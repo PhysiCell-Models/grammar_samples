@@ -1,0 +1,33 @@
+bacteria,debris secretion,0,0,1,dead,increases,0.1,10,1
+bacteria,cycle entry,0,0.00028,0.0028,resource,increases,0.5,5,0
+bacteria,cycle entry,0,0.00028,0.0028,pressure,decreases,0.5,4,0
+bacteria,necrosis,0,0.0028,0.0028,resource,decreases,0.1125,8,0
+bacteria,apoptosis,0,0.00028,0.028,damage,increases,36,4,0
+bacteria,migration speed,0,1,1,resource,decreases,0.25,2,0
+bacteria,migration bias,0,0.2,1,resource,increases,0.5,2,0
+bacteria,migration bias,0,0.2,1,virulence factor,increases,0.5,2,0
+
+stem cell,debris secretion,0,0,1,dead,increases,0.1,10,1
+stem cell,cycle entry,0,0.0002,0.002,resource,increases,0.5,5,0
+stem cell,cycle entry,0,0.0002,0.002,pressure,decreases,0.5,4,0
+stem cell,necrosis,0,0.0028,0.0028,resource,decreases,0.1125,8,0
+stem cell,transform to differentiated cell,0,0,0.0075,contact with stem cell,increases,0.1,2,0
+stem cell,cycle entry,0,0.0002,0.002,contact with differentiated cell,decreases,0.1,10,0
+stem cell,apoptosis,0,5.3e-8,5.3e-6,virulence factor,increases,0.4,2,0
+
+differentiated cell,debris secretion,0,0,1,dead,increases,0.1,10,1
+differentiated cell,cycle entry,0,5.3e-5,5.3e-4,resource,increases,0.5,5,0
+differentiated cell,cycle entry,0,5.3e-5,5.3e-4,pressure,decreases,0.5,4,0
+differentiated cell,necrosis,0,0.0028,0.0028,resource,decreases,0.1125,8,0
+differentiated cell,apoptosis,0,5.3e-5,5.3e-3,virulence factor,increases,0.4,2,0
+
+macrophage,migration bias,0,0.1,0.75,debris,increases,0.5,2,0 
+macrophage,migration bias,0,0.1,0.75,virulence factor,increases,0.5,2,0 
+macrophage,migration speed,0.1,1,1,debris,decreases,0.5,2,0 
+macrophage,migration speed,0.1,1,1,virulence factor,decreases,0.5,2,0 
+
+CD8 T cell,migration bias,0,0.1,0.75,pro-inflammatory factor,increases,0.25,2,0 
+CD8 T cell,migration speed,0.1,1,1,contact with bacteria,decreases,0.1,2,0
+
+neutrophil,migration bias,0,0.1,0.75,pro-inflammatory factor,increases,0.25,2,0 
+neutrophil,migration speed,0.1,1,1,contact with bacteria,decreases,0.1,2,0
