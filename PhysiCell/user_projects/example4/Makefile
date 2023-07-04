@@ -291,4 +291,4 @@ load:
 	cp ./user_projects/$(PROJ)/custom_modules/* ./custom_modules/ 
 
 GUI: 
-	python ../../PhysiCell-model-builder-2.8.3/bin/pmb.py --studio 
+	python ../../PhysiCell-model-builder-2.8.5/bin/pmb.py --studio 

@@ -260,15 +260,6 @@ void setup_tissue( void )
 	
 	// load cells from your CSV file (if enabled)
 	load_cells_from_pugixml(); 	
-
-	// make sure blood vessels are not moveable 
-
-	for( int n=0 ; n < (*all_cells).size() ; n++ )
-	{
-		Cell* pC = (*all_cells)[n]; 
-		if( pC->type_name == "blood vessel" )
-		{ pC->is_movable = false; }
-	}
 	
 	return; 
 }
@@ -289,3 +280,163 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
 { return; } 
+
+void turn_on_systemic_therapy( std::string substrate, double time_on, double time_off , double dose )
+{
+
+	static bool therapy_on = false; 
+	static double tol = 0.001; 
+
+	if( PhysiCell_globals.current_time >= time_on - tol && therapy_on == false )
+	{ 
+		therapy_on = true; 
+		set_Dirichlet_boundary(substrate,dose,true); 
+	}
+
+	if( PhysiCell_globals.current_time >= time_off - tol && therapy_on == true )
+	{ 
+		therapy_on = false; 
+		set_Dirichlet_boundary(substrate,dose,false); 
+	}
+
+	return; 
+}
+
+void set_Dirichlet_boundary( std::string substrate , double value , bool activated )
+{
+	static int substrate_index = microenvironment.find_density_index( substrate ); 
+
+	// add the Dirichlet nodes in the right places 
+	// now, go in and set the values 
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int I = 0; 
+		// set Dirichlet conditions along the xmin outer edges 
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int voxel_index = microenvironment.voxel_index(I,j,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+		
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int I = microenvironment.mesh.x_coordinates.size()-1;; 
+		// set Dirichlet conditions along the xmax outer edges 
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int voxel_index = microenvironment.voxel_index(I,j,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+		
+
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int J = 0; // microenvironment.mesh.x_coordinates.size()-1;; 
+		// set Dirichlet conditions along the ymin outer edges 
+		for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+		{
+			int voxel_index = microenvironment.voxel_index(i,J,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int J = microenvironment.mesh.y_coordinates.size()-1;; 
+		// set Dirichlet conditions along the ymin outer edges 
+		for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+		{
+			int voxel_index = microenvironment.voxel_index(i,J,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+	// if not 2D:
+	if( default_microenvironment_options.simulate_2D == false )
+	{
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int K = 0; // microenvironment.mesh.z_coordinates.size()-1;; 
+			// set Dirichlet conditions along the ymin outer edges 
+			for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+			{
+				int voxel_index = microenvironment.voxel_index(i,j,K); 
+
+				if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+				{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+				microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+				microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+			}
+		}
+		
+
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int K = microenvironment.mesh.z_coordinates.size()-1;; 
+			// set Dirichlet conditions along the ymin outer edges 
+			for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+			{
+				int voxel_index = microenvironment.voxel_index(i,j,K); 
+
+				if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+				{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+				microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+				microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+			}
+		}
+		
+	}
+	return; 		
+}
+
+void turn_on_injected_therapy( std::string substrate, std::vector<double> position, double time_on, double time_off, double dose )
+{
+	int substrate_index = microenvironment.find_density_index( substrate ); 
+	int voxel_index = microenvironment.nearest_voxel_index(position); 
+
+	static bool therapy_on = false; 
+	static double tol = 0.001; 
+
+	if( PhysiCell_globals.current_time >= time_on - tol && therapy_on == false )
+	{ 
+		therapy_on = true; 
+
+		if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && therapy_on == true )
+		{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+		microenvironment.update_dirichlet_node(voxel_index,substrate_index,dose); 
+		microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,true); 
+
+	}
+
+	if( PhysiCell_globals.current_time >= time_off - tol && therapy_on == true )
+	{ 
+		therapy_on = false; 
+
+		microenvironment.update_dirichlet_node(voxel_index,substrate_index,dose); 
+		microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,false); 
+
+	}
+
+}

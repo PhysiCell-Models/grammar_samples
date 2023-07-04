@@ -94,3 +94,7 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt );
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt ); 
 
+void set_Dirichlet_boundary( std::string substrate , double value , bool activated ); 
+void turn_on_systemic_therapy( std::string substrate, double time_on, double time_off , double dose ); 
+
+void turn_on_injected_therapy( std::string substrate, std::vector<double> position, double time_on, double time_off, double dose );

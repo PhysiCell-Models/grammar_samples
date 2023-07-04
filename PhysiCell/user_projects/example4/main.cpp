@@ -434,7 +434,10 @@ int main( int argc, char* argv[] )
 			/*
 			  Custom add-ons could potentially go here. 
 			*/
-			
+
+			// turn_on_systemic_therapy("IFN-gamma", 720, 3600 , 1 ); 
+			// turn_on_injected_therapy("IFN-gamma", {0,-200,0}, 720, 3600, 10 ); 
+
 			PhysiCell_globals.current_time += diffusion_dt;
 		}
 		
