@@ -24,7 +24,7 @@ naive T cell,transform to CD8 T cell,0,0.001,0.01,IL-10,decreases,0.25,2,0
 naive T cell,transform to CD8 T cell,0,0.001,0.01,IFN-gamma,increases,0.25,2,0
 naive T cell,debris secretion,0,0,0.017,dead,increases,0.1,10,1
 
-CD8 T cell,cycle entry,0,7.2e-5,9.3e-4,IFN-gamma,increases,0.25,2,0 
+CD8 T cell,cycle entry,0,7.2e-5,4.1e-4,IFN-gamma,increases,0.25,2,0
 CD8 T cell,attack tumor,0,0.01,0.05,IL-10,decreases,0.25,2,0 
 CD8 T cell,migration speed,0.1,1,1,IL-10,decreases,0.25,2,0 
 CD8 T cell,transform to exhausted T cell,0,0,0.005,IL-10,increases,0.25,4,0 

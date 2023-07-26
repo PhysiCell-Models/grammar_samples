@@ -27,7 +27,7 @@
 	</parallel>
 
 	<save>
-		<folder>./output_example5_gvax_uru</folder>
+		<folder>outputs/output_example5_gvax_uru</folder>
 
 		<full_data>
 			<interval units="min">60</interval>

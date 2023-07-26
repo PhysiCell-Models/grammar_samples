@@ -1,0 +1,2537 @@
+,x_coord,y_coord,cell_type
+0,3571,1504,adjacent tissue
+1,4118,4459,non-hypoxic
+2,3126,4811,adjacent tissue
+3,3375,4670,non-hypoxic
+4,4988,3608,non-hypoxic
+5,3067,4135,hypoxic
+6,3688,3639,hypoxic
+7,4498,2183,adjacent tissue
+8,2756,4454,hypoxic
+9,2640,2319,non-hypoxic
+10,4618,3038,post-hypoxic
+11,4558,2646,non-hypoxic
+12,3257,2748,non-hypoxic
+13,3252,4456,non-hypoxic
+14,2261,4595,adjacent tissue
+15,4552,4354,non-hypoxic
+16,4308,3214,non-hypoxic
+17,3875,3177,non-hypoxic
+18,1957,2922,hypoxic
+19,1952,4202,non-hypoxic
+20,3624,4173,non-hypoxic
+21,2756,4597,hypoxic
+22,3199,1787,post-hypoxic
+23,3075,1716,non-hypoxic
+24,3382,2678,non-hypoxic
+25,3754,2323,non-hypoxic
+26,4498,2041,adjacent tissue
+27,3993,4957,adjacent tissue
+28,3194,3139,post-hypoxic
+29,3757,1540,adjacent tissue
+30,3499,4528,non-hypoxic
+31,2513,3315,hypoxic
+32,2575,3066,hypoxic
+33,3872,4031,non-hypoxic
+34,3377,3958,post-hypoxic
+35,2202,3634,non-hypoxic
+36,4244,3819,non-hypoxic
+37,2262,4239,post-hypoxic
+38,3632,1825,non-hypoxic
+39,3252,4385,post-hypoxic
+40,4120,4032,post-hypoxic
+41,2263,4026,non-hypoxic
+42,4614,4318,non-hypoxic
+43,4432,3286,non-hypoxic
+44,2695,4276,hypoxic
+45,1397,3738,adjacent tissue
+46,3932,4636,non-hypoxic
+47,4616,3607,non-hypoxic
+48,5114,3039,non-hypoxic
+49,2952,1715,non-hypoxic
+50,1958,2637,hypoxic
+51,3322,1859,hypoxic
+52,4312,2218,non-hypoxic
+53,3815,2715,post-hypoxic
+54,4055,4850,adjacent tissue
+55,3753,2536,post-hypoxic
+56,1959,2424,non-hypoxic
+57,4618,3251,non-hypoxic
+58,1895,2815,hypoxic
+59,3818,1790,non-hypoxic
+60,3570,1860,post-hypoxic
+61,3378,3745,hypoxic
+62,3440,3638,post-hypoxic
+63,1954,3704,non-hypoxic
+64,2701,2497,hypoxic
+65,3876,2964,non-hypoxic
+66,2821,3565,hypoxic
+67,4189,1862,adjacent tissue
+68,2642,1821,non-hypoxic
+69,3749,3675,post-hypoxic
+70,1710,2778,hypoxic
+71,1580,4486,non-hypoxic
+72,2262,4168,post-hypoxic
+73,4184,3214,non-hypoxic
+74,2700,2711,hypoxic
+75,2138,4167,post-hypoxic
+76,2640,2390,hypoxic
+77,2881,4099,hypoxic
+78,2702,2284,non-hypoxic
+79,4121,3747,non-hypoxic
+80,2084,1926,non-hypoxic
+81,4125,2538,post-hypoxic
+82,3753,2679,post-hypoxic
+83,5048,4071,non-hypoxic
+84,4490,4318,non-hypoxic
+85,4620,2540,non-hypoxic
+86,3996,3889,non-hypoxic
+87,3567,2714,non-hypoxic
+88,2639,2533,hypoxic
+89,4002,2253,non-hypoxic
+90,2203,3421,hypoxic
+91,2146,2033,non-hypoxic
+92,1954,3775,non-hypoxic
+93,2326,3492,hypoxic
+94,4366,4389,non-hypoxic
+95,4181,4210,non-hypoxic
+96,2021,2246,non-hypoxic
+97,3199,1859,post-hypoxic
+98,1645,3454,non-hypoxic
+99,2510,4026,hypoxic
+100,3262,1539,hypoxic
+101,3005,4242,hypoxic
+102,4307,3428,non-hypoxic
+103,3500,4172,non-hypoxic
+104,4739,3821,non-hypoxic
+105,3692,2287,adjacent tissue
+106,4003,2110,non-hypoxic
+107,3315,3922,post-hypoxic
+108,4682,2646,non-hypoxic
+109,2696,4063,hypoxic
+110,3687,3781,post-hypoxic
+111,1890,4451,non-hypoxic
+112,4616,3820,non-hypoxic
+113,3688,3497,hypoxic
+114,3446,2073,post-hypoxic
+115,3999,3107,non-hypoxic
+116,3311,5061,adjacent tissue
+117,2695,4347,hypoxic
+118,4739,3963,non-hypoxic
+119,3818,1647,adjacent tissue
+120,5175,3146,non-hypoxic
+121,2888,2320,non-hypoxic
+122,4621,2184,adjacent tissue
+123,3684,4564,non-hypoxic
+124,2817,4775,adjacent tissue
+125,2456,1856,post-hypoxic
+126,3622,4600,non-hypoxic
+127,3439,4065,hypoxic
+128,3197,2357,post-hypoxic
+129,1893,3455,non-hypoxic
+130,2018,3029,hypoxic
+131,2323,4559,adjacent tissue
+132,1644,3881,non-hypoxic
+133,4488,4816,adjacent tissue
+134,3872,4173,non-hypoxic
+135,4553,3998,non-hypoxic
+136,2946,3352,hypoxic
+137,4062,2787,post-hypoxic
+138,3628,2892,non-hypoxic
+139,4556,3073,post-hypoxic
+140,4559,2433,post-hypoxic
+141,3505,2891,non-hypoxic
+142,3259,2179,hypoxic
+143,5173,3715,non-hypoxic
+144,3312,4990,adjacent tissue
+145,3569,2216,non-hypoxic
+146,3198,2143,hypoxic
+147,2453,2568,hypoxic
+148,1829,4060,non-hypoxic
+149,2324,4204,non-hypoxic
+150,3506,2464,non-hypoxic
+151,2263,3812,non-hypoxic
+152,4250,2040,adjacent tissue
+153,3197,2428,non-hypoxic
+154,3066,4420,hypoxic
+155,2696,3991,hypoxic
+156,3996,4032,non-hypoxic
+157,3633,1682,non-hypoxic
+158,2207,2211,non-hypoxic
+159,1956,3135,hypoxic
+160,3198,1930,hypoxic
+161,4180,4566,non-hypoxic
+162,4991,2754,non-hypoxic
+163,1955,3349,non-hypoxic
+164,1644,3739,post-hypoxic
+165,4489,4531,non-hypoxic
+166,2016,3598,non-hypoxic
+167,2391,2603,post-hypoxic
+168,2144,2602,hypoxic
+169,1518,4521,non-hypoxic
+170,3688,3426,hypoxic
+171,3685,4280,non-hypoxic
+172,3755,2038,hypoxic
+173,3625,3746,post-hypoxic
+174,3313,4634,non-hypoxic
+175,4117,4815,non-hypoxic
+176,1771,2885,hypoxic
+177,2446,4702,adjacent tissue
+178,3875,3106,non-hypoxic
+179,3076,1502,hypoxic
+180,3071,2925,hypoxic
+181,3006,3815,hypoxic
+182,3259,2250,hypoxic
+183,3628,2963,non-hypoxic
+184,4986,4177,adjacent tissue
+185,3750,3390,hypoxic
+186,1522,3383,post-hypoxic
+187,3940,2359,non-hypoxic
+188,2327,3208,hypoxic
+189,3444,2429,non-hypoxic
+190,2823,3138,hypoxic
+191,3189,4705,hypoxic
+192,3069,3637,hypoxic
+193,2331,2069,post-hypoxic
+194,2014,4238,non-hypoxic
+195,2759,3814,hypoxic
+196,4243,4104,non-hypoxic
+197,4739,3892,post-hypoxic
+198,4000,2822,post-hypoxic
+199,2828,1573,non-hypoxic
+200,3069,3424,hypoxic
+201,4061,3214,non-hypoxic
+202,3935,3711,post-hypoxic
+203,3445,2144,post-hypoxic
+204,3993,4743,non-hypoxic
+205,4248,2752,post-hypoxic
+206,2205,2780,hypoxic
+207,4868,2327,adjacent tissue
+208,2703,1857,non-hypoxic
+209,3630,2323,non-hypoxic
+210,5048,4000,non-hypoxic
+211,3323,1646,hypoxic
+212,4118,4601,non-hypoxic
+213,4244,3748,non-hypoxic
+214,3562,4066,non-hypoxic
+215,2448,4062,post-hypoxic
+216,4680,3073,non-hypoxic
+217,4489,4603,non-hypoxic
+218,3313,4492,non-hypoxic
+219,2447,4275,post-hypoxic
+220,4430,3926,non-hypoxic
+221,3561,4493,non-hypoxic
+222,3994,4672,non-hypoxic
+223,1835,2281,non-hypoxic
+224,2019,2886,hypoxic
+225,2705,1501,non-hypoxic
+226,2759,3600,hypoxic
+227,4369,3464,non-hypoxic
+228,2514,2959,hypoxic
+229,5115,2612,non-hypoxic
+230,1525,2529,adjacent tissue
+231,3134,2605,post-hypoxic
+232,3504,3034,non-hypoxic
+233,3005,4028,hypoxic
+234,2576,2924,hypoxic
+235,2879,4668,hypoxic
+236,4249,2467,post-hypoxic
+237,4002,2324,adjacent tissue
+238,3690,2999,non-hypoxic
+239,3751,3177,post-hypoxic
+240,3506,2393,post-hypoxic
+241,4241,4744,non-hypoxic
+242,3376,4243,non-hypoxic
+243,4801,3999,non-hypoxic
+244,2515,2746,hypoxic
+245,4806,2576,non-hypoxic
+246,3014,1680,non-hypoxic
+247,3188,4918,adjacent tissue
+248,3683,4991,adjacent tissue
+249,1524,2885,non-hypoxic
+250,3010,2676,hypoxic
+251,2883,3743,hypoxic
+252,5049,3786,non-hypoxic
+253,4183,3570,non-hypoxic
+254,4865,3394,non-hypoxic
+255,4366,4531,non-hypoxic
+256,2016,3669,non-hypoxic
+257,5048,4142,non-hypoxic
+258,4185,3143,non-hypoxic
+259,4428,4353,non-hypoxic
+260,4121,3676,non-hypoxic
+261,4188,2075,adjacent tissue
+262,2020,2673,hypoxic
+263,4613,4532,non-hypoxic
+264,4367,4104,non-hypoxic
+265,3375,4528,non-hypoxic
+266,4001,2680,post-hypoxic
+267,3444,2642,non-hypoxic
+268,3500,4314,non-hypoxic
+269,2702,2355,non-hypoxic
+270,3073,2356,non-hypoxic
+271,2701,2640,hypoxic
+272,4004,1826,adjacent tissue
+273,3383,2179,hypoxic
+274,4677,4070,non-hypoxic
+275,3746,4813,non-hypoxic
+276,4989,3252,non-hypoxic
+277,2330,2354,post-hypoxic
+278,2140,3741,non-hypoxic
+279,2513,3173,hypoxic
+280,2329,2852,hypoxic
+281,4064,2360,non-hypoxic
+282,2703,1928,non-hypoxic
+283,2822,3280,hypoxic
+284,3322,1930,post-hypoxic
+285,3631,2251,non-hypoxic
+286,4250,2111,adjacent tissue
+287,2144,2460,post-hypoxic
+288,3072,2570,post-hypoxic
+289,2265,3385,hypoxic
+290,3188,4776,hypoxic
+291,5113,3110,non-hypoxic
+292,2204,2922,hypoxic
+293,2879,4739,hypoxic
+294,4241,4673,non-hypoxic
+295,4241,4815,adjacent tissue
+296,2144,2531,hypoxic
+297,2827,2000,hypoxic
+298,3684,4635,non-hypoxic
+299,3069,3566,hypoxic
+300,4435,2361,non-hypoxic
+301,3438,4136,non-hypoxic
+302,2755,4739,adjacent tissue
+303,2457,1643,non-hypoxic
+304,1519,4308,non-hypoxic
+305,3622,4813,non-hypoxic
+306,1829,4131,non-hypoxic
+307,3505,2820,non-hypoxic
+308,2080,3135,hypoxic
+309,3004,4526,hypoxic
+310,3509,1682,hypoxic
+311,3748,3960,non-hypoxic
+312,2202,3492,post-hypoxic
+313,4369,3535,non-hypoxic
+314,4677,3927,non-hypoxic
+315,2084,1997,non-hypoxic
+316,4058,3925,non-hypoxic
+317,2942,4490,hypoxic
+318,2261,4452,non-hypoxic
+319,1953,4131,non-hypoxic
+320,3633,1540,adjacent tissue
+321,2450,3564,hypoxic
+322,2944,3779,hypoxic
+323,1396,3880,non-hypoxic
+324,3321,2215,hypoxic
+325,4434,2574,post-hypoxic
+326,2268,2460,hypoxic
+327,1770,3170,non-hypoxic
+328,4057,4281,non-hypoxic
+329,3436,4919,adjacent tissue
+330,2699,3209,hypoxic
+331,3746,4671,non-hypoxic
+332,4187,2574,post-hypoxic
+333,3013,1822,non-hypoxic
+334,3933,4423,non-hypoxic
+335,4676,4212,non-hypoxic
+336,2143,2816,hypoxic
+337,2571,4418,hypoxic
+338,3754,2252,non-hypoxic
+339,2387,3884,post-hypoxic
+340,4434,2717,post-hypoxic
+341,3937,3071,non-hypoxic
+342,3632,1753,non-hypoxic
+343,3747,4458,non-hypoxic
+344,1832,3277,non-hypoxic
+345,4433,3073,non-hypoxic
+346,4374,1969,adjacent tissue
+347,1897,2245,non-hypoxic
+348,4867,2825,non-hypoxic
+349,3067,4206,hypoxic
+350,4680,3216,non-hypoxic
+351,4429,4211,non-hypoxic
+352,4246,3392,non-hypoxic
+353,4615,4105,non-hypoxic
+354,3561,4350,adjacent tissue
+355,3560,4635,non-hypoxic
+356,1765,4593,adjacent tissue
+357,3625,3817,non-hypoxic
+358,1523,3027,adjacent tissue
+359,2018,3171,hypoxic
+360,4676,4354,non-hypoxic
+361,3999,3178,non-hypoxic
+362,4309,2930,non-hypoxic
+363,3560,4706,non-hypoxic
+364,4557,2788,post-hypoxic
+365,3258,2606,non-hypoxic
+366,4244,3961,non-hypoxic
+367,4436,2076,adjacent tissue
+368,3693,2074,hypoxic
+369,2825,2427,hypoxic
+370,3007,3530,hypoxic
+371,3810,4138,non-hypoxic
+372,3004,4313,hypoxic
+373,4248,2823,post-hypoxic
+374,3136,2107,hypoxic
+375,3131,3530,hypoxic
+376,3695,1647,non-hypoxic
+377,3752,2821,non-hypoxic
+378,3323,1717,hypoxic
+379,3437,4563,non-hypoxic
+380,2084,2068,non-hypoxic
+381,4122,3392,non-hypoxic
+382,3509,1611,non-hypoxic
+383,2201,3776,non-hypoxic
+384,3252,4242,post-hypoxic
+385,4927,3288,non-hypoxic
+386,4312,2005,non-hypoxic
+387,4118,4530,non-hypoxic
+388,2077,4060,post-hypoxic
+389,3564,3639,post-hypoxic
+390,1951,4487,non-hypoxic
+391,3875,3248,post-hypoxic
+392,3190,4420,post-hypoxic
+393,1521,3525,non-hypoxic
+394,2638,2817,hypoxic
+395,4678,3714,non-hypoxic
+396,2766,1679,non-hypoxic
+397,4491,3962,non-hypoxic
+398,2580,1856,non-hypoxic
+399,4740,3536,non-hypoxic
+400,2331,1998,non-hypoxic
+401,2514,2888,hypoxic
+402,4368,3891,non-hypoxic
+403,2634,4027,hypoxic
+404,3314,4421,non-hypoxic
+405,4432,3144,post-hypoxic
+406,2756,4525,hypoxic
+407,1835,2494,non-hypoxic
+408,3010,2747,post-hypoxic
+409,4868,2398,non-hypoxic
+410,2631,4738,adjacent tissue
+411,2021,2317,non-hypoxic
+412,3941,2003,non-hypoxic
+413,4804,2932,non-hypoxic
+414,2015,3954,non-hypoxic
+415,4431,3428,non-hypoxic
+416,4057,4210,non-hypoxic
+417,4060,3285,non-hypoxic
+418,4615,3891,non-hypoxic
+419,3007,3459,hypoxic
+420,3446,1931,post-hypoxic
+421,3880,1612,adjacent tissue
+422,3076,1574,hypoxic
+423,2827,1928,non-hypoxic
+424,2016,3740,non-hypoxic
+425,3376,4314,non-hypoxic
+426,4497,2254,post-hypoxic
+427,4003,1897,adjacent tissue
+428,3624,4101,non-hypoxic
+429,3810,4067,non-hypoxic
+430,1580,4415,non-hypoxic
+431,1957,2779,hypoxic
+432,4621,2397,hypoxic
+433,3200,1503,hypoxic
+434,3194,3282,hypoxic
+435,4553,4140,non-hypoxic
+436,2641,2035,post-hypoxic
+437,4127,1969,adjacent tissue
+438,3255,3389,hypoxic
+439,2517,2034,post-hypoxic
+440,3694,1718,adjacent tissue
+441,3316,3638,hypoxic
+442,4251,1898,adjacent tissue
+443,3013,1965,non-hypoxic
+444,4312,2076,post-hypoxic
+445,2941,4704,hypoxic
+446,3374,4812,adjacent tissue
+447,1766,4308,non-hypoxic
+448,2945,3565,hypoxic
+449,3624,4244,non-hypoxic
+450,2075,4630,non-hypoxic
+451,2327,3350,hypoxic
+452,3133,2819,post-hypoxic
+453,4495,2895,post-hypoxic
+454,4063,2502,non-hypoxic
+455,3447,1504,adjacent tissue
+456,3377,4029,post-hypoxic
+457,3381,2962,non-hypoxic
+458,2574,3351,hypoxic
+459,2819,4134,hypoxic
+460,2640,2248,non-hypoxic
+461,2020,2459,non-hypoxic
+462,3568,2571,non-hypoxic
+463,3317,3282,hypoxic
+464,3381,2891,non-hypoxic
+465,1581,4059,non-hypoxic
+466,4249,2396,non-hypoxic
+467,4433,2859,post-hypoxic
+468,3939,2573,non-hypoxic
+469,2634,4098,hypoxic
+470,4062,2858,post-hypoxic
+471,5112,3395,non-hypoxic
+472,2949,2356,non-hypoxic
+473,3933,4352,non-hypoxic
+474,1836,2210,non-hypoxic
+475,2508,4738,adjacent tissue
+476,3878,2395,post-hypoxic
+477,3384,1824,post-hypoxic
+478,4371,2894,post-hypoxic
+479,1771,2957,hypoxic
+480,4064,2146,non-hypoxic
+481,2208,1855,non-hypoxic
+482,2512,3528,hypoxic
+483,2079,3420,post-hypoxic
+484,3129,3957,hypoxic
+485,1772,2601,post-hypoxic
+486,2205,2851,hypoxic
+487,3009,3103,hypoxic
+488,2828,1502,non-hypoxic
+489,4062,2715,non-hypoxic
+490,3815,2501,post-hypoxic
+491,3931,4921,adjacent tissue
+492,4065,1862,adjacent tissue
+493,2638,2960,hypoxic
+494,4865,3181,non-hypoxic
+495,5053,2719,non-hypoxic
+496,2642,1679,non-hypoxic
+497,3192,3709,hypoxic
+498,3630,2394,post-hypoxic
+499,1582,3988,non-hypoxic
+500,2389,3172,hypoxic
+501,3501,3959,post-hypoxic
+502,4928,3074,non-hypoxic
+503,2514,2817,hypoxic
+504,4242,4459,non-hypoxic
+505,1712,2209,non-hypoxic
+506,3316,3851,hypoxic
+507,1772,2743,hypoxic
+508,3192,3637,hypoxic
+509,4003,2039,non-hypoxic
+510,3499,4599,non-hypoxic
+511,1898,2032,non-hypoxic
+512,5050,3573,non-hypoxic
+513,2885,3032,hypoxic
+514,2016,3811,non-hypoxic
+515,3129,4171,hypoxic
+516,4310,2574,post-hypoxic
+517,3565,3283,hypoxic
+518,2945,3494,hypoxic
+519,4303,4637,non-hypoxic
+520,4866,3110,non-hypoxic
+521,3193,3424,hypoxic
+522,2819,4205,hypoxic
+523,3255,3460,hypoxic
+524,3133,2890,hypoxic
+525,1895,2957,hypoxic
+526,2018,3100,hypoxic
+527,3692,2430,hypoxic
+528,4366,4317,non-hypoxic
+529,3876,2750,post-hypoxic
+530,4619,2824,post-hypoxic
+531,4369,3677,non-hypoxic
+532,4618,3109,non-hypoxic
+533,4248,2681,non-hypoxic
+534,2082,2424,hypoxic
+535,2078,3562,non-hypoxic
+536,1831,3490,non-hypoxic
+537,1461,3062,adjacent tissue
+538,3686,4066,non-hypoxic
+539,4369,3606,non-hypoxic
+540,3446,2002,post-hypoxic
+541,2015,3882,non-hypoxic
+542,1461,3204,adjacent tissue
+543,3193,3353,hypoxic
+544,4117,4744,non-hypoxic
+545,2140,3527,non-hypoxic
+546,2019,2815,hypoxic
+547,3137,1894,post-hypoxic
+548,2392,2461,hypoxic
+549,1650,2173,non-hypoxic
+550,2639,2604,hypoxic
+551,1767,4095,non-hypoxic
+552,4187,2431,non-hypoxic
+553,3745,4885,adjacent tissue
+554,5111,3751,non-hypoxic
+555,2700,2782,hypoxic
+556,1649,2316,non-hypoxic
+557,2142,2958,hypoxic
+558,4428,4496,non-hypoxic
+559,4243,4032,non-hypoxic
+560,3260,1894,hypoxic
+561,4428,4282,non-hypoxic
+562,4990,2968,non-hypoxic
+563,3260,2108,hypoxic
+564,4557,2859,post-hypoxic
+565,4682,2575,hypoxic
+566,5049,3929,non-hypoxic
+567,3314,4349,non-hypoxic
+568,1894,3099,hypoxic
+569,3382,2606,non-hypoxic
+570,2570,4631,adjacent tissue
+571,4493,3464,non-hypoxic
+572,3133,3032,post-hypoxic
+573,1834,2779,hypoxic
+574,1897,2317,non-hypoxic
+575,2943,4064,hypoxic
+576,1583,3561,non-hypoxic
+577,1646,3383,non-hypoxic
+578,2763,2604,hypoxic
+579,1587,2351,non-hypoxic
+580,4742,3109,non-hypoxic
+581,4551,4709,non-hypoxic
+582,1770,3241,non-hypoxic
+583,4120,3819,non-hypoxic
+584,3939,2715,post-hypoxic
+585,2138,4239,post-hypoxic
+586,3318,2997,non-hypoxic
+587,4251,1969,hypoxic
+588,2076,4274,non-hypoxic
+589,1892,3740,non-hypoxic
+590,2695,4205,hypoxic
+591,2389,3386,hypoxic
+592,3683,4849,non-hypoxic
+593,2519,1607,non-hypoxic
+594,4614,4247,non-hypoxic
+595,4436,2148,non-hypoxic
+596,3633,1611,non-hypoxic
+597,2635,3600,hypoxic
+598,4865,3252,non-hypoxic
+599,2325,3777,hypoxic
+600,3873,3889,non-hypoxic
+601,3748,4031,non-hypoxic
+602,2950,2142,hypoxic
+603,1648,2600,post-hypoxic
+604,4805,2647,non-hypoxic
+605,3379,3460,hypoxic
+606,2326,3706,post-hypoxic
+607,3934,4067,non-hypoxic
+608,3190,4278,post-hypoxic
+609,3256,3246,hypoxic
+610,1708,3348,post-hypoxic
+611,5049,3857,non-hypoxic
+612,1582,3774,non-hypoxic
+613,1583,3490,non-hypoxic
+614,4123,3178,non-hypoxic
+615,3320,2499,non-hypoxic
+616,3260,1966,hypoxic
+617,2449,3777,hypoxic
+618,1586,2778,adjacent tissue
+619,3815,2572,non-hypoxic
+620,2948,2712,hypoxic
+621,4741,3251,non-hypoxic
+622,5174,3431,non-hypoxic
+623,2951,1787,non-hypoxic
+624,2082,2495,post-hypoxic
+625,2941,4775,adjacent tissue
+626,3811,3711,post-hypoxic
+627,4990,3110,non-hypoxic
+628,3816,2217,non-hypoxic
+629,2207,2069,post-hypoxic
+630,2267,2816,hypoxic
+631,3931,4992,adjacent tissue
+632,2762,2889,hypoxic
+633,4613,4603,adjacent tissue
+634,3070,3352,hypoxic
+635,2014,4167,non-hypoxic
+636,2517,1963,post-hypoxic
+637,4428,4424,non-hypoxic
+638,2390,3030,hypoxic
+639,1709,2992,hypoxic
+640,4004,1684,adjacent tissue
+641,4309,3001,post-hypoxic
+642,3382,2535,non-hypoxic
+643,4182,3783,non-hypoxic
+644,4001,2466,non-hypoxic
+645,2824,2853,hypoxic
+646,3807,4992,adjacent tissue
+647,2941,4846,adjacent tissue
+648,4180,4352,non-hypoxic
+649,3749,3746,post-hypoxic
+650,3940,2288,non-hypoxic
+651,3561,4564,non-hypoxic
+652,2142,3029,hypoxic
+653,4551,4567,non-hypoxic
+654,3749,3817,non-hypoxic
+655,3377,4101,non-hypoxic
+656,1519,4236,non-hypoxic
+657,1710,2565,post-hypoxic
+658,1586,2636,adjacent tissue
+659,1960,2139,non-hypoxic
+660,3138,1467,hypoxic
+661,2510,4098,hypoxic
+662,1958,2566,post-hypoxic
+663,2388,3599,hypoxic
+664,3076,1645,hypoxic
+665,3501,3816,post-hypoxic
+666,2764,2248,non-hypoxic
+667,2636,3315,hypoxic
+668,2885,3103,hypoxic
+669,3935,3853,non-hypoxic
+670,3444,2500,non-hypoxic
+671,2632,4667,adjacent tissue
+672,4741,3465,non-hypoxic
+673,4494,3322,non-hypoxic
+674,1645,3596,non-hypoxic
+675,2574,3422,hypoxic
+676,1767,4024,non-hypoxic
+677,3755,2110,hypoxic
+678,3751,3319,hypoxic
+679,2395,1607,hypoxic
+680,3565,3354,hypoxic
+681,3628,3105,post-hypoxic
+682,2082,2637,hypoxic
+683,3812,3426,hypoxic
+684,2079,3491,non-hypoxic
+685,4613,4461,non-hypoxic
+686,3870,4529,non-hypoxic
+687,2206,2353,hypoxic
+688,3571,1575,non-hypoxic
+689,4311,2503,adjacent tissue
+690,1897,2388,non-hypoxic
+691,3750,3604,hypoxic
+692,2514,3030,hypoxic
+693,2208,1926,non-hypoxic
+694,4987,3893,non-hypoxic
+695,3438,4350,non-hypoxic
+696,2448,4133,post-hypoxic
+697,3195,2997,post-hypoxic
+698,4498,2112,adjacent tissue
+699,2883,3601,hypoxic
+700,3934,4138,non-hypoxic
+701,3506,2536,non-hypoxic
+702,1767,4237,non-hypoxic
+703,3437,4492,non-hypoxic
+704,3250,5025,adjacent tissue
+705,3072,2783,post-hypoxic
+706,2021,2175,non-hypoxic
+707,1397,3809,non-hypoxic
+708,3694,1860,non-hypoxic
+709,4799,4568,adjacent tissue
+710,2265,3314,hypoxic
+711,2076,4203,non-hypoxic
+712,4741,3394,non-hypoxic
+713,2704,1786,non-hypoxic
+714,4063,2573,non-hypoxic
+715,3065,4633,hypoxic
+716,4246,3179,non-hypoxic
+717,2758,4027,hypoxic
+718,4491,4033,non-hypoxic
+719,2886,2889,hypoxic
+720,2698,3422,hypoxic
+721,4679,3287,non-hypoxic
+722,4746,2042,adjacent tissue
+723,2076,4345,non-hypoxic
+724,3811,3640,hypoxic
+725,1645,3525,non-hypoxic
+726,3253,4029,post-hypoxic
+727,3132,3175,hypoxic
+728,3438,4279,non-hypoxic
+729,3694,1789,non-hypoxic
+730,4551,4496,non-hypoxic
+731,3818,1861,non-hypoxic
+732,3071,3068,hypoxic
+733,1889,4736,adjacent tissue
+734,2766,1608,non-hypoxic
+735,4126,2324,non-hypoxic
+736,5110,3964,non-hypoxic
+737,1772,2672,hypoxic
+738,3128,4384,hypoxic
+739,4926,3501,non-hypoxic
+740,3881,1541,adjacent tissue
+741,1523,3098,adjacent tissue
+742,3940,2217,non-hypoxic
+743,1774,2103,non-hypoxic
+744,3258,2535,non-hypoxic
+745,4117,4886,adjacent tissue
+746,2081,2780,hypoxic
+747,3817,1932,non-hypoxic
+748,3507,2109,post-hypoxic
+749,1648,2814,hypoxic
+750,4615,4034,non-hypoxic
+751,2079,3278,post-hypoxic
+752,2694,4703,adjacent tissue
+753,2022,2104,non-hypoxic
+754,3565,3425,hypoxic
+755,1831,3419,non-hypoxic
+756,4923,4355,adjacent tissue
+757,4616,3678,non-hypoxic
+758,2387,3813,post-hypoxic
+759,3689,3283,hypoxic
+760,1709,2921,hypoxic
+761,2515,2603,hypoxic
+762,2573,3635,hypoxic
+763,2760,3387,hypoxic
+764,1707,3490,non-hypoxic
+765,2269,2104,post-hypoxic
+766,2884,3387,hypoxic
+767,3446,1859,hypoxic
+768,3869,4956,adjacent tissue
+769,3687,3710,post-hypoxic
+770,2763,2462,hypoxic
+771,1525,2458,non-hypoxic
+772,3376,4172,non-hypoxic
+773,4862,4035,non-hypoxic
+774,2880,4383,hypoxic
+775,3687,3853,non-hypoxic
+776,1890,4380,non-hypoxic
+777,2207,2140,hypoxic
+778,2762,2818,hypoxic
+779,4371,2823,post-hypoxic
+780,2757,4383,hypoxic
+781,2261,4524,post-hypoxic
+782,2141,3242,hypoxic
+783,2146,1891,non-hypoxic
+784,3064,4847,adjacent tissue
+785,1960,2068,non-hypoxic
+786,4123,3036,non-hypoxic
+787,3621,4955,adjacent tissue
+788,1585,2920,adjacent tissue
+789,1335,3773,adjacent tissue
+790,3566,2927,non-hypoxic
+791,2828,1644,non-hypoxic
+792,3942,1648,adjacent tissue
+793,2637,3244,hypoxic
+794,1769,3597,non-hypoxic
+795,5049,3715,non-hypoxic
+796,2447,4346,post-hypoxic
+797,4676,4141,non-hypoxic
+798,2450,3635,hypoxic
+799,2511,3742,hypoxic
+800,3877,2608,non-hypoxic
+801,2579,1999,non-hypoxic
+802,3130,3886,hypoxic
+803,4183,3712,non-hypoxic
+804,2882,3957,hypoxic
+805,3497,5026,adjacent tissue
+806,5173,3787,non-hypoxic
+807,5053,2790,non-hypoxic
+808,3684,4706,non-hypoxic
+809,3074,2214,hypoxic
+810,3251,4741,adjacent tissue
+811,1711,2494,non-hypoxic
+812,3505,2749,non-hypoxic
+813,1645,3668,non-hypoxic
+814,1642,4308,non-hypoxic
+815,4494,3108,post-hypoxic
+816,2014,4380,non-hypoxic
+817,3746,4529,non-hypoxic
+818,2943,4135,hypoxic
+819,3997,3747,non-hypoxic
+820,1894,3313,non-hypoxic
+821,3188,4989,adjacent tissue
+822,4807,2078,adjacent tissue
+823,5237,3253,non-hypoxic
+824,3373,5026,adjacent tissue
+825,4181,4281,non-hypoxic
+826,4924,4213,adjacent tissue
+827,1459,3560,post-hypoxic
+828,4738,4105,non-hypoxic
+829,2387,3741,post-hypoxic
+830,2817,4703,adjacent tissue
+831,3004,4455,hypoxic
+832,2571,4276,hypoxic
+833,3374,4954,adjacent tissue
+834,3566,3141,post-hypoxic
+835,1519,4165,non-hypoxic
+836,3189,4491,post-hypoxic
+837,3506,2607,non-hypoxic
+838,1828,4344,non-hypoxic
+839,2509,4382,hypoxic
+840,3810,4209,non-hypoxic
+841,2766,1537,non-hypoxic
+842,2818,4419,hypoxic
+843,2701,2426,non-hypoxic
+844,2200,4203,post-hypoxic
+845,3938,2786,post-hypoxic
+846,3808,4707,non-hypoxic
+847,3126,4882,adjacent tissue
+848,2879,4810,adjacent tissue
+849,3626,3532,hypoxic
+850,2448,4204,post-hypoxic
+851,2323,4346,non-hypoxic
+852,3257,2891,non-hypoxic
+853,4867,2683,non-hypoxic
+854,3377,3887,post-hypoxic
+855,1953,3989,post-hypoxic
+856,4061,3142,non-hypoxic
+857,3374,4741,post-hypoxic
+858,1460,3276,adjacent tissue
+859,2454,2425,hypoxic
+860,4799,4426,adjacent tissue
+861,2703,2070,post-hypoxic
+862,2820,3992,hypoxic
+863,3935,3640,hypoxic
+864,2516,2390,hypoxic
+865,4190,1720,adjacent tissue
+866,3748,4173,non-hypoxic
+867,4675,4639,non-hypoxic
+868,3439,3852,post-hypoxic
+869,2942,4348,hypoxic
+870,5174,3502,non-hypoxic
+871,3072,2712,post-hypoxic
+872,3508,1966,post-hypoxic
+873,3625,3959,non-hypoxic
+874,2141,3385,hypoxic
+875,2703,1999,non-hypoxic
+876,3622,4742,non-hypoxic
+877,3878,2252,non-hypoxic
+878,3874,3533,hypoxic
+879,4179,4779,non-hypoxic
+880,4308,3286,non-hypoxic
+881,1649,2387,non-hypoxic
+882,4304,4282,non-hypoxic
+883,2267,2674,hypoxic
+884,4681,2718,post-hypoxic
+885,4313,1862,adjacent tissue
+886,1520,3881,non-hypoxic
+887,2510,3955,hypoxic
+888,4613,4674,adjacent tissue
+889,2817,4846,adjacent tissue
+890,1587,2493,non-hypoxic
+891,3999,3035,non-hypoxic
+892,4801,3785,non-hypoxic
+893,1896,2530,post-hypoxic
+894,4614,4176,non-hypoxic
+895,3686,4208,non-hypoxic
+896,2573,3849,hypoxic
+897,3752,2963,non-hypoxic
+898,2764,2106,post-hypoxic
+899,1896,2601,hypoxic
+900,3257,2962,non-hypoxic
+901,4863,3963,non-hypoxic
+902,2631,4810,adjacent tissue
+903,2446,4631,adjacent tissue
+904,2079,3349,hypoxic
+905,2264,3599,post-hypoxic
+906,4124,2680,post-hypoxic
+907,2759,3672,hypoxic
+908,2943,4277,hypoxic
+909,2267,2745,hypoxic
+910,2700,2924,hypoxic
+911,4865,3323,non-hypoxic
+912,4066,1790,non-hypoxic
+913,4245,3463,non-hypoxic
+914,4742,2967,post-hypoxic
+915,3127,4598,hypoxic
+916,1649,2529,non-hypoxic
+917,4927,3430,non-hypoxic
+918,4060,3356,non-hypoxic
+919,4055,4921,adjacent tissue
+920,3006,3957,hypoxic
+921,3571,1718,non-hypoxic
+922,3503,3389,hypoxic
+923,3375,4599,non-hypoxic
+924,5053,2648,non-hypoxic
+925,4551,4638,non-hypoxic
+926,2511,3884,hypoxic
+927,4304,4353,non-hypoxic
+928,4304,4424,non-hypoxic
+929,4370,3108,post-hypoxic
+930,4986,4106,non-hypoxic
+931,3137,1752,post-hypoxic
+932,3323,1788,hypoxic
+933,2697,3636,hypoxic
+934,3436,4706,non-hypoxic
+935,3560,4777,non-hypoxic
+936,3133,2961,post-hypoxic
+937,2268,2531,hypoxic
+938,3250,4883,adjacent tissue
+939,4436,2005,adjacent tissue
+940,1890,4238,non-hypoxic
+941,1524,2742,adjacent tissue
+942,2267,2602,hypoxic
+943,2825,2355,non-hypoxic
+944,4433,3001,non-hypoxic
+945,3253,3887,hypoxic
+946,3872,4102,non-hypoxic
+947,2145,2104,post-hypoxic
+948,2765,1822,non-hypoxic
+949,2946,3423,hypoxic
+950,4550,4781,adjacent tissue
+951,4560,2006,adjacent tissue
+952,4927,3217,non-hypoxic
+953,2822,3352,hypoxic
+954,4554,3713,non-hypoxic
+955,5052,2861,non-hypoxic
+956,3314,4278,post-hypoxic
+957,4055,4708,non-hypoxic
+958,3938,2928,non-hypoxic
+959,4001,2537,non-hypoxic
+960,2139,3812,non-hypoxic
+961,1891,3953,non-hypoxic
+962,2202,3563,post-hypoxic
+963,2076,4132,non-hypoxic
+964,2889,2035,non-hypoxic
+965,4677,3998,non-hypoxic
+966,2890,1608,non-hypoxic
+967,4622,1970,non-hypoxic
+968,2948,2783,hypoxic
+969,2142,3100,hypoxic
+970,2880,4526,hypoxic
+971,3498,4813,adjacent tissue
+972,1959,2281,non-hypoxic
+973,4122,3320,non-hypoxic
+974,4498,1970,adjacent tissue
+975,1588,2280,non-hypoxic
+976,4612,4745,non-hypoxic
+977,1952,4416,non-hypoxic
+978,2888,2178,hypoxic
+979,4988,3537,non-hypoxic
+980,3134,2534,post-hypoxic
+981,3005,4170,hypoxic
+982,1951,4700,adjacent tissue
+983,4126,2253,non-hypoxic
+984,3685,4422,non-hypoxic
+985,3933,4280,non-hypoxic
+986,3565,3212,hypoxic
+987,1773,2458,non-hypoxic
+988,3137,1680,non-hypoxic
+989,2207,2282,non-hypoxic
+990,2141,3314,hypoxic
+991,2822,3423,hypoxic
+992,2890,1537,non-hypoxic
+993,1335,3844,non-hypoxic
+994,1643,4023,non-hypoxic
+995,2823,2996,hypoxic
+996,1769,3526,non-hypoxic
+997,2511,3813,hypoxic
+998,3447,1646,non-hypoxic
+999,2017,3455,non-hypoxic
+1000,4121,3605,non-hypoxic
+1001,4556,3286,non-hypoxic
+1002,3067,4064,hypoxic
+1003,1583,3632,non-hypoxic
+1004,2393,2105,non-hypoxic
+1005,4060,3427,post-hypoxic
+1006,3379,3531,post-hypoxic
+1007,5175,3289,non-hypoxic
+1008,4867,2612,non-hypoxic
+1009,3064,4918,adjacent tissue
+1010,3814,2999,non-hypoxic
+1011,2886,2747,hypoxic
+1012,2325,3919,post-hypoxic
+1013,1642,4521,adjacent tissue
+1014,4188,2289,non-hypoxic
+1015,4799,4355,adjacent tissue
+1016,3691,2785,non-hypoxic
+1017,2456,1785,non-hypoxic
+1018,2637,3031,hypoxic
+1019,4617,3393,non-hypoxic
+1020,4127,1826,adjacent tissue
+1021,3257,2819,non-hypoxic
+1022,3508,1895,post-hypoxic
+1023,1642,4593,adjacent tissue
+1024,1895,3028,hypoxic
+1025,2451,3137,hypoxic
+1026,3008,3174,hypoxic
+1027,4744,2469,non-hypoxic
+1028,2455,2069,post-hypoxic
+1029,3136,2179,hypoxic
+1030,2083,2282,non-hypoxic
+1031,4370,3321,non-hypoxic
+1032,1588,2209,non-hypoxic
+1033,2633,4311,hypoxic
+1034,3068,3850,hypoxic
+1035,3502,3745,post-hypoxic
+1036,1520,4023,non-hypoxic
+1037,2333,1642,hypoxic
+1038,2881,4241,hypoxic
+1039,4553,4069,non-hypoxic
+1040,4992,2470,non-hypoxic
+1041,4800,4141,non-hypoxic
+1042,5113,3182,non-hypoxic
+1043,4679,3358,non-hypoxic
+1044,1834,2708,hypoxic
+1045,4622,2041,adjacent tissue
+1046,2451,3208,hypoxic
+1047,2322,4631,adjacent tissue
+1048,3379,3318,hypoxic
+1049,1704,4415,non-hypoxic
+1050,4497,2397,post-hypoxic
+1051,4367,4246,non-hypoxic
+1052,2580,1714,adjacent tissue
+1053,3809,4351,non-hypoxic
+1054,3940,2430,post-hypoxic
+1055,2947,3139,hypoxic
+1056,4370,3179,non-hypoxic
+1057,2949,2498,hypoxic
+1058,2882,4028,hypoxic
+1059,3135,2392,non-hypoxic
+1060,4305,4139,non-hypoxic
+1061,3385,1539,non-hypoxic
+1062,4554,3642,non-hypoxic
+1063,2202,3705,non-hypoxic
+1064,4182,3926,non-hypoxic
+1065,4127,2040,adjacent tissue
+1066,4802,3501,non-hypoxic
+1067,4495,2966,non-hypoxic
+1068,3437,4421,non-hypoxic
+1069,4002,2395,non-hypoxic
+1070,3196,2499,non-hypoxic
+1071,4493,3535,non-hypoxic
+1072,4434,2788,post-hypoxic
+1073,2573,3706,hypoxic
+1074,2636,3386,hypoxic
+1075,3873,3675,post-hypoxic
+1076,2696,3849,hypoxic
+1077,3195,2926,post-hypoxic
+1078,4244,3890,non-hypoxic
+1079,2083,2139,non-hypoxic
+1080,2758,3885,hypoxic
+1081,2332,1784,non-hypoxic
+1082,3563,3852,post-hypoxic
+1083,3196,2570,post-hypoxic
+1084,2201,3919,post-hypoxic
+1085,1767,4166,non-hypoxic
+1086,4059,3712,non-hypoxic
+1087,4674,4710,adjacent tissue
+1088,2394,1891,non-hypoxic
+1089,2819,4277,hypoxic
+1090,4737,4461,non-hypoxic
+1091,2637,3102,hypoxic
+1092,3747,4244,non-hypoxic
+1093,2270,1820,non-hypoxic
+1094,4183,3641,non-hypoxic
+1095,2386,4239,non-hypoxic
+1096,2143,2887,non-hypoxic
+1097,3073,2499,post-hypoxic
+1098,2576,2781,hypoxic
+1099,3632,1896,non-hypoxic
+1100,4864,3608,non-hypoxic
+1101,4063,2644,post-hypoxic
+1102,4373,2254,non-hypoxic
+1103,2762,2675,hypoxic
+1104,2573,3778,hypoxic
+1105,3753,2750,non-hypoxic
+1106,2081,2709,hypoxic
+1107,4306,3784,non-hypoxic
+1108,4739,4034,non-hypoxic
+1109,3756,1825,non-hypoxic
+1110,2639,2675,hypoxic
+1111,4924,4142,adjacent tissue
+1112,4371,3037,post-hypoxic
+1113,2329,2781,hypoxic
+1114,3251,4527,non-hypoxic
+1115,3690,2928,non-hypoxic
+1116,4805,2860,non-hypoxic
+1117,2702,2213,post-hypoxic
+1118,4430,3713,non-hypoxic
+1119,4374,2112,adjacent tissue
+1120,4310,2716,post-hypoxic
+1121,4373,2467,post-hypoxic
+1122,2943,4206,hypoxic
+1123,4990,3039,non-hypoxic
+1124,3126,4954,adjacent tissue
+1125,3562,4208,non-hypoxic
+1126,4187,2360,non-hypoxic
+1127,1833,2921,hypoxic
+1128,3623,4315,non-hypoxic
+1129,3130,3744,hypoxic
+1130,1647,3027,hypoxic
+1131,4308,3357,non-hypoxic
+1132,3869,4885,adjacent tissue
+1133,4925,3999,non-hypoxic
+1134,2266,3029,hypoxic
+1135,1958,2708,hypoxic
+1136,4179,4708,non-hypoxic
+1137,4186,2858,post-hypoxic
+1138,4243,4175,non-hypoxic
+1139,3012,2249,hypoxic
+1140,1584,3347,non-hypoxic
+1141,3933,4209,non-hypoxic
+1142,4180,4495,non-hypoxic
+1143,4807,2220,adjacent tissue
+1144,5175,3075,non-hypoxic
+1145,4802,3714,non-hypoxic
+1146,3127,4527,post-hypoxic
+1147,4929,2790,non-hypoxic
+1148,4560,1934,adjacent tissue
+1149,3443,2713,non-hypoxic
+1150,2453,2639,hypoxic
+1151,3995,4387,non-hypoxic
+1152,4862,4319,adjacent tissue
+1153,2452,2923,hypoxic
+1154,3323,1574,non-hypoxic
+1155,4306,3712,non-hypoxic
+1156,3813,3070,non-hypoxic
+1157,1648,2671,hypoxic
+1158,3380,3247,hypoxic
+1159,2395,1536,hypoxic
+1160,2446,4560,adjacent tissue
+1161,4862,4106,non-hypoxic
+1162,3568,2429,non-hypoxic
+1163,1398,3382,non-hypoxic
+1164,3815,2643,post-hypoxic
+1165,1773,2387,non-hypoxic
+1166,2947,2925,hypoxic
+1167,4429,4140,non-hypoxic
+1168,4868,2540,non-hypoxic
+1169,4928,3003,non-hypoxic
+1170,2385,4311,non-hypoxic
+1171,5114,2826,non-hypoxic
+1172,3501,3888,post-hypoxic
+1173,3754,2465,hypoxic
+1174,2265,3243,hypoxic
+1175,3570,2002,post-hypoxic
+1176,3622,4671,non-hypoxic
+1177,3504,3176,post-hypoxic
+1178,3438,4208,non-hypoxic
+1179,1526,2244,non-hypoxic
+1180,2765,1964,non-hypoxic
+1181,1704,4344,non-hypoxic
+1182,3199,1716,non-hypoxic
+1183,3813,3142,non-hypoxic
+1184,2826,2142,hypoxic
+1185,3191,4064,post-hypoxic
+1186,3135,2321,hypoxic
+1187,3746,4742,non-hypoxic
+1188,3074,2000,post-hypoxic
+1189,1889,4593,non-hypoxic
+1190,4490,4460,non-hypoxic
+1191,3322,2001,post-hypoxic
+1192,2884,3316,hypoxic
+1193,3936,3498,hypoxic
+1194,4740,3607,non-hypoxic
+1195,1706,3988,non-hypoxic
+1196,1898,2174,non-hypoxic
+1197,3072,2641,post-hypoxic
+1198,3879,1968,non-hypoxic
+1199,3442,3069,non-hypoxic
+1200,1832,3135,hypoxic
+1201,1830,3917,post-hypoxic
+1202,4614,4390,non-hypoxic
+1203,3621,5026,adjacent tissue
+1204,2388,3528,hypoxic
+1205,1460,3418,post-hypoxic
+1206,5053,2577,adjacent tissue
+1207,1835,2352,non-hypoxic
+1208,4250,2182,non-hypoxic
+1209,4615,3963,non-hypoxic
+1210,3127,4740,hypoxic
+1211,4125,2395,non-hypoxic
+1212,4861,4390,adjacent tissue
+1213,3809,4493,adjacent tissue
+1214,1644,3810,post-hypoxic
+1215,2699,2995,hypoxic
+1216,3936,3355,post-hypoxic
+1217,4684,2006,adjacent tissue
+1218,2883,3530,hypoxic
+1219,3315,4136,hypoxic
+1220,3626,3461,hypoxic
+1221,4553,3927,non-hypoxic
+1222,2889,1822,non-hypoxic
+1223,3128,4242,hypoxic
+1224,3256,3175,post-hypoxic
+1225,4247,3107,non-hypoxic
+1226,1770,3312,non-hypoxic
+1227,3567,2785,non-hypoxic
+1228,2826,2284,non-hypoxic
+1229,1581,4130,non-hypoxic
+1230,1896,2743,hypoxic
+1231,3630,2536,hypoxic
+1232,3569,2144,non-hypoxic
+1233,3012,2036,hypoxic
+1234,3195,2855,hypoxic
+1235,3814,2786,non-hypoxic
+1236,4189,1791,adjacent tissue
+1237,2447,4489,hypoxic
+1238,2449,3706,hypoxic
+1239,4307,3570,non-hypoxic
+1240,3993,4885,adjacent tissue
+1241,2951,1858,non-hypoxic
+1242,4180,4424,non-hypoxic
+1243,3255,3317,hypoxic
+1244,4184,3285,non-hypoxic
+1245,2200,4274,post-hypoxic
+1246,3937,3213,non-hypoxic
+1247,2633,4383,hypoxic
+1248,2015,4025,post-hypoxic
+1249,1580,4343,non-hypoxic
+1250,2509,4311,hypoxic
+1251,1586,2707,adjacent tissue
+1252,2327,3279,hypoxic
+1253,3132,3246,hypoxic
+1254,4622,2113,adjacent tissue
+1255,1832,3348,non-hypoxic
+1256,4001,2609,non-hypoxic
+1257,4124,2751,post-hypoxic
+1258,3003,4811,adjacent tissue
+1259,4373,2325,non-hypoxic
+1260,1647,2885,hypoxic
+1261,2393,2034,post-hypoxic
+1262,2508,4596,adjacent tissue
+1263,4681,2789,post-hypoxic
+1264,4119,4103,non-hypoxic
+1265,1335,3702,adjacent tissue
+1266,4496,2681,post-hypoxic
+1267,4247,2965,non-hypoxic
+1268,2576,2995,hypoxic
+1269,3871,4387,non-hypoxic
+1270,2263,3883,non-hypoxic
+1271,4557,3002,non-hypoxic
+1272,3690,3070,non-hypoxic
+1273,2765,1893,non-hypoxic
+1274,2884,3458,hypoxic
+1275,2698,3493,hypoxic
+1276,3075,1858,post-hypoxic
+1277,4182,3854,non-hypoxic
+1278,2078,3634,non-hypoxic
+1279,3071,2854,post-hypoxic
+1280,1766,4522,adjacent tissue
+1281,4372,2681,post-hypoxic
+1282,2940,4917,adjacent tissue
+1283,3135,2250,hypoxic
+1284,1896,2672,hypoxic
+1285,2577,2710,hypoxic
+1286,3380,3176,post-hypoxic
+1287,2200,4061,post-hypoxic
+1288,3200,1574,non-hypoxic
+1289,2021,2388,non-hypoxic
+1290,1708,3205,non-hypoxic
+1291,2330,2567,post-hypoxic
+1292,5111,3822,non-hypoxic
+1293,1643,4237,non-hypoxic
+1294,3193,3495,hypoxic
+1295,3188,4847,adjacent tissue
+1296,3074,2072,hypoxic
+1297,2819,4348,hypoxic
+1298,4496,2610,non-hypoxic
+1299,3689,3355,hypoxic
+1300,4807,2291,adjacent tissue
+1301,2388,3457,hypoxic
+1302,3809,4422,non-hypoxic
+1303,2571,4347,hypoxic
+1304,4675,4568,adjacent tissue
+1305,2946,3281,hypoxic
+1306,2817,4917,adjacent tissue
+1307,4558,2504,post-hypoxic
+1308,3691,2643,post-hypoxic
+1309,3942,1577,adjacent tissue
+1310,4925,3928,non-hypoxic
+1311,3813,3213,post-hypoxic
+1312,2820,3850,hypoxic
+1313,4246,3321,non-hypoxic
+1314,2333,1571,non-hypoxic
+1315,2201,3990,hypoxic
+1316,4986,4035,non-hypoxic
+1317,1894,3242,non-hypoxic
+1318,2140,3598,non-hypoxic
+1319,3499,4386,non-hypoxic
+1320,4559,2361,post-hypoxic
+1321,3931,4778,non-hypoxic
+1322,5051,3146,non-hypoxic
+1323,3321,2286,hypoxic
+1324,2137,4594,non-hypoxic
+1325,4616,3749,non-hypoxic
+1326,2204,3136,hypoxic
+1327,3751,3106,non-hypoxic
+1328,2821,3707,hypoxic
+1329,3191,4136,post-hypoxic
+1330,4926,3715,non-hypoxic
+1331,2574,3564,hypoxic
+1332,2330,2496,hypoxic
+1333,3259,2392,post-hypoxic
+1334,4806,2433,non-hypoxic
+1335,3691,2572,post-hypoxic
+1336,4064,2289,non-hypoxic
+1337,4429,4069,non-hypoxic
+1338,3755,1967,post-hypoxic
+1339,3508,1824,post-hypoxic
+1340,4242,4317,non-hypoxic
+1341,4679,3429,non-hypoxic
+1342,2269,2176,non-hypoxic
+1343,4991,2683,non-hypoxic
+1344,1396,3951,adjacent tissue
+1345,4864,3537,non-hypoxic
+1346,2139,4025,post-hypoxic
+1347,3871,4316,non-hypoxic
+1348,2633,4169,hypoxic
+1349,4492,3678,non-hypoxic
+1350,2146,1962,non-hypoxic
+1351,4367,4033,non-hypoxic
+1352,4619,2753,post-hypoxic
+1353,1581,4201,non-hypoxic
+1354,5172,3929,adjacent tissue
+1355,3437,4634,non-hypoxic
+1356,1397,3596,adjacent tissue
+1357,4309,2859,post-hypoxic
+1358,4800,4070,non-hypoxic
+1359,3502,3603,post-hypoxic
+1360,4372,2610,post-hypoxic
+1361,3936,3427,post-hypoxic
+1362,3318,3069,non-hypoxic
+1363,4374,2183,post-hypoxic
+1364,3198,2001,hypoxic
+1365,3623,4457,non-hypoxic
+1366,1397,3667,adjacent tissue
+1367,2889,1964,non-hypoxic
+1368,3255,3531,post-hypoxic
+1369,4804,3145,non-hypoxic
+1370,3442,2998,non-hypoxic
+1371,4678,3571,non-hypoxic
+1372,2888,2249,post-hypoxic
+1373,2199,4488,non-hypoxic
+1374,2581,1572,non-hypoxic
+1375,4306,3855,non-hypoxic
+1376,2328,3136,hypoxic
+1377,2204,2994,hypoxic
+1378,2887,2533,hypoxic
+1379,3563,3995,non-hypoxic
+1380,2141,3456,non-hypoxic
+1381,2698,3280,hypoxic
+1382,3571,1646,non-hypoxic
+1383,4243,4246,non-hypoxic
+1384,4799,4497,non-hypoxic
+1385,3003,4669,hypoxic
+1386,2205,2709,hypoxic
+1387,2825,2569,hypoxic
+1388,3683,4920,adjacent tissue
+1389,4308,3143,non-hypoxic
+1390,3196,2641,post-hypoxic
+1391,2697,3778,hypoxic
+1392,3996,3960,non-hypoxic
+1393,4621,2255,adjacent tissue
+1394,1889,4522,non-hypoxic
+1395,4056,4637,non-hypoxic
+1396,2761,3102,hypoxic
+1397,1522,3311,post-hypoxic
+1398,4804,3074,non-hypoxic
+1399,3135,2463,non-hypoxic
+1400,1643,4095,non-hypoxic
+1401,3623,4386,non-hypoxic
+1402,3007,3601,hypoxic
+1403,1705,4059,non-hypoxic
+1404,3880,1825,non-hypoxic
+1405,3006,3744,hypoxic
+1406,5112,3537,non-hypoxic
+1407,2019,2744,hypoxic
+1408,2014,4309,non-hypoxic
+1409,3010,2605,hypoxic
+1410,5052,2932,non-hypoxic
+1411,4367,4175,non-hypoxic
+1412,4559,2290,adjacent tissue
+1413,5113,3324,non-hypoxic
+1414,3445,2215,post-hypoxic
+1415,4000,2751,post-hypoxic
+1416,4552,4425,non-hypoxic
+1417,2635,3671,hypoxic
+1418,3002,4953,adjacent tissue
+1419,3313,4563,non-hypoxic
+1420,3129,4100,post-hypoxic
+1421,3192,3851,hypoxic
+1422,1954,3633,non-hypoxic
+1423,4617,3536,non-hypoxic
+1424,4490,4389,non-hypoxic
+1425,4055,4779,non-hypoxic
+1426,3942,1790,post-hypoxic
+1427,4929,2647,non-hypoxic
+1428,2569,4774,adjacent tissue
+1429,4926,3643,non-hypoxic
+1430,4930,2434,non-hypoxic
+1431,3873,3747,non-hypoxic
+1432,4558,2717,post-hypoxic
+1433,3631,2109,non-hypoxic
+1434,1889,4665,adjacent tissue
+1435,2761,2960,hypoxic
+1436,2821,3636,hypoxic
+1437,3746,4600,non-hypoxic
+1438,2635,3813,hypoxic
+1439,4126,2182,non-hypoxic
+1440,2818,4632,hypoxic
+1441,2761,3031,hypoxic
+1442,1459,3631,non-hypoxic
+1443,2332,1927,non-hypoxic
+1444,2199,4630,adjacent tissue
+1445,3559,4991,adjacent tissue
+1446,3004,4384,hypoxic
+1447,3312,4776,adjacent tissue
+1448,3254,3744,hypoxic
+1449,4128,1755,adjacent tissue
+1450,4863,3892,non-hypoxic
+1451,3750,3461,hypoxic
+1452,3870,4672,non-hypoxic
+1453,1830,3775,non-hypoxic
+1454,3500,4243,non-hypoxic
+1455,4303,4780,adjacent tissue
+1456,3752,2892,non-hypoxic
+1457,3502,3674,post-hypoxic
+1458,1707,3703,non-hypoxic
+1459,2145,2317,non-hypoxic
+1460,3808,4565,non-hypoxic
+1461,4682,2504,non-hypoxic
+1462,2636,3529,hypoxic
+1463,4305,4068,non-hypoxic
+1464,3009,2961,hypoxic
+1465,2632,4525,hypoxic
+1466,2697,3707,hypoxic
+1467,3009,3032,hypoxic
+1468,4803,3216,non-hypoxic
+1469,4864,3679,non-hypoxic
+1470,4683,2220,adjacent tissue
+1471,1707,3632,non-hypoxic
+1472,2270,1891,non-hypoxic
+1473,1953,4060,non-hypoxic
+1474,3013,1751,non-hypoxic
+1475,3877,2466,post-hypoxic
+1476,4990,2897,non-hypoxic
+1477,1460,3347,post-hypoxic
+1478,3819,1576,adjacent tissue
+1479,3197,2214,hypoxic
+1480,4560,2148,adjacent tissue
+1481,2390,2959,hypoxic
+1482,4120,3961,non-hypoxic
+1483,3442,3211,hypoxic
+1484,4991,2612,non-hypoxic
+1485,2760,3458,hypoxic
+1486,2638,2888,hypoxic
+1487,2763,2391,post-hypoxic
+1488,4057,4139,non-hypoxic
+1489,2952,1573,non-hypoxic
+1490,2270,1749,non-hypoxic
+1491,3010,2819,post-hypoxic
+1492,4680,3002,post-hypoxic
+1493,4002,2182,non-hypoxic
+1494,2577,2639,hypoxic
+1495,3131,3459,hypoxic
+1496,4003,1968,adjacent tissue
+1497,3626,3603,hypoxic
+1498,3872,3960,non-hypoxic
+1499,3321,2357,post-hypoxic
+1500,4119,4174,non-hypoxic
+1501,2821,3778,hypoxic
+1502,4806,2362,non-hypoxic
+1503,1584,3418,non-hypoxic
+1504,5115,2684,non-hypoxic
+1505,3875,3320,post-hypoxic
+1506,3379,3389,hypoxic
+1507,4431,3642,non-hypoxic
+1508,1524,2813,adjacent tissue
+1509,3814,2928,non-hypoxic
+1510,2883,3672,hypoxic
+1511,2642,1750,non-hypoxic
+1512,2384,4666,adjacent tissue
+1513,1890,4309,non-hypoxic
+1514,4065,2004,adjacent tissue
+1515,2136,4666,adjacent tissue
+1516,2578,2283,non-hypoxic
+1517,1769,3455,non-hypoxic
+1518,2941,4633,hypoxic
+1519,3134,2677,post-hypoxic
+1520,3570,1789,non-hypoxic
+1521,3942,1719,non-hypoxic
+1522,4552,4283,non-hypoxic
+1523,3688,3568,hypoxic
+1524,3817,2145,post-hypoxic
+1525,2886,2818,hypoxic
+1526,3693,2003,hypoxic
+1527,3816,2359,post-hypoxic
+1528,1705,4273,non-hypoxic
+1529,3187,5061,adjacent tissue
+1530,3749,3888,non-hypoxic
+1531,4309,3072,non-hypoxic
+1532,5050,3430,non-hypoxic
+1533,4742,3180,non-hypoxic
+1534,3934,3996,non-hypoxic
+1535,2013,4665,adjacent tissue
+1536,3014,1609,hypoxic
+1537,1836,2138,non-hypoxic
+1538,1956,3064,hypoxic
+1539,2078,3705,non-hypoxic
+1540,2080,3064,hypoxic
+1541,4432,3215,non-hypoxic
+1542,4119,4317,non-hypoxic
+1543,2948,2854,hypoxic
+1544,3011,2534,post-hypoxic
+1545,5050,3502,non-hypoxic
+1546,3937,3142,non-hypoxic
+1547,3630,2465,hypoxic
+1548,2390,2888,hypoxic
+1549,2386,4026,post-hypoxic
+1550,3814,2857,non-hypoxic
+1551,4987,3964,non-hypoxic
+1552,4179,4637,non-hypoxic
+1553,3316,3780,hypoxic
+1554,2889,1751,non-hypoxic
+1555,3074,2143,hypoxic
+1556,2641,1963,non-hypoxic
+1557,2268,2389,post-hypoxic
+1558,4737,4603,non-hypoxic
+1559,1830,3846,post-hypoxic
+1560,2395,1678,non-hypoxic
+1561,2518,1749,non-hypoxic
+1562,4992,2541,non-hypoxic
+1563,5112,3609,non-hypoxic
+1564,3503,3461,hypoxic
+1565,4118,4388,non-hypoxic
+1566,2013,4594,non-hypoxic
+1567,2455,2212,non-hypoxic
+1568,5114,2897,non-hypoxic
+1569,3629,2750,non-hypoxic
+1570,4058,4067,non-hypoxic
+1571,4679,3500,non-hypoxic
+1572,4430,3784,non-hypoxic
+1573,1892,3668,non-hypoxic
+1574,3560,4848,adjacent tissue
+1575,3134,2748,post-hypoxic
+1576,2083,2210,non-hypoxic
+1577,4620,2682,non-hypoxic
+1578,2454,2354,post-hypoxic
+1579,2578,2212,non-hypoxic
+1580,4492,3891,non-hypoxic
+1581,3623,4528,non-hypoxic
+1582,3075,1787,post-hypoxic
+1583,2759,3529,hypoxic
+1584,2880,4455,hypoxic
+1585,2641,1892,non-hypoxic
+1586,4868,2469,non-hypoxic
+1587,1644,3952,non-hypoxic
+1588,1650,2245,non-hypoxic
+1589,4188,2147,adjacent tissue
+1590,2393,2176,non-hypoxic
+1591,3810,3924,non-hypoxic
+1592,3008,3245,hypoxic
+1593,4619,2966,post-hypoxic
+1594,3258,2677,non-hypoxic
+1595,2329,2638,hypoxic
+1596,2574,3493,hypoxic
+1597,2572,3991,hypoxic
+1598,1526,2173,non-hypoxic
+1599,5052,3075,non-hypoxic
+1600,4806,2505,non-hypoxic
+1601,2757,4312,hypoxic
+1602,4305,3997,non-hypoxic
+1603,4497,2326,non-hypoxic
+1604,4121,3534,non-hypoxic
+1605,4928,2861,non-hypoxic
+1606,2693,4845,adjacent tissue
+1607,3136,2036,hypoxic
+1608,3621,4884,adjacent tissue
+1609,2757,4170,hypoxic
+1610,3070,3210,hypoxic
+1611,4065,2075,adjacent tissue
+1612,3380,3033,non-hypoxic
+1613,1518,4450,non-hypoxic
+1614,4620,2611,non-hypoxic
+1615,2450,3493,hypoxic
+1616,2391,2674,hypoxic
+1617,4435,2219,post-hypoxic
+1618,2387,3955,post-hypoxic
+1619,4431,3571,non-hypoxic
+1620,2511,3671,hypoxic
+1621,4120,3890,non-hypoxic
+1622,2394,1820,non-hypoxic
+1623,1706,3775,post-hypoxic
+1624,2082,2566,post-hypoxic
+1625,3507,2322,post-hypoxic
+1626,5174,3360,non-hypoxic
+1627,4185,2929,non-hypoxic
+1628,2882,3814,hypoxic
+1629,4429,3998,non-hypoxic
+1630,4435,2432,post-hypoxic
+1631,4374,2041,adjacent tissue
+1632,3994,4459,non-hypoxic
+1633,3999,3249,non-hypoxic
+1634,2452,2994,hypoxic
+1635,2452,2852,hypoxic
+1636,4684,2077,adjacent tissue
+1637,2760,3316,hypoxic
+1638,2516,2461,hypoxic
+1639,3378,3603,post-hypoxic
+1640,3075,1929,post-hypoxic
+1641,3871,4458,non-hypoxic
+1642,4803,3430,non-hypoxic
+1643,3435,4990,adjacent tissue
+1644,4061,3000,non-hypoxic
+1645,4745,2326,adjacent tissue
+1646,4989,3181,non-hypoxic
+1647,3070,3281,hypoxic
+1648,2818,4561,hypoxic
+1649,2702,2141,post-hypoxic
+1650,3250,4812,adjacent tissue
+1651,2204,3065,hypoxic
+1652,3502,3532,hypoxic
+1653,3130,3815,hypoxic
+1654,1956,3206,non-hypoxic
+1655,3441,3354,hypoxic
+1656,4250,2254,non-hypoxic
+1657,4552,4211,non-hypoxic
+1658,3559,4920,adjacent tissue
+1659,3998,3320,non-hypoxic
+1660,2022,1961,non-hypoxic
+1661,2515,2674,hypoxic
+1662,2389,3314,hypoxic
+1663,2759,3743,hypoxic
+1664,2200,4132,post-hypoxic
+1665,3870,4600,non-hypoxic
+1666,2636,3458,hypoxic
+1667,4494,3179,non-hypoxic
+1668,3318,3140,non-hypoxic
+1669,3812,3355,hypoxic
+1670,1642,4450,non-hypoxic
+1671,3995,4174,non-hypoxic
+1672,2946,3210,hypoxic
+1673,2818,4490,hypoxic
+1674,3753,2608,hypoxic
+1675,3751,3248,post-hypoxic
+1676,5051,3217,non-hypoxic
+1677,2577,2568,hypoxic
+1678,2513,3244,hypoxic
+1679,3443,2927,non-hypoxic
+1680,4986,4248,non-hypoxic
+1681,2455,2141,non-hypoxic
+1682,3937,3284,post-hypoxic
+1683,3499,4457,non-hypoxic
+1684,3687,3924,non-hypoxic
+1685,2330,2282,non-hypoxic
+1686,4495,2824,post-hypoxic
+1687,3378,3816,post-hypoxic
+1688,2764,2320,non-hypoxic
+1689,4617,3465,non-hypoxic
+1690,1460,3489,post-hypoxic
+1691,2137,4381,non-hypoxic
+1692,3069,3495,hypoxic
+1693,3879,2110,post-hypoxic
+1694,4743,2825,post-hypoxic
+1695,4803,3358,non-hypoxic
+1696,3253,3958,post-hypoxic
+1697,5174,3573,non-hypoxic
+1698,3384,2037,post-hypoxic
+1699,2201,3847,non-hypoxic
+1700,2138,4310,non-hypoxic
+1701,2879,4882,adjacent tissue
+1702,2508,4667,adjacent tissue
+1703,4368,3748,non-hypoxic
+1704,2020,2530,hypoxic
+1705,3324,1503,hypoxic
+1706,2518,1892,post-hypoxic
+1707,5175,3217,non-hypoxic
+1708,4555,3500,non-hypoxic
+1709,1895,2886,hypoxic
+1710,2950,2213,hypoxic
+1711,2077,3847,non-hypoxic
+1712,3564,3568,hypoxic
+1713,2700,2853,hypoxic
+1714,2764,2177,post-hypoxic
+1715,1771,3099,hypoxic
+1716,3320,2571,non-hypoxic
+1717,3196,2712,post-hypoxic
+1718,2142,3171,hypoxic
+1719,2695,4134,hypoxic
+1720,2516,2248,non-hypoxic
+1721,1520,3952,non-hypoxic
+1722,1951,4558,non-hypoxic
+1723,4372,2752,post-hypoxic
+1724,3624,4030,non-hypoxic
+1725,3567,2643,non-hypoxic
+1726,2886,2676,hypoxic
+1727,4492,3820,non-hypoxic
+1728,2394,1963,non-hypoxic
+1729,1526,2315,non-hypoxic
+1730,3507,2251,post-hypoxic
+1731,4373,2396,post-hypoxic
+1732,4492,3749,non-hypoxic
+1733,1709,3063,post-hypoxic
+1734,3880,1683,non-hypoxic
+1735,4929,2576,non-hypoxic
+1736,1706,3917,post-hypoxic
+1737,4057,4352,non-hypoxic
+1738,4861,4462,adjacent tissue
+1739,3319,2784,non-hypoxic
+1740,3685,4351,non-hypoxic
+1741,2827,1857,non-hypoxic
+1742,1705,4202,non-hypoxic
+1743,3440,3781,post-hypoxic
+1744,3932,4494,non-hypoxic
+1745,2887,2391,non-hypoxic
+1746,1891,4024,non-hypoxic
+1747,2325,3990,non-hypoxic
+1748,2260,4666,adjacent tissue
+1749,2266,2958,hypoxic
+1750,2081,2922,hypoxic
+1751,2762,2747,hypoxic
+1752,2385,4524,post-hypoxic
+1753,4494,3251,non-hypoxic
+1754,4802,3572,non-hypoxic
+1755,2515,2532,hypoxic
+1756,4064,2217,non-hypoxic
+1757,3817,2003,non-hypoxic
+1758,2203,3278,hypoxic
+1759,4744,2611,hypoxic
+1760,1580,4557,non-hypoxic
+1761,3756,1896,non-hypoxic
+1762,3807,4920,adjacent tissue
+1763,4737,4532,adjacent tissue
+1764,3997,3605,post-hypoxic
+1765,2887,2462,hypoxic
+1766,2449,3848,post-hypoxic
+1767,1525,2386,non-hypoxic
+1768,2940,4989,adjacent tissue
+1769,4124,2822,post-hypoxic
+1770,3319,2926,non-hypoxic
+1771,2755,4810,adjacent tissue
+1772,3320,2428,post-hypoxic
+1773,2756,4668,hypoxic
+1774,5051,3359,non-hypoxic
+1775,2945,3637,hypoxic
+1776,3570,1931,post-hypoxic
+1777,4186,2787,post-hypoxic
+1778,4866,2967,non-hypoxic
+1779,4117,4672,non-hypoxic
+1780,1711,2280,non-hypoxic
+1781,3317,3567,post-hypoxic
+1782,4987,3750,non-hypoxic
+1783,1960,1997,non-hypoxic
+1784,3498,4884,adjacent tissue
+1785,4434,2503,post-hypoxic
+1786,2889,1893,non-hypoxic
+1787,4497,2468,post-hypoxic
+1788,3317,3353,hypoxic
+1789,4740,3678,non-hypoxic
+1790,2509,4240,hypoxic
+1791,3011,2392,non-hypoxic
+1792,2012,4736,adjacent tissue
+1793,3689,3141,post-hypoxic
+1794,4491,4176,non-hypoxic
+1795,3385,1681,non-hypoxic
+1796,3256,3104,post-hypoxic
+1797,4312,2147,non-hypoxic
+1798,3440,3709,post-hypoxic
+1799,4556,3215,non-hypoxic
+1800,1525,2600,adjacent tissue
+1801,3068,3922,hypoxic
+1802,2888,2107,hypoxic
+1803,3193,3566,hypoxic
+1804,3254,3602,hypoxic
+1805,2704,1572,non-hypoxic
+1806,1708,3134,non-hypoxic
+1807,3012,2178,hypoxic
+1808,2575,3280,hypoxic
+1809,2755,4881,adjacent tissue
+1810,3253,4100,post-hypoxic
+1811,3938,2857,non-hypoxic
+1812,4056,4565,non-hypoxic
+1813,3811,3782,non-hypoxic
+1814,3561,4421,non-hypoxic
+1815,2942,4419,hypoxic
+1816,4864,3465,non-hypoxic
+1817,3251,4598,hypoxic
+1818,2264,3741,non-hypoxic
+1819,3997,3676,post-hypoxic
+1820,3259,2321,post-hypoxic
+1821,3067,3993,hypoxic
+1822,2083,2353,non-hypoxic
+1823,4063,2431,non-hypoxic
+1824,4678,3643,non-hypoxic
+1825,3816,2430,post-hypoxic
+1826,2517,2176,non-hypoxic
+1827,3011,2463,post-hypoxic
+1828,3507,2180,post-hypoxic
+1829,3877,2537,non-hypoxic
+1830,4248,2609,post-hypoxic
+1831,2758,3956,hypoxic
+1832,3381,2749,non-hypoxic
+1833,3132,3317,hypoxic
+1834,4620,2468,post-hypoxic
+1835,3808,4636,non-hypoxic
+1836,3442,3140,post-hypoxic
+1837,2449,3919,hypoxic
+1838,4804,3003,non-hypoxic
+1839,1522,3240,post-hypoxic
+1840,4802,3643,non-hypoxic
+1841,4738,4176,non-hypoxic
+1842,2760,3245,hypoxic
+1843,3632,1967,post-hypoxic
+1844,5114,2968,non-hypoxic
+1845,3068,3708,hypoxic
+1846,3692,2358,post-hypoxic
+1847,1955,3420,non-hypoxic
+1848,2455,1998,post-hypoxic
+1849,2698,3351,hypoxic
+1850,3876,2893,non-hypoxic
+1851,4866,2896,non-hypoxic
+1852,1398,3453,hypoxic
+1853,3443,2856,non-hypoxic
+1854,2881,4170,hypoxic
+1855,2017,3384,non-hypoxic
+1856,2949,2569,hypoxic
+1857,2328,3065,hypoxic
+1858,3073,2285,hypoxic
+1859,3629,2821,non-hypoxic
+1860,4375,1898,adjacent tissue
+1861,3752,3035,non-hypoxic
+1862,4554,3784,non-hypoxic
+1863,3745,5027,adjacent tissue
+1864,3811,3853,non-hypoxic
+1865,4369,3392,non-hypoxic
+1866,2208,1997,non-hypoxic
+1867,4927,3359,non-hypoxic
+1868,1891,4095,non-hypoxic
+1869,5054,2505,adjacent tissue
+1870,4863,3750,non-hypoxic
+1871,1768,3882,non-hypoxic
+1872,2199,4559,post-hypoxic
+1873,4368,3819,non-hypoxic
+1874,5052,3004,non-hypoxic
+1875,2824,2640,hypoxic
+1876,3871,4245,non-hypoxic
+1877,2519,1536,non-hypoxic
+1878,2138,4096,post-hypoxic
+1879,1953,3918,non-hypoxic
+1880,3131,3388,hypoxic
+1881,1643,4166,non-hypoxic
+1882,4366,4460,non-hypoxic
+1883,2632,4454,hypoxic
+1884,4490,4247,non-hypoxic
+1885,1459,3703,adjacent tissue
+1886,2020,2602,post-hypoxic
+1887,3998,3391,post-hypoxic
+1888,4310,2645,post-hypoxic
+1889,3261,1681,non-hypoxic
+1890,4004,1755,adjacent tissue
+1891,2570,4489,hypoxic
+1892,3316,3709,hypoxic
+1893,3810,3995,non-hypoxic
+1894,4924,4284,adjacent tissue
+1895,3756,1754,non-hypoxic
+1896,1709,2850,hypoxic
+1897,4744,2398,non-hypoxic
+1898,3563,3781,post-hypoxic
+1899,4242,4388,non-hypoxic
+1900,2145,2175,non-hypoxic
+1901,1522,3454,non-hypoxic
+1902,2013,4523,non-hypoxic
+1903,3008,3388,hypoxic
+1904,2386,4168,non-hypoxic
+1905,4930,2505,non-hypoxic
+1906,4126,2111,adjacent tissue
+1907,2947,2996,hypoxic
+1908,3189,4634,hypoxic
+1909,2885,3174,hypoxic
+1910,4123,2965,non-hypoxic
+1911,3878,2181,non-hypoxic
+1912,3503,3318,hypoxic
+1913,4677,3856,hypoxic
+1914,2518,1678,non-hypoxic
+1915,3381,2820,non-hypoxic
+1916,3191,3922,hypoxic
+1917,4123,3107,non-hypoxic
+1918,3629,2678,non-hypoxic
+1919,4062,2929,non-hypoxic
+1920,1461,3133,adjacent tissue
+1921,4184,3356,non-hypoxic
+1922,4491,4104,non-hypoxic
+1923,2200,4346,post-hypoxic
+1924,3500,4101,non-hypoxic
+1925,2389,3243,hypoxic
+1926,3318,3211,hypoxic
+1927,3195,2784,post-hypoxic
+1928,2635,3742,hypoxic
+1929,2634,3885,hypoxic
+1930,3008,3317,hypoxic
+1931,2947,3067,hypoxic
+1932,3934,3925,non-hypoxic
+1933,3875,3035,non-hypoxic
+1934,4988,3466,non-hypoxic
+1935,4676,4283,non-hypoxic
+1936,4744,2540,adjacent tissue
+1937,1774,2174,non-hypoxic
+1938,4307,3641,non-hypoxic
+1939,1768,3953,non-hypoxic
+1940,4745,2255,adjacent tissue
+1941,2944,3992,hypoxic
+1942,3998,3462,post-hypoxic
+1943,4430,3855,non-hypoxic
+1944,2694,4561,hypoxic
+1945,1773,2245,non-hypoxic
+1946,4060,3498,post-hypoxic
+1947,3936,3569,post-hypoxic
+1948,4178,4922,adjacent tissue
+1949,5236,3324,non-hypoxic
+1950,2633,4240,hypoxic
+1951,2765,2035,non-hypoxic
+1952,2332,1713,non-hypoxic
+1953,3375,4456,non-hypoxic
+1954,2393,2247,non-hypoxic
+1955,2693,4774,adjacent tissue
+1956,4372,2539,post-hypoxic
+1957,2456,1927,post-hypoxic
+1958,3190,4207,post-hypoxic
+1959,4991,2825,non-hypoxic
+1960,3818,1718,non-hypoxic
+1961,2265,3172,hypoxic
+1962,3503,3247,non-hypoxic
+1963,4128,1684,adjacent tissue
+1964,4740,3750,non-hypoxic
+1965,2447,4418,post-hypoxic
+1966,1829,4202,non-hypoxic
+1967,3136,1965,post-hypoxic
+1968,2517,2105,post-hypoxic
+1969,3754,2394,post-hypoxic
+1970,2824,2711,hypoxic
+1971,2266,3101,hypoxic
+1972,3627,3319,hypoxic
+1973,4184,3427,non-hypoxic
+1974,3566,3070,post-hypoxic
+1975,3065,4775,adjacent tissue
+1976,1898,2103,non-hypoxic
+1977,3870,4743,non-hypoxic
+1978,2704,1715,non-hypoxic
+1979,1832,3206,non-hypoxic
+1980,2262,4310,post-hypoxic
+1981,2457,1571,non-hypoxic
+1982,4249,2325,non-hypoxic
+1983,2263,3954,non-hypoxic
+1984,2950,2071,post-hypoxic
+1985,4185,3001,non-hypoxic
+1986,2638,2746,hypoxic
+1987,4928,2932,non-hypoxic
+1988,1766,4380,non-hypoxic
+1989,4245,3606,non-hypoxic
+1990,4555,3429,non-hypoxic
+1991,2884,3245,hypoxic
+1992,4738,4248,non-hypoxic
+1993,3447,1717,non-hypoxic
+1994,2944,3921,hypoxic
+1995,4925,3857,non-hypoxic
+1996,2451,3279,hypoxic
+1997,1707,3561,non-hypoxic
+1998,1768,3739,non-hypoxic
+1999,3566,2998,non-hypoxic
+2000,1582,3845,non-hypoxic
+2001,4186,2716,post-hypoxic
+2002,1704,4486,non-hypoxic
+2003,4431,3499,non-hypoxic
+2004,3374,4883,adjacent tissue
+2005,2694,4418,hypoxic
+2006,4368,3962,non-hypoxic
+2007,4181,4139,non-hypoxic
+2008,4863,3821,non-hypoxic
+2009,2704,1643,hypoxic
+2010,3807,4849,non-hypoxic
+2011,3878,2323,non-hypoxic
+2012,1584,3276,non-hypoxic
+2013,4242,4531,non-hypoxic
+2014,4122,3249,non-hypoxic
+2015,4742,3038,non-hypoxic
+2016,1893,3384,non-hypoxic
+2017,2324,4275,post-hypoxic
+2018,3071,2997,post-hypoxic
+2019,2570,4703,adjacent tissue
+2020,3932,4565,non-hypoxic
+2021,2261,4381,non-hypoxic
+2022,4065,1933,adjacent tissue
+2023,2019,2957,hypoxic
+2024,2080,3207,hypoxic
+2025,2324,4061,non-hypoxic
+2026,2699,3138,hypoxic
+2027,2452,3066,hypoxic
+2028,2699,3066,hypoxic
+2029,4555,3571,non-hypoxic
+2030,2331,2211,non-hypoxic
+2031,3808,4778,non-hypoxic
+2032,3998,3534,post-hypoxic
+2033,2828,1715,non-hypoxic
+2034,3994,4530,non-hypoxic
+2035,2577,2497,hypoxic
+2036,3504,3105,post-hypoxic
+2037,3817,2074,hypoxic
+2038,3439,3994,post-hypoxic
+2039,2576,2853,hypoxic
+2040,1585,3063,post-hypoxic
+2041,1955,3491,non-hypoxic
+2042,1957,2993,hypoxic
+2043,2391,2816,hypoxic
+2044,3497,4955,adjacent tissue
+2045,4800,4283,non-hypoxic
+2046,4683,2362,non-hypoxic
+2047,4186,2645,post-hypoxic
+2048,3748,4102,non-hypoxic
+2049,4059,3569,post-hypoxic
+2050,3189,4562,post-hypoxic
+2051,2017,3313,non-hypoxic
+2052,3070,3139,hypoxic
+2053,3501,4030,non-hypoxic
+2054,2881,4312,hypoxic
+2055,2385,4453,post-hypoxic
+2056,4371,2966,post-hypoxic
+2057,3627,3390,non-hypoxic
+2058,3874,3391,hypoxic
+2059,3383,2322,post-hypoxic
+2060,2450,3421,non-hypoxic
+2061,2199,4417,non-hypoxic
+2062,3256,3033,non-hypoxic
+2063,2332,1856,non-hypoxic
+2064,3686,4137,non-hypoxic
+2065,2512,3386,hypoxic
+2066,4675,4496,non-hypoxic
+2067,1893,3526,non-hypoxic
+2068,2824,2925,hypoxic
+2069,3444,2571,non-hypoxic
+2070,2392,2532,post-hypoxic
+2071,4245,3677,non-hypoxic
+2072,2206,2567,hypoxic
+2073,2326,3634,post-hypoxic
+2074,2077,3918,non-hypoxic
+2075,3317,3424,hypoxic
+2076,4058,3854,non-hypoxic
+2077,1828,4273,non-hypoxic
+2078,4433,2930,post-hypoxic
+2079,1519,4094,non-hypoxic
+2080,4807,2149,adjacent tissue
+2081,3996,4103,non-hypoxic
+2082,2642,1608,adjacent tissue
+2083,2945,3708,hypoxic
+2084,4621,2326,adjacent tissue
+2085,4370,3250,non-hypoxic
+2086,2325,3848,post-hypoxic
+2087,4743,2753,post-hypoxic
+2088,4246,3250,non-hypoxic
+2089,2392,2318,post-hypoxic
+2090,2948,2640,hypoxic
+2091,4927,3145,non-hypoxic
+2092,2390,3101,hypoxic
+2093,4247,2894,non-hypoxic
+2094,5111,3893,non-hypoxic
+2095,2080,2993,hypoxic
+2096,2575,3137,hypoxic
+2097,2327,3421,hypoxic
+2098,2143,2673,hypoxic
+2099,2572,3920,hypoxic
+2100,1897,2459,non-hypoxic
+2101,3197,2286,hypoxic
+2102,4056,4494,non-hypoxic
+2103,2510,4169,hypoxic
+2104,2509,4453,hypoxic
+2105,4801,3857,non-hypoxic
+2106,1586,2849,adjacent tissue
+2107,1835,2423,non-hypoxic
+2108,2018,3242,hypoxic
+2109,2448,3991,post-hypoxic
+2110,3939,2502,non-hypoxic
+2111,2579,2141,post-hypoxic
+2112,3757,1611,adjacent tissue
+2113,3383,2251,hypoxic
+2114,3567,2856,non-hypoxic
+2115,3627,3248,hypoxic
+2116,1704,4557,adjacent tissue
+2117,3695,1576,adjacent tissue
+2118,2270,1962,non-hypoxic
+2119,4683,2148,adjacent tissue
+2120,3939,2644,post-hypoxic
+2121,4307,3499,non-hypoxic
+2122,3321,2144,hypoxic
+2123,3007,3672,hypoxic
+2124,3376,4385,non-hypoxic
+2125,2949,2427,post-hypoxic
+2126,2077,3989,post-hypoxic
+2127,2323,4417,post-hypoxic
+2128,2820,4063,hypoxic
+2129,3509,1753,hypoxic
+2130,4743,2682,non-hypoxic
+2131,3941,1861,non-hypoxic
+2132,2328,2923,hypoxic
+2133,2264,3527,post-hypoxic
+2134,3261,1610,non-hypoxic
+2135,4058,3996,non-hypoxic
+2136,5113,3253,non-hypoxic
+2137,3994,4601,non-hypoxic
+2138,4924,4070,non-hypoxic
+2139,2761,3173,hypoxic
+2140,3997,3818,non-hypoxic
+2141,3382,2464,non-hypoxic
+2142,3569,2287,non-hypoxic
+2143,3254,3816,hypoxic
+2144,4560,2077,adjacent tissue
+2145,3312,4919,adjacent tissue
+2146,1647,2956,hypoxic
+2147,2386,4097,non-hypoxic
+2148,4496,2539,post-hypoxic
+2149,2266,2887,hypoxic
+2150,4683,2291,adjacent tissue
+2151,2206,2496,hypoxic
+2152,2022,2032,non-hypoxic
+2153,2324,4133,non-hypoxic
+2154,2516,2319,post-hypoxic
+2155,3252,4314,post-hypoxic
+2156,2454,2496,post-hypoxic
+2157,3498,4670,non-hypoxic
+2158,4066,1719,adjacent tissue
+2159,4125,2609,post-hypoxic
+2160,2880,4597,hypoxic
+2161,2951,2000,hypoxic
+2162,3995,4316,non-hypoxic
+2163,2144,2389,non-hypoxic
+2164,4680,3145,non-hypoxic
+2165,2757,4241,hypoxic
+2166,3935,3782,non-hypoxic
+2167,2137,4452,non-hypoxic
+2168,1830,3704,non-hypoxic
+2169,3755,2181,non-hypoxic
+2170,3382,2393,hypoxic
+2171,3128,4313,hypoxic
+2172,3689,3212,hypoxic
+2173,3812,3497,hypoxic
+2174,3684,4778,non-hypoxic
+2175,2136,4737,adjacent tissue
+2176,3995,4245,non-hypoxic
+2177,2143,2744,hypoxic
+2178,3315,4065,post-hypoxic
+2179,1893,3597,non-hypoxic
+2180,3443,2784,non-hypoxic
+2181,3199,1645,non-hypoxic
+2182,2575,3208,hypoxic
+2183,1583,3703,post-hypoxic
+2184,1833,2850,hypoxic
+2185,1334,3916,non-hypoxic
+2186,3003,4597,hypoxic
+2187,3508,2038,non-hypoxic
+2188,1711,2351,non-hypoxic
+2189,4251,1827,adjacent tissue
+2190,3816,2288,adjacent tissue
+2191,3250,4954,adjacent tissue
+2192,1708,3277,non-hypoxic
+2193,4493,3606,non-hypoxic
+2194,1768,3810,post-hypoxic
+2195,3385,1753,post-hypoxic
+2196,3940,2146,non-hypoxic
+2197,2580,1785,adjacent tissue
+2198,3631,2180,non-hypoxic
+2199,3011,2320,non-hypoxic
+2200,2952,1644,non-hypoxic
+2201,2944,3850,hypoxic
+2202,2454,2283,non-hypoxic
+2203,3625,3888,non-hypoxic
+2204,1398,3524,non-hypoxic
+2205,2015,4096,non-hypoxic
+2206,3261,1823,hypoxic
+2207,3138,1609,hypoxic
+2208,2456,1714,non-hypoxic
+2209,2887,2605,hypoxic
+2210,2453,2781,hypoxic
+2211,2453,2710,hypoxic
+2212,4496,2753,post-hypoxic
+2213,1772,2814,hypoxic
+2214,2580,1643,non-hypoxic
+2215,2640,2177,post-hypoxic
+2216,4554,3856,non-hypoxic
+2217,4559,2219,adjacent tissue
+2218,4555,3358,non-hypoxic
+2219,3064,4989,adjacent tissue
+2220,3869,4814,non-hypoxic
+2221,2643,1536,non-hypoxic
+2222,4743,2896,post-hypoxic
+2223,4557,2931,non-hypoxic
+2224,2512,3457,hypoxic
+2225,3190,4349,post-hypoxic
+2226,2766,1750,non-hypoxic
+2227,3319,2713,non-hypoxic
+2228,4304,4566,non-hypoxic
+2229,1584,3205,post-hypoxic
+2230,2878,4953,adjacent tissue
+2231,3013,1894,post-hypoxic
+2232,3068,3779,hypoxic
+2233,3876,2822,non-hypoxic
+2234,4061,3071,non-hypoxic
+2235,3931,4850,non-hypoxic
+2236,4803,3287,non-hypoxic
+2237,3380,3104,non-hypoxic
+2238,3254,3673,hypoxic
+2239,2331,2140,non-hypoxic
+2240,3874,3604,post-hypoxic
+2241,2198,4701,adjacent tissue
+2242,4741,3323,non-hypoxic
+2243,3066,4277,hypoxic
+2244,2203,3207,hypoxic
+2245,2203,3349,hypoxic
+2246,3436,4848,adjacent tissue
+2247,4432,3357,non-hypoxic
+2248,2388,3670,hypoxic
+2249,3440,3567,post-hypoxic
+2250,2820,3921,hypoxic
+2251,5236,3396,non-hypoxic
+2252,4866,3038,non-hypoxic
+2253,4189,1933,adjacent tissue
+2254,2328,2994,hypoxic
+2255,4313,1934,non-hypoxic
+2256,3066,4349,hypoxic
+2257,2822,3494,hypoxic
+2258,3066,4491,hypoxic
+2259,3065,4562,hypoxic
+2260,1958,2495,non-hypoxic
+2261,4675,4425,non-hypoxic
+2262,2951,1929,non-hypoxic
+2263,2641,2106,post-hypoxic
+2264,1648,2743,hypoxic
+2265,4678,3785,non-hypoxic
+2266,2269,2247,non-hypoxic
+2267,3128,4455,post-hypoxic
+2268,3813,3284,post-hypoxic
+2269,3126,5025,adjacent tissue
+2270,1711,2423,non-hypoxic
+2271,3629,2607,non-hypoxic
+2272,3258,2464,non-hypoxic
+2273,4306,3926,non-hypoxic
+2274,4000,2893,non-hypoxic
+2275,4867,2754,post-hypoxic
+2276,1710,2636,adjacent tissue
+2277,3693,2216,non-hypoxic
+2278,3251,4669,post-hypoxic
+2279,3317,3496,post-hypoxic
+2280,4182,3997,non-hypoxic
+2281,3564,3710,post-hypoxic
+2282,2391,2745,hypoxic
+2283,2140,3669,non-hypoxic
+2284,4682,2433,adjacent tissue
+2285,1834,2637,post-hypoxic
+2286,3131,3602,hypoxic
+2287,3747,4386,non-hypoxic
+2288,3073,2427,non-hypoxic
+2289,3694,1931,post-hypoxic
+2290,4800,4212,non-hypoxic
+2291,3261,1752,post-hypoxic
+2292,4000,2964,non-hypoxic
+2293,4558,2575,post-hypoxic
+2294,4434,2646,post-hypoxic
+2295,1769,3668,non-hypoxic
+2296,2824,2782,hypoxic
+2297,4305,4211,non-hypoxic
+2298,4310,2787,non-hypoxic
+2299,2882,3885,hypoxic
+2300,1710,2707,hypoxic
+2301,2075,4487,non-hypoxic
+2302,4311,2289,non-hypoxic
+2303,4056,4423,non-hypoxic
+2304,2763,2533,hypoxic
+2305,4926,3572,non-hypoxic
+2306,2264,3670,non-hypoxic
+2307,3568,2358,post-hypoxic
+2308,1836,2067,non-hypoxic
+2309,4556,3144,non-hypoxic
+2310,3194,3068,hypoxic
+2311,2885,2960,hypoxic
+2312,3932,4707,non-hypoxic
+2313,2206,2424,post-hypoxic
+2314,3498,4741,non-hypoxic
+2315,2078,3776,non-hypoxic
+2316,3874,3462,hypoxic
+2317,3627,3176,hypoxic
+2318,4188,2218,non-hypoxic
+2319,3065,4704,hypoxic
+2320,1646,3312,non-hypoxic
+2321,1891,4167,non-hypoxic
+2322,1587,2565,non-hypoxic
+2323,3384,1966,post-hypoxic
+2324,4681,2931,post-hypoxic
+2325,4745,2113,adjacent tissue
+2326,4929,2718,non-hypoxic
+2327,4862,4248,non-hypoxic
+2328,3003,4740,hypoxic
+2329,3447,1575,non-hypoxic
+2330,3692,2501,hypoxic
+2331,4987,3822,non-hypoxic
+2332,3002,4882,adjacent tissue
+2333,2758,4098,hypoxic
+2334,2075,4559,non-hypoxic
+2335,5051,3288,non-hypoxic
+2336,4179,4851,adjacent tissue
+2337,3568,2500,post-hypoxic
+2338,1894,3170,post-hypoxic
+2339,2694,4632,hypoxic
+2340,4127,1897,adjacent tissue
+2341,2823,3067,hypoxic
+2342,2579,2070,post-hypoxic
+2343,2634,3956,hypoxic
+2344,2268,2318,post-hypoxic
+2345,3137,1823,post-hypoxic
+2346,4989,3323,non-hypoxic
+2347,2323,4488,post-hypoxic
+2348,2572,4062,hypoxic
+2349,5115,2755,non-hypoxic
+2350,4241,4602,non-hypoxic
+2351,1772,2530,hypoxic
+2352,4124,2894,non-hypoxic
+2353,3756,1683,non-hypoxic
+2354,2694,4490,hypoxic
+2355,2269,2033,post-hypoxic
+2356,4495,3037,non-hypoxic
+2357,4493,3393,non-hypoxic
+2358,1954,3847,non-hypoxic
+2359,2385,4382,post-hypoxic
+2360,3198,2072,hypoxic
+2361,2697,3565,hypoxic
+2362,4805,2789,post-hypoxic
+2363,3504,2963,non-hypoxic
+2364,2512,3599,hypoxic
+2365,1959,2210,hypoxic
+2366,1585,3134,post-hypoxic
+2367,2074,4701,adjacent tissue
+2368,2394,1749,non-hypoxic
+2369,4989,3395,non-hypoxic
+2370,1952,4345,non-hypoxic
+2371,1646,3170,post-hypoxic
+2372,1951,4629,adjacent tissue
+2373,3314,4207,post-hypoxic
+2374,3138,1538,hypoxic
+2375,2326,3563,hypoxic
+2376,4119,4245,non-hypoxic
+2377,4436,1934,adjacent tissue
+2378,1587,2422,non-hypoxic
+2379,2329,2709,hypoxic
+2380,4311,2432,post-hypoxic
+2381,1524,2671,adjacent tissue
+2382,1956,3277,non-hypoxic
+2383,1706,3846,hypoxic
+2384,2572,4133,hypoxic
+2385,1952,4274,non-hypoxic
+2386,4185,3072,non-hypoxic
+2387,2518,1821,post-hypoxic
+2388,3445,2358,post-hypoxic
+2389,2570,4560,hypoxic
+2390,2578,2355,non-hypoxic
+2391,3129,4029,hypoxic
+2392,3194,3211,hypoxic
+2393,3690,2856,non-hypoxic
+2394,4245,3534,non-hypoxic
+2395,3445,2286,hypoxic
+2396,3322,2072,post-hypoxic
+2397,1705,4130,non-hypoxic
+2398,2384,4595,adjacent tissue
+2399,2827,1786,non-hypoxic
+2400,4059,3783,non-hypoxic
+2401,2571,4205,hypoxic
+2402,3384,1895,hypoxic
+2403,4249,2538,post-hypoxic
+2404,2825,2498,hypoxic
+2405,2081,2851,hypoxic
+2406,3631,2038,hypoxic
+2407,3685,4493,non-hypoxic
+2408,2137,4523,non-hypoxic
+2409,3312,4847,adjacent tissue
+2410,1833,2992,hypoxic
+2411,3009,2890,hypoxic
+2412,2139,3883,non-hypoxic
+2413,2826,2213,post-hypoxic
+2414,2075,4416,non-hypoxic
+2415,3320,2642,non-hypoxic
+2416,2639,2461,non-hypoxic
+2417,1707,3419,post-hypoxic
+2418,2826,2071,post-hypoxic
+2419,2823,3209,hypoxic
+2420,4862,4177,non-hypoxic
+2421,3877,2679,post-hypoxic
+2422,4617,3322,non-hypoxic
+2423,3383,2108,post-hypoxic
+2424,3880,1754,non-hypoxic
+2425,2942,4562,hypoxic
+2426,4925,3786,non-hypoxic
+2427,1649,2458,non-hypoxic
+2428,3441,3496,post-hypoxic
+2429,3564,3496,hypoxic
+2430,5112,3466,non-hypoxic
+2431,3313,4705,post-hypoxic
+2432,3319,2855,non-hypoxic
+2433,3812,3568,hypoxic
+2434,3260,2037,hypoxic
+2435,1770,3383,non-hypoxic
+2436,3569,2073,post-hypoxic
+2437,2632,4596,hypoxic
+2438,5050,3644,non-hypoxic
+2439,3691,2714,non-hypoxic
+2440,1955,3562,non-hypoxic
+2441,2017,3527,non-hypoxic
+2442,4247,3036,non-hypoxic
+2443,3993,4814,non-hypoxic
+2444,4122,3463,non-hypoxic
+2445,1581,4272,non-hypoxic
+2446,2701,2568,hypoxic
+2447,3873,3818,non-hypoxic
+2448,4619,2895,post-hypoxic
+2449,2262,4097,non-hypoxic
+2450,2579,1928,non-hypoxic
+2451,4738,4319,non-hypoxic
+2452,1829,3988,non-hypoxic
+2453,4183,3499,non-hypoxic
+2454,1831,3562,non-hypoxic
+2455,4618,3180,non-hypoxic
+2456,3693,2145,post-hypoxic
+2457,3505,2678,non-hypoxic
+2458,2508,4524,post-hypoxic
+2459,2950,2285,non-hypoxic
+2460,1582,3916,non-hypoxic
+2461,1523,2956,adjacent tissue
+2462,3509,1539,adjacent tissue
+2463,3378,3674,post-hypoxic
+2464,3686,3995,non-hypoxic
+2465,1773,2316,non-hypoxic
+2466,1892,3882,non-hypoxic
+2467,1642,4379,non-hypoxic
+2468,4189,2004,adjacent tissue
+2469,2451,3350,hypoxic
+2470,4303,4709,non-hypoxic
+2471,2578,2426,hypoxic
+2472,3436,4777,non-hypoxic
+2473,2890,1680,non-hypoxic
+2474,3385,1610,non-hypoxic
+2475,3191,3993,post-hypoxic
+2476,4435,2290,non-hypoxic
+2477,1959,2352,non-hypoxic
+2478,3563,3923,hypoxic
+2479,3014,1538,non-hypoxic
+2480,3130,3673,hypoxic
+2481,3879,2039,adjacent tissue
+2482,3192,3780,hypoxic
+2483,2265,3456,hypoxic
+2484,4801,3928,non-hypoxic
+2485,3439,3923,post-hypoxic
+2486,2139,3954,post-hypoxic
+2487,4805,2718,post-hypoxic
+2488,3132,3104,hypoxic
+2489,1771,3028,hypoxic
+2490,3006,3886,hypoxic
+2491,3809,4280,non-hypoxic
+2492,2696,3920,hypoxic
+2493,4304,4495,non-hypoxic
+2494,4311,2361,non-hypoxic
+2495,4737,4390,adjacent tissue
+2496,5173,3644,non-hypoxic
+2497,3750,3533,hypoxic
+2498,2013,4452,non-hypoxic
+2499,3626,3675,hypoxic
+2500,4745,2184,adjacent tissue
+2501,1834,2565,post-hypoxic
+2502,1647,3098,post-hypoxic
+2503,2513,3101,hypoxic
+2504,3562,4279,adjacent tissue
+2505,3005,4099,hypoxic
+2506,3941,2075,adjacent tissue
+2507,3441,3283,hypoxic
+2508,1523,3169,adjacent tissue
+2509,1518,4379,non-hypoxic
+2510,1892,3811,non-hypoxic
+2511,4681,2860,post-hypoxic
+2512,2205,2638,hypoxic
+2513,2330,2425,hypoxic
+2514,3441,3425,hypoxic
+2515,3747,4315,non-hypoxic
+2516,3315,3994,post-hypoxic
+2517,2145,2246,non-hypoxic
+2518,2637,3173,hypoxic
+2519,3745,4956,adjacent tissue
+2520,1833,3063,hypoxic
+2521,5111,3680,non-hypoxic
+2522,3941,1932,non-hypoxic
+2523,3127,4669,hypoxic
+2524,4187,2502,post-hypoxic
+2525,1585,2991,adjacent tissue
+2526,3562,4137,non-hypoxic
+2527,3938,3000,non-hypoxic
+2528,3628,3034,post-hypoxic
+2529,1831,3633,non-hypoxic
+2530,1957,2850,hypoxic
+2531,2392,2389,hypoxic
+2532,4059,3640,hypoxic
+2533,4181,4068,non-hypoxic
+2534,3252,4171,post-hypoxic
+2535,4988,3679,non-hypoxic

@@ -1,0 +1,9 @@
+non-hypoxic,cycle entry,0,1.70E-05,7.00E-04,oxygen,increases,21.5,4,0
+non-hypoxic,cycle entry,0,1.70E-05,7.00E-04,pressure,decreases,0.25,3,0
+non-hypoxic,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0
+hypoxic,cycle entry,0,1.70E-05,7.00E-04,oxygen,increases,21.5,4,0
+hypoxic,cycle entry,0,1.70E-05,7.00E-04,pressure,decreases,0.25,3,0
+hypoxic,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0
+post-hypoxic,cycle entry,0,1.70E-05,7.00E-04,oxygen,increases,21.5,4,0
+post-hypoxic,cycle entry,0,1.70E-05,7.00E-04,pressure,decreases,0.25,3,0
+post-hypoxic,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0

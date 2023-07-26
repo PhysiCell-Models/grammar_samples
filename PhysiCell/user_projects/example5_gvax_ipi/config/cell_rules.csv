@@ -8,6 +8,8 @@ PD-L1hi_tumor,cycle entry,0,0,7.20E-04,pressure,decreases,1,4,0
 PD-L1hi_tumor,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0
 PD-L1hi_tumor,apoptosis,0,7.2e-5,7.2e-2,damage,increases,180,2,0
 PD-L1hi_tumor,debris secretion,0,0,0.017,dead,increases,0.1,10,1
+
+
 macrophage,pro-inflammatory factor secretion,0,0,5,oxygen,increases,5,4,0
 macrophage,anti-inflammatory factor secretion,0,10,10,oxygen,decreases,5,4,0
 
