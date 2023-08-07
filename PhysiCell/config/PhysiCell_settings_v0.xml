@@ -27,7 +27,7 @@
 	</parallel> 
 	
 	<save>
-		<folder>outputs/output_example1</folder>
+		<folder>output</folder>  
 
 		<full_data>
 			<interval units="min">60</interval>
