@@ -1,0 +1,9 @@
+tumor,substrate,increases,cycle entry,7.00e-04,1.7e-05,21.5,4
+tumor,oxygen,increases,cycle entry,7.00e-04,21.5,4
+tumor,pressure,decreases,cycle entry, 1.7e-05,7.00e-04,0.25,3.0
+tumor,oxygen,decreases,necrosis, 2.80e-03, 0.00e+00,3.75,8
+tumor,oxygen,decreases,transform to motile tumor,0.001,0.005,6.75,8
+motile tumor,oxygen,increases,cycle entry,0,1.70E-05,7.00E-04,21.5,4
+motile tumor,pressure,decreases,cycle entry,0,1.70E-05,7.00E-04,0.25,3
+motile tumor,oxygen,decreases,necrosis,2.80e-03,0,3.75,8
+motile tumor,oxygen,increases,transform to tumor,0,0.005,6.75,8
