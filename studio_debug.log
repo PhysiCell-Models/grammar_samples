@@ -1,0 +1,9 @@
+DEBUG:root:studio.py: config file is /Users/morgana/Documents/GitHub/grammar_samples/project
+DEBUG:root:studio.py: open_as_cb():  filePath is valid
+DEBUG:root:len(config_file) = 55
+DEBUG:root:done with args.config
+INFO:numexpr.utils:Note: NumExpr detected 10 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+DEBUG:root:self.current_dir = /Users/morgana/Documents/GitHub/grammar_samples
+DEBUG:root:self.studio_root_dir = /Users/morgana/Documents/GitHub/grammar_samples/studio
+DEBUG:root:self.config_dir = /Users/morgana/Documents/GitHub/grammar_samples/config

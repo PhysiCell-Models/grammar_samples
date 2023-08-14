@@ -173,8 +173,8 @@ void setup_tissue( void )
 	// create some of each type of cell 
 	
 	Cell* pC;
-	
-	for( int k=0; k < cell_definitions_by_index.size() ; k++ )
+	/*
+     for( int k=0; k < cell_definitions_by_index.size() ; k++ )
 	{
 		Cell_Definition* pCD = cell_definitions_by_index[k]; 
 		std::cout << "Placing cells of type " << pCD->name << " ... " << std::endl; 
@@ -189,6 +189,8 @@ void setup_tissue( void )
 			pC->assign_position( position );
 		}
 	}
+     */
+    
 	std::cout << std::endl; 
 	
 	// load cells from your CSV file (if enabled)

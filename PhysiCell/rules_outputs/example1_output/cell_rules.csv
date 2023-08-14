@@ -1,8 +1,0 @@
-tumor,oxygen,increases,cycle entry,1.7e-05,0.0007,21.5,4,0
-tumor,pressure,decreases,cycle entry,1.7e-05,0,0.25,3,0
-tumor,oxygen,decreases,necrosis,0.0028,0,3.75,8,0
-tumor,oxygen,decreases,transform to motile tumor,0.001,0,6.75,8,0
-motile tumor,oxygen,increases,cycle entry,1.7e-05,0.0007,21.5,4,0
-motile tumor,pressure,decreases,cycle entry,1.7e-05,0,0.25,3,0
-motile tumor,oxygen,decreases,necrosis,0.0028,0,3.75,8,0
-motile tumor,oxygen,increases,transform to tumor,0,0.005,6.75,8,0
