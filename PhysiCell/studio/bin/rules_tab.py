@@ -1181,7 +1181,7 @@ class Rules(QWidget):
         if os.path.isfile(full_rules_fname):
             try:
                 # with open("config/rules.csv", 'rU') as f:
-                with open(full_rules_fname, 'r') as csvfile:
+                with open(full_rules_fname, 'rU') as csvfile:
                     csv_reader = csv.reader(self.strip_comments(csvfile))
                     # print("     fill_rules():  past csv.reader")
                     # with open(full_rules_fname, 'rU') as f:

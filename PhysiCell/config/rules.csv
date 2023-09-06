@@ -1,28 +1,27 @@
-PD-L1lo_tumor,oxygen,increases,cycle entry,7.2e-04,21.5,4,0
-PD-L1lo_tumor,pressure,decreases,cycle entry,0,1,4,0
-PD-L1lo_tumor,oxygen,decreases,necrosis,0,3.75,8,0
-PD-L1lo_tumor,damage,increases,apoptosis,7.2e-02,180,2,0
-PD-L1lo_tumor,dead,increases,debris secretion,0.017,0.1,10,1
-PD-L1hi_tumor,oxygen,increases,cycle entry,7.2e-04,21.5,4,0
-PD-L1hi_tumor,pressure,decreases,cycle entry,0,1,4,0
-PD-L1hi_tumor,oxygen,decreases,necrosis,0,3.75,8,0
-PD-L1hi_tumor,damage,increases,apoptosis,7.2e-02,180,2,0
-PD-L1hi_tumor,dead,increases,debris secretion,0.017,0.1,10,1
-macrophage,oxygen,increases,pro-inflammatory factor secretion,1,5,4,0
-macrophage,oxygen,decreases,anti-inflammatory factor secretion,0,5,4,0
-PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1hi_tumor,0,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1hi_tumor,1,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1lo_tumor,0,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1lo_tumor,1,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
-PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1hi_tumor,0,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1hi_tumor,1,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1lo_tumor,0,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1lo_tumor,1,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
-PD-1hi_CD137hi_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
-PD-1hi_CD137lo_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
-PD-1hi_CD4_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
-PD-1lo_CD4_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
+tumor,oxygen,increases,cycle entry,7.20e-04,21.5,4,0
+tumor,pressure,decreases,cycle entry,0,1,4,0
+tumor,oxygen,decreases,necrosis,0,3.75,8,0
+tumor,damage,increases,apoptosis,7.2e-02,180,2,0
+tumor,dead,increases,debris secretion,0.017,0.1,10,1
+tumor,IFN-gamma,increases,migration speed,1,0.25,2,0
+M0 macrophage,contact with dead cell,increases,transform to M1 macrophage,0.05,0.1,10,0
+M0 macrophage,contact with dead cell,decreases,migration speed,0.1,0.1,4,0
+M0 macrophage,dead,increases,debris secretion,0.017,0.1,10,0
+M1 macrophage,contact with dead cell,decreases,migration speed,0.1,0.1,4,0
+M1 macrophage,oxygen,decreases,transform to M2 macrophage,0,5,4,0
+M1 macrophage,IFN-gamma,increases,cycle entry,3.6e-04,0.25,2,0
+M1 macrophage,dead,increases,debris secretion,0.017,0.1,10,1
+M2 macrophage,contact with dead cell,decreases,migration speed,0.1,0.1,4,0
+M2 macrophage,IFN-gamma,decreases,cycle entry,0,0.25,2,0
+M2 macrophage,IFN-gamma,increases,phagocytose dead cell,0.05,0.25,2,0
+M2 macrophage,dead,increases,debris secretion,0.017,0.1,10,0
+naive T cell,IL-10,decreases,transform to CD8 T cell,0.0,0.25,2,0
+naive T cell,IFN-gamma,increases,transform to CD8 T cell,0.01,0.25,2,0
+naive T cell,dead,increases,debris secretion,0.017,0.1,10,0
+CD8 T cell,IFN-gamma,increases,cycle entry,4.1e-4,0.25,2,0
+CD8 T cell,IL-10,decreases,attack tumor,0,0.25,2,0
+CD8 T cell,IL-10,decreases,migration speed,0.1,0.25,2,0
+CD8 T cell,contact with tumor,decreases,migration speed,0.1,0.1,2,0
+CD8 T cell,IL-10,increases,transform to exhausted T cell,0.005,0.25,4,0
+CD8 T cell,dead,increases,debris secretion,0.017,0.1,10,1
+exhausted T cell,dead,increases,debris secretion,0.017,0.1,10,1
