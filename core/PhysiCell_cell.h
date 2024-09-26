@@ -33,7 +33,7 @@
 #                                                                             #
 # BSD 3-Clause License (see https://opensource.org/licenses/BSD-3-Clause)     #
 #                                                                             #
-# Copyright (c) 2015-2023, Paul Macklin and the PhysiCell Project             #
+# Copyright (c) 2015-2024, Paul Macklin and the PhysiCell Project             #
 # All rights reserved.                                                        #
 #                                                                             #
 # Redistribution and use in source and binary forms, with or without          #
@@ -154,8 +154,8 @@ class Cell_State
 
 	int number_of_nuclei; 
 	
-	double damage; 
-	double total_attack_time; 
+	// double damage; 
+	double total_attack_time; // now in interactions
 	bool contact_with_basement_membrane; // not implemented yet 
 	
 	Cell_State(); 
@@ -200,7 +200,7 @@ class Cell : public Basic_Agent
 	void step(double dt);
 	Cell();
 	
-	~Cell(); 
+	virtual ~Cell(); 
 	
 	bool assign_position(std::vector<double> new_position);
 	bool assign_position(double, double, double);
@@ -251,7 +251,7 @@ class Cell : public Basic_Agent
 	void convert_to_cell_definition( Cell_Definition& cd ); 
 };
 
-Cell* create_cell( void );  
+Cell* create_cell( Cell* (*custom_instantiate)() = NULL );  
 Cell* create_cell( Cell_Definition& cd );  
 
 void delete_cell( int ); 

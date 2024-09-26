@@ -33,7 +33,7 @@
 #                                                                             #
 # BSD 3-Clause License (see https://opensource.org/licenses/BSD-3-Clause)     #
 #                                                                             #
-# Copyright (c) 2015-2022, Paul Macklin and the PhysiCell Project             #
+# Copyright (c) 2015-2024, Paul Macklin and the PhysiCell Project             #
 # All rights reserved.                                                        #
 #                                                                             #
 # Redistribution and use in source and binary forms, with or without          #
@@ -101,6 +101,9 @@ std::unordered_map<int,int> cell_definition_indices_by_type;
 // in case you want the legacy method 
 std::vector<double> (*cell_division_orientation)(void) = UniformOnUnitSphere; // LegacyRandomOnUnitSphere; 
 
+Cell* standard_instantiate_cell()
+{ return new Cell; }
+
 Cell_Parameters::Cell_Parameters()
 {
 	o2_hypoxic_threshold = 15.0; // HIF-1alpha at half-max around 1.5-2%, and tumors often are below 2%
@@ -148,6 +151,7 @@ Cell_Definition::Cell_Definition()
 		// the default Custom_Cell_Data constructor should take care of this
 		
 	// set up the default functions 
+	functions.instantiate_cell = NULL;
 	functions.volume_update_function = NULL; // standard_volume_update_function;
 	functions.update_migration_bias = NULL; 
 	
@@ -157,6 +161,11 @@ Cell_Definition::Cell_Definition()
 	functions.update_velocity = NULL; // standard_update_cell_velocity;
 	functions.add_cell_basement_membrane_interactions = NULL; 
 	functions.calculate_distance_to_membrane = NULL; 
+
+	// bug fix July 31 2023
+	functions.plot_agent_SVG = standard_agent_SVG;
+	functions.plot_agent_legend = standard_agent_legend;
+	// bug fix July 31 2023
 	
 	functions.set_orientation = NULL;
 	
@@ -237,8 +246,8 @@ Cell_State::Cell_State()
 	
 	number_of_nuclei = 1; 
 	
-	damage = 0.0; 
-	total_attack_time = 0.0; 
+	// damage = 0.0; 
+	// total_attack_time = 0.0; 
 	
 	contact_with_basement_membrane = false; 
 
@@ -346,6 +355,9 @@ void Cell::advance_bundled_phenotype_functions( double dt_ )
 	
 	// update geometry
 	phenotype.geometry.update( this, phenotype, dt_ );
+
+	// update integrity 
+	phenotype.cell_integrity.advance_damage( dt_ );  
 	
 	// check for new death events 
 	if( phenotype.death.check_for_death( dt_ ) == true )
@@ -552,7 +564,7 @@ Cell* Cell::divide( )
 	}
 
 	
-	Cell* child = create_cell();
+	Cell* child = create_cell(functions.instantiate_cell);
 	child->copy_data( this );	
 	child->copy_function_pointers(this);
 	child->parameters = parameters;
@@ -635,10 +647,15 @@ Cell* Cell::divide( )
 
 
 	// changes for new phenotyp March 2022
-	state.damage = 0.0; 
+	// state.damage = 0.0; 
+	// phenotype.integrity.damage = 0.0; // leave alone - damage is heritable
 	state.total_attack_time = 0; 
-	child->state.damage = 0.0; 
+	// child->state.damage = 0.0; 
+	// child->phenotype.integrity.damage = 0.0; // leave alone - damage is heritable 
 	child->state.total_attack_time = 0.0; 
+
+    if( this->functions.cell_division_function )
+        { this->functions.cell_division_function( this, child); }
 
 	return child;
 }
@@ -966,7 +983,7 @@ void Cell::add_potentials(Cell* other_agent)
 	//Repulsive
 	double R = phenotype.geometry.radius+ (*other_agent).phenotype.geometry.radius; 
 	
-	double RN = phenotype.geometry.nuclear_radius + (*other_agent).phenotype.geometry.nuclear_radius;	
+	// double RN = phenotype.geometry.nuclear_radius + (*other_agent).phenotype.geometry.nuclear_radius;	
 	double temp_r, c;
 	if( distance > R ) 
 	{
@@ -1048,10 +1065,16 @@ void Cell::add_potentials(Cell* other_agent)
 	return;
 }
 
-Cell* create_cell( void )
+Cell* create_cell( Cell* (*custom_instantiate)())
 {
 	Cell* pNew; 
-	pNew = new Cell;		
+	
+	if (custom_instantiate) {
+		pNew = custom_instantiate();
+	} else {
+		pNew = standard_instantiate_cell();
+	}
+	
 	(*all_cells).push_back( pNew ); 
 	pNew->index=(*all_cells).size()-1;
 	
@@ -1074,7 +1097,7 @@ Cell* create_cell( void )
 // In that "create_cell()" uses "create_cell( cell_defaults )" 
 Cell* create_cell( Cell_Definition& cd )
 {
-	Cell* pNew = create_cell(); 
+	Cell* pNew = create_cell(cd.functions.instantiate_cell); 
 	
 	// use the cell defaults; 
 	pNew->type = cd.type; 
@@ -1101,24 +1124,50 @@ Cell* create_cell( Cell_Definition& cd )
 
 void Cell::convert_to_cell_definition( Cell_Definition& cd )
 {	
+	Volume cell_volume = phenotype.volume;
+	Geometry cell_geometry = phenotype.geometry;
 	// use the cell defaults; 
 	type = cd.type; 
 	type_name = cd.name; 
 	
-	custom_data = cd.custom_data; 
+	custom_data = cd.custom_data; // this is kinda risky since users may want to be updating custom_data throughout
 	parameters = cd.parameters; 
 	functions = cd.functions; 
 	
 	phenotype = cd.phenotype; 
-	// is_movable = true;
-	// is_out_of_domain = false;
+	phenotype.volume = cell_volume; // leave the cell volume alone..
+	// ..except for the following target values
+	// phenotype.volume.target_solid_cytoplasmic = cd.phenotype.volume.target_solid_cytoplasmic; // gets set by standard_volume_update_function anyways
+	phenotype.volume.target_solid_nuclear = cd.phenotype.volume.target_solid_nuclear;
+	phenotype.volume.target_fluid_fraction = cd.phenotype.volume.target_fluid_fraction;
+	phenotype.volume.target_cytoplasmic_to_nuclear_ratio = cd.phenotype.volume.target_cytoplasmic_to_nuclear_ratio;
+	phenotype.volume.relative_rupture_volume = cd.phenotype.volume.relative_rupture_volume;
 	
-	// displacement.resize(3,0.0); // state? 
+	phenotype.geometry = cell_geometry; // leave the geometry alone
+	/* things no longer done here:
+	// assign_orientation(); // not necesary since the this->state is unchanged
+	// Basic_Agent::set_total_volume(volume); // not necessary since the volume is unchanged
 	
-	assign_orientation();	
-	
-	set_total_volume( phenotype.volume.total ); 
-	
+	// not necessary since the volume is unchanged
+	// if( fabs( phenotype.volume.total - volume ) > 1e-16 )
+	// {
+	// 	double ratio= volume/ (phenotype.volume.total + 1e-16);  
+	// 	phenotype.volume.multiply_by_ratio(ratio);
+	// }
+
+	// phenotype.geometry.update( this, phenotype, 0.0 ); // not necessary since we copy geometry above
+	*/
+
+	// Here the current mechanics voxel index may not be initialized, when position is still unknown. 
+	if (get_current_mechanics_voxel_index() >= 0)
+    {
+        if( get_container()->max_cell_interactive_distance_in_voxel[get_current_mechanics_voxel_index()] < 
+            phenotype.geometry.radius * phenotype.mechanics.relative_maximum_adhesion_distance )
+        {
+            get_container()->max_cell_interactive_distance_in_voxel[get_current_mechanics_voxel_index()] = phenotype.geometry.radius
+                * phenotype.mechanics.relative_maximum_adhesion_distance;
+        }
+	}
 	return; 
 }
 
@@ -1291,6 +1340,8 @@ void Cell::ingest_cell( Cell* pCell_to_eat )
 		pCell_to_eat->functions.custom_cell_rule = NULL; 
 		pCell_to_eat->functions.update_phenotype = NULL; 
 		pCell_to_eat->functions.contact_function = NULL; 
+		pCell_to_eat->functions.cell_division_function = NULL; 
+
 		
 		// should set volume fuction to NULL too! 
 		pCell_to_eat->functions.volume_update_function = NULL; 
@@ -1385,12 +1436,17 @@ void Cell::attack_cell( Cell* pCell_to_attack , double dt )
 	{ return; } 
 	
 	// make this thread safe 
+	// WORK HERE June 2024 
 	#pragma omp critical
 	{ 
 		// std::cout << this->type_name << " attacks " << pCell_to_attack->type_name << std::endl;
 		// 
-		pCell_to_attack->state.damage += phenotype.cell_interactions.damage_rate * dt; 
+		double new_damage = phenotype.cell_interactions.attack_damage_rate * dt; 
+
+		pCell_to_attack->phenotype.cell_integrity.damage += new_damage; 
 		pCell_to_attack->state.total_attack_time += dt; 
+
+		phenotype.cell_interactions.total_damage_delivered += new_damage; 
 	}
 	return; 
 }
@@ -1516,6 +1572,7 @@ void Cell::fuse_cell( Cell* pCell_to_fuse )
 		pCell_to_fuse->functions.custom_cell_rule = NULL; 
 		pCell_to_fuse->functions.update_phenotype = NULL; 
 		pCell_to_fuse->functions.contact_function = NULL; 
+		pCell_to_fuse->functions.cell_division_function = NULL; 
 		pCell_to_fuse->functions.volume_update_function = NULL; 
 
 		// remove all adhesions 
@@ -1555,6 +1612,7 @@ void Cell::lyse_cell( void )
 	functions.custom_cell_rule = NULL; 
 	functions.update_phenotype = NULL; 
 	functions.contact_function = NULL; 
+	functions.cell_division_function = NULL; 
 	
 	// remove all adhesions 
 	
@@ -1645,6 +1703,14 @@ void display_ptr_as_bool( void (*ptr)(Cell*,Phenotype&,Cell*,Phenotype&,double),
 	return;
 }
 
+void display_ptr_as_bool( void (*ptr)(Cell*,Cell*), std::ostream& os )
+{
+	if( ptr )
+	{ os << "true"; return; }
+	os << "false"; 
+	return;
+}
+
 void display_cell_definitions( std::ostream& os )
 {
 	for( int n=0; n < cell_definitions_by_index.size() ; n++ )
@@ -1727,6 +1793,8 @@ void display_cell_definitions( std::ostream& os )
 		os << "\t\t mechanics function: "; display_ptr_as_bool( pCF->update_velocity , std::cout ); 
 		os << std::endl;
 		os << "\t\t contact function: "; display_ptr_as_bool( pCF->contact_function , std::cout ); 
+		os << std::endl; 
+        os << "\t\t cell division function: "; display_ptr_as_bool( pCF->cell_division_function , std::cout ); 
 		os << std::endl; 
 		
 		// summarize motility 
@@ -1935,7 +2003,7 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 		pugi::xml_node node_options = xml_find_node( physicell_config_root , "options" ); 
 		bool disable_bugfix = false; 
 		if( node_options )
-		{ xml_get_bool_value( node_options, "legacy_cell_defaults_copy" ); }
+		{ disable_bugfix = xml_get_bool_value( node_options, "legacy_cell_defaults_copy" ); }
 
 		if( disable_bugfix == false )
 		{
@@ -1954,10 +2022,12 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 			pCD->phenotype.secretion.saturation_densities.assign(number_of_substrates,0.0); 
 
 			// interaction 
-			pCD->phenotype.cell_interactions.dead_phagocytosis_rate = 0.0; 
+			pCD->phenotype.cell_interactions.apoptotic_phagocytosis_rate = 0.0; 
+			pCD->phenotype.cell_interactions.necrotic_phagocytosis_rate = 0.0; 
+			pCD->phenotype.cell_interactions.other_dead_phagocytosis_rate = 0.0; 
 			pCD->phenotype.cell_interactions.live_phagocytosis_rates.assign(number_of_cell_defs,0.0); 
 			pCD->phenotype.cell_interactions.attack_rates.assign(number_of_cell_defs,0.0); 
-			pCD->phenotype.cell_interactions.damage_rate = 1.0; 
+			pCD->phenotype.cell_interactions.attack_damage_rate = 1.0; 
 			pCD->phenotype.cell_interactions.fusion_rates.assign(number_of_cell_defs,0.0); 
 
 			// transformation 
@@ -2567,6 +2637,9 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 		if( node_mech )
 		{ pM->detachment_rate = xml_get_my_double_value( node_mech ); }	
 
+		node_mech = node.child( "maximum_number_of_attachments" );
+		if ( node_mech )
+		{ pM->maximum_number_of_attachments = xml_get_my_int_value( node_mech ); }
 	}
 	
 	// motility 
@@ -2811,7 +2884,35 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 
 		// dead_phagocytosis_rate
 		pugi::xml_node node_dpr = node.child("dead_phagocytosis_rate");
-		pCI->dead_phagocytosis_rate = xml_get_my_double_value(node_dpr); 
+		double dead_phagocytosis_rate = 0.0; 
+		if( node_dpr )
+		{
+			// pCI->dead_phagocytosis_rate = xml_get_my_double_value(node_dpr); 
+			dead_phagocytosis_rate = xml_get_my_double_value(node_dpr); 
+		}
+/*
+		pCI->apoptotic_phagocytosis_rate = pCI->dead_phagocytosis_rate; 
+		pCI->necrotic_phagocytosis_rate = pCI->dead_phagocytosis_rate; 
+		pCI->other_dead_phagocytosis_rate = pCI->dead_phagocytosis_rate; 
+*/
+		pCI->apoptotic_phagocytosis_rate = dead_phagocytosis_rate; 
+		pCI->necrotic_phagocytosis_rate = dead_phagocytosis_rate; 
+		pCI->other_dead_phagocytosis_rate = dead_phagocytosis_rate; 
+
+		// if specific apoptotic rate is specified, overwrite 
+		pugi::xml_node node_apr = node.child("apoptotic_phagocytosis_rate"); 
+		if( node_apr )
+		{ pCI->apoptotic_phagocytosis_rate = xml_get_my_double_value(node_apr);  }
+
+		// if specific necrotic rate is specified, overwrite 
+		pugi::xml_node node_npr = node.child("necrotic_phagocytosis_rate"); 
+		if( node_npr )
+		{ pCI->necrotic_phagocytosis_rate = xml_get_my_double_value(node_npr);  }
+
+		// if specific necrotic rate is specified, overwrite 
+		pugi::xml_node node_odpr = node.child("other_dead_phagocytosis_rate"); 
+		if( node_odpr )
+		{ pCI->other_dead_phagocytosis_rate = xml_get_my_double_value(node_odpr);  }
 
 		// live phagocytosis rates 
 		pugi::xml_node node_lpcr = node.child( "live_phagocytosis_rates");
@@ -2868,8 +2969,8 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 		}
 
 		// damage_rate
-		pugi::xml_node node_dr = node.child("damage_rate");
-		pCI->damage_rate = xml_get_my_double_value(node_dr); 
+		pugi::xml_node node_dr = node.child("attack_damage_rate");
+		pCI->attack_damage_rate = xml_get_my_double_value(node_dr); 
 
 		// fusion_rates 
 		pugi::xml_node node_fr = node.child( "fusion_rates");
@@ -2944,7 +3045,23 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 			node_tr = node_tr.next_sibling( "transformation_rate" ); 
 		}
 
-	}	
+	}
+
+	// cell integrity 
+	node = cd_node.child( "phenotype" );
+	node = node.child( "cell_integrity" ); 
+	if( node )
+	{
+		Cell_Integrity *pCI = &(pCD->phenotype.cell_integrity);
+
+		pugi::xml_node node_dr = node.child("damage_rate");
+		if( node_dr )
+		{ pCI->damage_rate = xml_get_my_double_value( node_dr ); }
+
+		pugi::xml_node node_drr = node.child("damage_repair_rate");
+		if( node_drr )
+		{ pCI->damage_repair_rate = xml_get_my_double_value( node_drr ); }
+	}
 
     	// intracellular
 	node = cd_node.child( "phenotype" );
@@ -3002,7 +3119,11 @@ Cell_Definition* initialize_cell_definition_from_pugixml( pugi::xml_node cd_node
 		}
 #endif
 
-	}	
+	} else{
+
+		pCD->phenotype.intracellular = NULL;
+
+	}
 
 	// set up custom data 
 	node = cd_node.child( "custom_data" );
