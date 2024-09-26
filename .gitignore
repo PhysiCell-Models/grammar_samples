@@ -1,3 +1,5 @@
-
+# output files
+outputs/
 .DS_Store
 *.o
+studio_debug.log
