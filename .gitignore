@@ -1,5 +1,8 @@
 # output files
 outputs/
+*.feather
 .DS_Store
 *.o
-studio_debug.log
+*.log
+*.err
+
