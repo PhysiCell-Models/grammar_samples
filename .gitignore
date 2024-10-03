@@ -1,5 +1,7 @@
 # output files
 outputs/
+output_SA*
+Sensitivity_Analysis/*.sh
 *.feather
 .DS_Store
 *.o
