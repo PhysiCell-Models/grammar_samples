@@ -18,17 +18,19 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
         df_cell = mcds.get_cell_df() 
         df_tumor_live = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['dead'] == False) ]
         df_tumor_dead = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['dead'] == True) ]
-        df_motile_live = df_cell[ (df_cell['cell_type'] == 'motile tumor') & (df_cell['dead'] == False) ]
-        df_motile_dead = df_cell[ (df_cell['cell_type'] == 'motile tumor') & (df_cell['dead'] == True) ]
+        df_motile_live = df_cell[ (df_cell['cell_type'] == 'motile_tumor') & (df_cell['dead'] == False) ]
+        df_motile_dead = df_cell[ (df_cell['cell_type'] == 'motile_tumor') & (df_cell['dead'] == True) ]
         # distance from the center (0,0,0)
         distances_tumor_live = np.sqrt( (df_tumor_live['position_x'])**2 + (df_tumor_live['position_y'])**2 + (df_tumor_live['position_z'])**2 )
         distances_tumor_dead = np.sqrt( (df_tumor_dead['position_x'])**2 + (df_tumor_dead['position_y'])**2 + (df_tumor_dead['position_z'])**2 )
         distances_motile_live = np.sqrt( (df_motile_live['position_x'])**2 + (df_motile_live['position_y'])**2 + (df_motile_live['position_z'])**2 )
         distances_motile_dead = np.sqrt( (df_motile_dead['position_x'])**2 + (df_motile_dead['position_y'])**2 + (df_motile_dead['position_z'])**2 )
         data = {'time': mcds.get_time(), 'replicate': ReplicateID, 'sample': SampleID, 'runtime': mcds.get_runtime(),
-                'tumor_live': tumor_live, 'tumor_dead': tumor_dead, 'motile_live': motile_live, 'motile_dead': motile_dead,
-                'dist_center_tumor_live': distances_tumor_live, 'dist_center_tumor_dead': distances_tumor_dead,
-                'dist_center_motile_live': distances_motile_live, 'dist_center_motile_dead': distances_motile_dead}   
+                'tumor_live': len(df_tumor_live), 'tumor_dead': len(df_tumor_dead), 'motile_live': len(df_motile_live), 'motile_dead': len(df_motile_dead),
+                'dist_mean_tumor_live': distances_tumor_live.mean(), 'dist_mean_tumor_dead': distances_tumor_dead.mean(),
+                'dist_mean_motile_live': distances_motile_live.mean(), 'dist_mean_motile_dead': distances_motile_dead.mean(),
+                'dist_std_tumor_live': distances_tumor_live.std(), 'dist_std_tumor_dead': distances_tumor_dead.std(),
+                'dist_std_motile_live': distances_motile_live.std(), 'dist_std_motile_dead': distances_motile_dead.std()}      
         data_conc = {**data,**dic_params} 
         if ( mcds.get_time() == 0 ): 
             # create the dataframe
@@ -42,7 +44,7 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
     return
 
 if __name__ == '__main__':
-    PhysiCellModel = PhysiCell_Model("SensitivityAnalysis/ConfigFile.ini", 'model_hypoxia')
+    PhysiCellModel = PhysiCell_Model("Sensitivity_Analysis/ConfigFile.ini", 'model_hypoxia')
     # Define parameters of rules in range +/- 20% of the reference value
     names_parameters = []
     bounds_parameters = []
