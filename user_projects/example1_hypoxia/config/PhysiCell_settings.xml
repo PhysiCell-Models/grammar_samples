@@ -36,7 +36,7 @@
     </parallel>
 
     <save>
-        <folder>outputs</folder>
+        <folder>outputs/example1_hypoxia</folder>
         <full_data>
             <interval units="min">60</interval>
             <enable>true</enable>
