@@ -68,10 +68,6 @@
 #include "../core/PhysiCell.h"
 #include "../modules/PhysiCell_standard_modules.h" 
 
-#include <typeinfo>
-
-#include "./PhysiCell_rules.h"
-
 using namespace BioFVM; 
 using namespace PhysiCell;
 
@@ -92,5 +88,7 @@ std::vector<std::string> my_coloring_function( Cell* );
 void phenotype_function( Cell* pCell, Phenotype& phenotype, double dt );
 void custom_function( Cell* pCell, Phenotype& phenotype , double dt );
 
-void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt ); 
+void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt );
+
+bool read_custom_microenvironment_from_matlab( std::string mat_filename );
 

@@ -1,33 +1,28 @@
-PD-L1lo_tumor,cycle entry,0,0,7.20E-04,oxygen,increases,21.5,4,0
-PD-L1lo_tumor,cycle entry,0,0,7.20E-04,pressure,decreases,1,4,0
-PD-L1lo_tumor,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0
-PD-L1lo_tumor,apoptosis,0,7.2e-5,7.2e-2,damage,increases,180,2,0
-PD-L1lo_tumor,debris secretion,0,0,0.017,dead,increases,0.1,10,1
-PD-L1hi_tumor,cycle entry,0,0,7.20E-04,oxygen,increases,21.5,4,0
-PD-L1hi_tumor,cycle entry,0,0,7.20E-04,pressure,decreases,1,4,0
-PD-L1hi_tumor,necrosis,0,2.80E-03,0.00E+00,oxygen,decreases,3.75,8,0
-PD-L1hi_tumor,apoptosis,0,7.2e-5,7.2e-2,damage,increases,180,2,0
-PD-L1hi_tumor,debris secretion,0,0,0.017,dead,increases,0.1,10,1
-
-macrophage,pro-inflammatory factor secretion,0,0,10,oxygen,increases,5,4,0
-macrophage,anti-inflammatory factor secretion,0,10,10,oxygen,decreases,5,4,0
-
-PD-1lo_CD137hi_CD8_Tcell,attack PD-L1hi_tumor,0,0.000001,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,attack PD-L1hi_tumor,0,.000001,1,pro-inflammatory factor,increases,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,attack PD-L1lo_tumor,0,0.00001,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,attack PD-L1lo_tumor,0,.00001,1,pro-inflammatory factor,increases,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,migration speed,0,1,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137hi_CD8_Tcell,migration speed,0,1,1,contact with PD-L1hi_tumor,decreases,0.5,2,0
-
-PD-1lo_CD137lo_CD8_Tcell,attack PD-L1hi_tumor,0,0.000001,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,attack PD-L1hi_tumor,0,.000001,1,pro-inflammatory factor,increases,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,attack PD-L1lo_tumor,0,0.00001,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,attack PD-L1lo_tumor,0,.00001,1,pro-inflammatory factor,increases,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,migration speed,0,1,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD137lo_CD8_Tcell,migration speed,0,1,1,contact with PD-L1hi_tumor,decreases,0.5,2,0
-
-PD-1hi_CD137hi_CD8_Tcell,migration speed,0,1,1,contact with PD-L1hi_tumor,decreases,0.5,2,0
-PD-1hi_CD137lo_CD8_Tcell,migration speed,0,1,1,contact with PD-L1hi_tumor,decreases,0.5,2,0
-
-PD-1hi_CD4_Tcell,migration speed,0,1,1,anti-inflammatory factor,decreases,0.5,8,0
-PD-1lo_CD4_Tcell,migration speed,0,1,1,anti-inflammatory factor,decreases,0.5,8,0
+PD-L1lo_tumor,pressure,decreases,cycle entry,0,1,4,0
+PD-L1lo_tumor,oxygen,decreases,necrosis,0,3.75,8,0
+PD-L1hi_tumor,pressure,decreases,cycle entry,0,1,4,0
+PD-L1hi_tumor,oxygen,decreases,necrosis,0,3.75,8,0
+macrophage,oxygen,decreases,anti-inflammatory factor secretion,0,5,4,0
+PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1hi_tumor,0,0.5,8,0
+PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1lo_tumor,0,0.5,8,0
+PD-1lo_CD137hi_CD8_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
+PD-1lo_CD137hi_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
+PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1hi_tumor,0,0.5,8,0
+PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,attack PD-L1lo_tumor,0,0.5,8,0
+PD-1lo_CD137lo_CD8_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
+PD-1lo_CD137lo_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
+PD-1hi_CD137hi_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
+PD-1hi_CD137lo_CD8_Tcell,contact with PD-L1hi_tumor,decreases,migration speed,0,0.5,2,0
+PD-1hi_CD4_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
+PD-1lo_CD4_Tcell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
+PD-L1lo_tumor,oxygen,increases,cycle entry,7.20E-04,21.5,4,0
+PD-L1lo_tumor,damage,increases,apoptosis,7.2e-2,180,2,0
+PD-L1lo_tumor,dead,increases,debris secretion,0.017,0.1,10,1
+PD-L1hi_tumor,oxygen,increases,cycle entry,7.20E-04,21.5,4,0
+PD-L1hi_tumor,damage,increases,apoptosis,7.2e-2,180,2,0
+PD-L1hi_tumor,dead,increases,debris secretion,0.017,0.1,10,1
+macrophage,oxygen,increases,pro-inflammatory factor secretion,10,5,4,0
+PD-1lo_CD137hi_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1hi_tumor,1,0.5,8,0
+PD-1lo_CD137hi_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1lo_tumor,1,0.5,8,0
+PD-1lo_CD137lo_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1hi_tumor,1,0.5,8,0
+PD-1lo_CD137lo_CD8_Tcell,pro-inflammatory factor,increases,attack PD-L1lo_tumor,1,0.5,8,0

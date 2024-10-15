@@ -67,216 +67,214 @@
 
 #include "./custom.h"
 
-void create_cell_types( void )
+void create_cell_types(void)
 {
-	// set the random seed 
-	SeedRandom( parameters.ints("random_seed") );  
-	
-	/* 
-	   Put any modifications to default cell definition here if you 
-	   want to have "inherited" by other cell types. 
-	   
-	   This is a good place to set default functions. 
-	*/ 
-	
-	initialize_default_cell_definition(); 
-	cell_defaults.phenotype.secretion.sync_to_microenvironment( &microenvironment ); 
-	
+	// set the random seed
+	if (parameters.ints.find_index("random_seed") != -1)
+	{
+		SeedRandom(parameters.ints("random_seed"));
+	}
+
+	/*
+	   Put any modifications to default cell definition here if you
+	   want to have "inherited" by other cell types.
+
+	   This is a good place to set default functions.
+	*/
+
+	initialize_default_cell_definition();
+	cell_defaults.phenotype.secretion.sync_to_microenvironment(&microenvironment);
+
 	cell_defaults.functions.volume_update_function = standard_volume_update_function;
 	cell_defaults.functions.update_velocity = standard_update_cell_velocity;
 
-	cell_defaults.functions.update_migration_bias = NULL; 
-	cell_defaults.functions.update_phenotype = NULL; // update_cell_and_death_parameters_O2_based; 
-	cell_defaults.functions.custom_cell_rule = NULL; 
-	cell_defaults.functions.contact_function = NULL; 
-	
-	cell_defaults.functions.add_cell_basement_membrane_interactions = NULL; 
-	cell_defaults.functions.calculate_distance_to_membrane = NULL; 
-	
-	/*
-	   This parses the cell definitions in the XML config file. 
-	*/
-	
-	initialize_cell_definitions_from_pugixml(); 
+	cell_defaults.functions.update_migration_bias = NULL;
+	cell_defaults.functions.update_phenotype = NULL; // update_cell_and_death_parameters_O2_based;
+	cell_defaults.functions.custom_cell_rule = NULL;
+	cell_defaults.functions.contact_function = NULL;
+
+	cell_defaults.functions.add_cell_basement_membrane_interactions = NULL;
+	cell_defaults.functions.calculate_distance_to_membrane = NULL;
 
 	/*
-	   This builds the map of cell definitions and summarizes the setup. 
+	   This parses the cell definitions in the XML config file.
 	*/
-		
-	build_cell_definitions_maps(); 
+
+	initialize_cell_definitions_from_pugixml();
 
 	/*
-	   This intializes cell signal and response dictionaries 
+	   This builds the map of cell definitions and summarizes the setup.
 	*/
 
-	setup_signal_behavior_dictionaries(); 	
+	build_cell_definitions_maps();
 
 	/*
-       Cell rule definitions 
+	   This intializes cell signal and response dictionaries
 	*/
 
-	intialize_hypothesis_rulesets(); 
+	setup_signal_behavior_dictionaries();
 
-	// parse_rules_from_pugixml(); // for the future 
-	parse_rules_from_parameters(); 
-
-	/* 
-	   Put any modifications to individual cell definitions here. 
-	   
-	   This is a good place to set custom functions. 
-	*/ 
-	
-	cell_defaults.functions.update_phenotype = rule_phenotype_function; // phenotype_function; 
-	cell_defaults.functions.custom_cell_rule = custom_function; 
-	cell_defaults.functions.contact_function = contact_function; 
-
-	// now apply the ruelset function to all cell definitions 
-	for( int n=0 ; n < cell_definitions_by_index.size() ; n++ )
-	{ cell_definitions_by_index[n]->functions.update_phenotype = rule_phenotype_function; }
-	
 	/*
-	   This builds the map of cell definitions and summarizes the setup. 
+	   Cell rule definitions
 	*/
-		
-	// display_cell_definitions( std::cout ); 
 
-	display_hypothesis_rulesets( std::cout );
+	setup_cell_rules();
 
-	save_annotated_detailed_English_rules(); 
-	save_annotated_detailed_English_rules_HTML(); 
-	save_annotated_English_rules(); 
-	save_annotated_English_rules_HTML(); 
+	/*
+	   Put any modifications to individual cell definitions here.
 
-	return; 
+	   This is a good place to set custom functions.
+	*/
+
+	cell_defaults.functions.update_phenotype = phenotype_function;
+	cell_defaults.functions.custom_cell_rule = custom_function;
+	cell_defaults.functions.contact_function = contact_function;
+
+	/*
+	   This builds the map of cell definitions and summarizes the setup.
+	*/
+
+	display_cell_definitions(std::cout);
+
+	return;
 }
 
-void setup_microenvironment( void )
+void setup_microenvironment(void)
 {
-	// set domain parameters 
-	
-	// put any custom code to set non-homogeneous initial conditions or 
-	// extra Dirichlet nodes here. 
-	
-	// initialize BioFVM 
-	
-	initialize_microenvironment(); 	
-	
-	return; 
+	// set domain parameters
+
+	// put any custom code to set non-homogeneous initial conditions or
+	// extra Dirichlet nodes here.
+
+	// std::string mat_filename = parameters.strings("substrate_file");
+
+	// initialize BioFVM
+
+	initialize_microenvironment();
+
+	// read_custom_microenvironment_from_matlab(mat_filename);
+
+	return;
 }
 
-void setup_tissue( void )
+bool read_custom_microenvironment_from_matlab(std::string mat_filename)
 {
-	double Xmin = microenvironment.mesh.bounding_box[0]; 
-	double Ymin = microenvironment.mesh.bounding_box[1]; 
-	double Zmin = microenvironment.mesh.bounding_box[2]; 
+	std::cout << std::endl
+			  << "Attempting to load the microenvironment from " << mat_filename << " ... " << std::endl;
 
-	double Xmax = microenvironment.mesh.bounding_box[3]; 
-	double Ymax = microenvironment.mesh.bounding_box[4]; 
-	double Zmax = microenvironment.mesh.bounding_box[5]; 
-	
-	if( default_microenvironment_options.simulate_2D == true )
+	std::vector<std::vector<double>> mat = read_matlab(mat_filename);
+
+	// row 0 : x
+	// row 1 : y
+	// row 2 : z
+	// row 3 : vol
+	// row 4-n : substrate
+	int num_rows = mat.size();
+	int num_cols = mat[0].size();
+
+	int number_of_mat_voxels = num_cols;
+	int number_of_mat_substrates = num_rows - 3 - 1;
+
+	if (number_of_mat_substrates != microenvironment.number_of_densities())
 	{
-		Zmin = 0.0; 
-		Zmax = 0.0; 
+		std::cout << "Error reading microenvironment from " << mat_filename << "! ";
+		std::cout << "Expected " << microenvironment.number_of_densities() << " substrates but only detected "
+				  << number_of_mat_substrates << std::endl;
+		return false;
 	}
-	
-	double Xrange = Xmax - Xmin; 
-	double Yrange = Ymax - Ymin; 
-	double Zrange = Zmax - Zmin; 
 
-	double Xmiddle = 0.5*(Xmin+Xmax);
-	double Ymiddle = 0.5*(Ymin+Ymax);
-	double Zmiddle = 0.5*(Zmin+Zmax);
-
-	std::vector<double> center = {Xmiddle,Ymiddle,Zmiddle}; 
-
-	double radius = std::min( Xrange, Yrange ); 
-	if( Zrange > microenvironment.mesh.dz - 1e-5 )
-	{ radius = std::min( radius, Zrange ); }
-	radius *= 0.5; 
-	
-	// create some of each type of cell 
-	
-	Cell* pC;
-
-	double r1_default = 0; 
-	double r2_default = radius; 
-
-	std::string optional_parameter_name = "min_position_cells"; 
-	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
-	{ r1_default = parameters.doubles(optional_parameter_name); }
-
-	optional_parameter_name = "max_position_cells"; 
-	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
-	{ r2_default = parameters.doubles(optional_parameter_name); }
-
-	for( int k=0; k < cell_definitions_by_index.size() ; k++ )
+	if (number_of_mat_voxels != microenvironment.number_of_voxels())
 	{
-		Cell_Definition* pCD = cell_definitions_by_index[k]; 
+		std::cout << "Error reading microenvironment from " << mat_filename << "! ";
+		std::cout << "Expected " << microenvironment.number_of_voxels() << " voxels but only detected "
+				  << number_of_mat_voxels << std::endl;
+		return false;
+	}
 
-		int number_of_cells = parameters.ints("number_of_cells"); 
+	std::cout << num_rows << std::endl;
 
-		// optional: number_of_{cell type X} : number of cells of this particular type 
+	std::cout << num_cols << std::endl;
+	int ecm_index = microenvironment.find_density_index("ecm");
+	for (int n = 0; n < number_of_mat_voxels; n++)
+	{
 
-		optional_parameter_name = "number_of_" + pCD->name; 
-		spaces_to_underscore( optional_parameter_name ); 
-		if( parameters.ints.find_index(optional_parameter_name) > -1 )
-		{ number_of_cells = parameters.ints(optional_parameter_name); }
-
-		std::cout << "Placing " << number_of_cells << " cells of type " << pCD->name << " ... " << std::endl; 
-
-		double r1 = r1_default; 
-		optional_parameter_name = "min_position_" + pCD->name; 
-		spaces_to_underscore( optional_parameter_name ); 
-		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
-		{ r1 = parameters.doubles(optional_parameter_name); }
-
-		double r2 = r2_default; 
-		optional_parameter_name = "max_position_" + pCD->name; 
-		spaces_to_underscore( optional_parameter_name ); 
-		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
-		{ r2 = parameters.doubles(optional_parameter_name); }
-
-		for( int n = 0 ; n < number_of_cells ; n++ )
+		std::cout << mat[5][n] << std::endl;
+		for (int k = 4; k < num_rows; k++)
 		{
-			std::vector<double> position; 
-			if( default_microenvironment_options.simulate_2D )
-			{ position = UniformInAnnulus( r1, r2); }
-			else
-			{ position = UniformInShell( r1, r2); }
+			microenvironment(n)[k - 4] = mat[k][n];
+		}
+		std::cout << microenvironment(n) << std::endl;
+		// microenvironment.density_vector(n)[ecm_index] = mat[5][n];
+	}
 
-			position += center; 
-			/*
-			position[0] = Xmin + UniformRandom()*Xrange; 
-			position[1] = Ymin + UniformRandom()*Yrange; 
-			position[2] = Zmin + UniformRandom()*Zrange; 
-			*/
+	std::cout << "done!" << std::endl
+			  << std::endl;
+	return true;
+}
 
-			pC = create_cell( *pCD ); 
-			pC->assign_position( position );
+void setup_tissue(void)
+{
+	double Xmin = microenvironment.mesh.bounding_box[0];
+	double Ymin = microenvironment.mesh.bounding_box[1];
+	double Zmin = microenvironment.mesh.bounding_box[2];
+
+	double Xmax = microenvironment.mesh.bounding_box[3];
+	double Ymax = microenvironment.mesh.bounding_box[4];
+	double Zmax = microenvironment.mesh.bounding_box[5];
+
+	if (default_microenvironment_options.simulate_2D == true)
+	{
+		Zmin = 0.0;
+		Zmax = 0.0;
+	}
+
+	double Xrange = Xmax - Xmin;
+	double Yrange = Ymax - Ymin;
+	double Zrange = Zmax - Zmin;
+
+	// create some of each type of cell
+
+	Cell *pC;
+
+	for (int k = 0; k < cell_definitions_by_index.size(); k++)
+	{
+		Cell_Definition *pCD = cell_definitions_by_index[k];
+		std::cout << "Placing cells of type " << pCD->name << " ... " << std::endl;
+		for (int n = 0; n < parameters.ints("number_of_cells"); n++)
+		{
+			std::vector<double> position = {0, 0, 0};
+			position[0] = Xmin + UniformRandom() * Xrange;
+			position[1] = Ymin + UniformRandom() * Yrange;
+			position[2] = Zmin + UniformRandom() * Zrange;
+
+			pC = create_cell(*pCD);
+			pC->assign_position(position);
 		}
 	}
-	std::cout << std::endl; 
-	
+	std::cout << std::endl;
+
 	// load cells from your CSV file (if enabled)
-	load_cells_from_pugixml(); 	
-	
-	return; 
+	load_cells_from_pugixml();
+
+	return;
 }
 
-std::vector<std::string> my_coloring_function( Cell* pCell )
+std::vector<std::string> my_coloring_function(Cell *pCell)
 {
-	std::vector<std::string> output = paint_by_number_cell_coloring(pCell);
-
-	output[0] = output[2];
-	return output; 
+	return paint_by_number_cell_coloring(pCell);
 }
 
-void phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
-{ return; }
+void phenotype_function(Cell *pCell, Phenotype &phenotype, double dt)
+{
+	return;
+}
 
-void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
-{ return; } 
+void custom_function(Cell *pCell, Phenotype &phenotype, double dt)
+{
+	return;
+}
 
-void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
-{ return; } 
+void contact_function(Cell *pMe, Phenotype &phenoMe, Cell *pOther, Phenotype &phenoOther, double dt)
+{
+	return;
+}
