@@ -38,7 +38,7 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
             df = pd.concat([df, pd.DataFrame([data_conc])])
     # remove replicate output folder
     rmtree( OutputFolder )
-    df.to_csv(SummaryFile, sep='\t', encoding='utf-8')
+    df.to_feather(SummaryFile.replace('.csv','.feather'))
     return
 
 if __name__ == '__main__':
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print('Reference parameters: ', ref_parameters)
 
     # Define the samples for the local sensitivity analysis +- 1%, 5%, 10%, 20%
-    parameterSamples = []
+    parameterSamples = [ref_parameters] # reference value first sample
     for i in range(len(ref_parameters)):
         # change only one parameter at a time
         for var in [-0.01,0.01,-0.05,0.05,-0.1,0.1,-0.2,0.2]:
@@ -65,10 +65,10 @@ if __name__ == '__main__':
 
     # Generate a three list with size NumSimulations = len(Samples) or len(Replicates or len(Parameters)
     Parameters = []; Samples = []; Replicates = []
-    for sampleID in range(parameterSamples.shape[0]):
+    for sampleID in range(len(parameterSamples)):
         for replicateID in np.arange(PhysiCellModel.numReplicates):
             # check if the file already exists
-            if ( os.path.isfile(PhysiCellModel.outputs_folder+'SummaryFile_%06d_%02d.csv'%(sampleID,replicateID)) ) : continue
+            if ( os.path.isfile(PhysiCellModel.outputs_folder+'SummaryFile_%06d_%02d.feather'%(sampleID,replicateID)) ) : continue
             Parameters.append(parameterSamples[sampleID])
             Samples.append(sampleID)
             Replicates.append(replicateID)
