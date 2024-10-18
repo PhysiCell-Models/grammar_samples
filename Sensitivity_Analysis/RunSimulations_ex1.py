@@ -1,5 +1,6 @@
 from mpi4py import MPI 
-from uq_physicell.uq_physicell import PhysiCell_Model, get_rule_index_in_csv
+from uq_physicell.uq_physicell import PhysiCell_Model, get_xml_element_value, get_rule_index_in_csv
+import xml.etree.ElementTree as ET
 import numpy as np
 import pandas as pd
 from shutil import rmtree
@@ -44,32 +45,55 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
 if __name__ == '__main__':
     PhysiCellModel = PhysiCell_Model("Sensitivity_Analysis/ConfigFile.ini", 'model_hypoxia')
     # Define reference values for the parameters
-    ref_parameters = []
+    ref_parameters = {'xml': [], 'rules': []}
+    # Parameters from xml
+    tree = ET.parse(PhysiCellModel.configFile_ref)
+    xml_root = tree.getroot()
+    for key_xml in PhysiCellModel.keys_variable_params:
+        text_elem = get_xml_element_value(xml_root, key_xml)
+        ref_parameters['xml'].append(float(text_elem))
+    # Parameters from rules
     for key_rule, list_rule in PhysiCellModel.parameters_rules.items():
         id_rule = get_rule_index_in_csv(PhysiCellModel.rules, key_rule)
         parameter_rule = key_rule.split(',')[-1]
-        ref_parameters.append(float(PhysiCellModel.rules[id_rule][parameter_rule])*0.8)
-    ref_parameters = np.array(ref_parameters)
-    print('Reference parameters: ', ref_parameters)
+        ref_parameters['rules'].append( float(PhysiCellModel.rules[id_rule][parameter_rule]) )
+    ref_parameters_xml = np.array(ref_parameters['xml'])
+    ref_parameters_rules = np.array(ref_parameters['rules'])
+    print('Reference parameters XML: ', ref_parameters_xml, '\nReference parameters Rules: ', ref_parameters_rules)
 
     # Define the samples for the local sensitivity analysis +- 1%, 5%, 10%, 20%
-    parameterSamples = [ref_parameters] # reference value first sample
-    for i in range(len(ref_parameters)):
+    parameterSamplesXML = [ref_parameters_xml] # reference value first sample
+    parameterSamplesRules = [ref_parameters_rules] # reference value first sample
+    # For XML parameters
+    for i in range(len(ref_parameters_xml)):
         # change only one parameter at a time
         for var in [-0.01,0.01,-0.05,0.05,-0.1,0.1,-0.2,0.2]:
-            sample = ref_parameters.copy()
-            sample[i] = ref_parameters[i]*(1+var)
-            parameterSamples.append(sample)
-    parameterSamples = np.array(parameterSamples)
-    print('Number of samples: ', len(parameterSamples))
+            sample_xml = ref_parameters_xml.copy()
+            sample_xml[i] = ref_parameters_xml[i] * (1 + var)
+            parameterSamplesXML.append(sample_xml)
+            parameterSamplesRules.append(ref_parameters_rules.copy())
+
+    # For Rules parameters
+    for i in range(len(ref_parameters_rules)):
+        # change only one parameter at a time
+        for var in [-0.01,0.01,-0.05,0.05,-0.1,0.1,-0.2,0.2]:
+            sample_rules = ref_parameters_rules.copy()
+            sample_rules[i] = ref_parameters_rules[i] * (1 + var)
+            parameterSamplesRules.append(sample_rules)
+            parameterSamplesXML.append(ref_parameters_xml.copy())
+    
+    # Size of parameterSamples and parameterSamplesRules are the same
+    parameterSamplesXML = np.array(parameterSamplesXML)
+    print('Number of samples: ', len(parameterSamplesXML))
 
     # Generate a three list with size NumSimulations = len(Samples) or len(Replicates or len(Parameters)
-    Parameters = []; Samples = []; Replicates = []
-    for sampleID in range(len(parameterSamples)):
+    ParametersXML = []; ParametersRules = []; Samples = []; Replicates = []
+    for sampleID in range(len(parameterSamplesXML)):
         for replicateID in np.arange(PhysiCellModel.numReplicates):
             # check if the file already exists
             if ( os.path.isfile(PhysiCellModel.outputs_folder+'SummaryFile_%06d_%02d.feather'%(sampleID,replicateID)) ) : continue
-            Parameters.append(parameterSamples[sampleID])
+            ParametersXML.append(parameterSamplesXML[sampleID])
+            ParametersRules.append(parameterSamplesRules[sampleID])
             Samples.append(sampleID)
             Replicates.append(replicateID)
     
@@ -79,6 +103,6 @@ if __name__ == '__main__':
 
     for ind_sim in SplitIndexes[rank]:
         print('Rank: ',rank, ', Simulation: ', ind_sim, ', Sample: ', Samples[ind_sim],', Replicate: ', Replicates[ind_sim])
-        PhysiCellModel.RunModel(Samples[ind_sim], Replicates[ind_sim], Parameters=np.array([]), ParametersRules = Parameters[ind_sim],SummaryFunction=custom_summary_func)
+        PhysiCellModel.RunModel(Samples[ind_sim], Replicates[ind_sim], Parameters=ParametersXML[ind_sim], ParametersRules = ParametersRules[ind_sim],SummaryFunction=custom_summary_func)
 
     MPI.Finalize()
