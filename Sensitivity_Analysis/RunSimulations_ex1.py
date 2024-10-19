@@ -72,7 +72,6 @@ if __name__ == '__main__':
             sample_xml[i] = ref_parameters_xml[i] * (1 + var)
             parameterSamplesXML.append(sample_xml)
             parameterSamplesRules.append(ref_parameters_rules.copy())
-
     # For Rules parameters
     for i in range(len(ref_parameters_rules)):
         # change only one parameter at a time
