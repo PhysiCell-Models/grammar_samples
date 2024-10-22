@@ -66,35 +66,33 @@
 */
 
 #include "../core/PhysiCell.h"
-#include "../modules/PhysiCell_standard_modules.h" 
+#include "../modules/PhysiCell_standard_modules.h"
 
 #include <typeinfo>
 
-#include "./PhysiCell_rules.h"
-
-using namespace BioFVM; 
+using namespace BioFVM;
 using namespace PhysiCell;
 
-// setup functions to help us along 
+// setup functions to help us along
 
-void create_cell_types( void );
-void setup_tissue( void ); 
+void create_cell_types(void);
+void setup_tissue(void);
 
-// set up the BioFVM microenvironment 
-void setup_microenvironment( void ); 
+// set up the BioFVM microenvironment
+void setup_microenvironment(void);
 
-// custom pathology coloring function 
+// custom pathology coloring function
 
-std::vector<std::string> my_coloring_function( Cell* );
+std::vector<std::string> my_coloring_function(Cell *);
 
-// custom functions can go here 
+// custom functions can go here
 
-void phenotype_function( Cell* pCell, Phenotype& phenotype, double dt );
-void custom_function( Cell* pCell, Phenotype& phenotype , double dt );
+void phenotype_function(Cell *pCell, Phenotype &phenotype, double dt);
+void custom_function(Cell *pCell, Phenotype &phenotype, double dt);
 
-void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt ); 
+void contact_function(Cell *pMe, Phenotype &phenoMe, Cell *pOther, Phenotype &phenoOther, double dt);
 
-void set_Dirichlet_boundary( std::string substrate , double value , bool activated ); 
-void turn_on_systemic_therapy( std::string substrate, double time_on, double time_off , double dose ); 
+void set_Dirichlet_boundary(std::string substrate, double value, bool activated);
+void turn_on_systemic_therapy(std::string substrate, double time_on, double time_off, double dose);
 
-void turn_on_injected_therapy( std::string substrate, std::vector<double> position, double time_on, double time_off, double dose );
+void turn_on_injected_therapy(std::string substrate, std::vector<double> position, double time_on, double time_off, double dose);
