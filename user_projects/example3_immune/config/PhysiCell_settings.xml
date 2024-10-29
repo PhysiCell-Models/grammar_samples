@@ -10,10 +10,10 @@
     </cell_rules>
 
     <domain>
-        <x_min>-750</x_min>
-        <x_max>750</x_max>
-        <y_min>-750</y_min>
-        <y_max>750</y_max>
+        <x_min>-400</x_min>
+        <x_max>400</x_max>
+        <y_min>-400</y_min>
+        <y_max>400</y_max>
         <z_min>-10</z_min>
         <z_max>10</z_max>
         <dx>20</dx>
@@ -23,7 +23,7 @@
     </domain>
 
     <overall>
-        <max_time units="min">7200</max_time>
+        <max_time units="min">7200.0</max_time>
         <time_units>min</time_units>
         <space_units>micron</space_units>
         <dt_diffusion units="min">0.01</dt_diffusion>
@@ -44,7 +44,7 @@
         <SVG>
             <interval units="min">60</interval>
             <enable>true</enable>
-            <plot_substrate enabled="true" limits="true">
+            <plot_substrate enabled="false" limits="false">
                 <substrate>oxygen</substrate>
                 <min_conc>0</min_conc>
                 <max_conc>38</max_conc>
@@ -144,7 +144,7 @@
             <phenotype>
                 <cycle code="5" name="live">
                     <phase_transition_rates units="1/min">
-                        <rate start_index="0" end_index="0" fixed_duration="false">0.00072</rate>
+                        <rate start_index="0" end_index="0" fixed_duration="false">0.0</rate>
                     </phase_transition_rates>
                     <standard_asymmetric_division enabled="False">
                         <asymmetric_division_probability name="tumor" units="dimensionless">1.0</asymmetric_division_probability>
@@ -358,7 +358,7 @@
                     <relative_rupture_volume units="dimensionless">2</relative_rupture_volume>
                 </volume>
                 <mechanics>
-                    <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
+                    <cell_cell_adhesion_strength units="micron/min">0</cell_cell_adhesion_strength>
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
@@ -416,7 +416,7 @@
                     <substrate name="pro-inflammatory factor">
                         <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">1.0</secretion_target>
-                        <uptake_rate units="1/min">0.0</uptake_rate>
+                        <uptake_rate units="1/min">1</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="anti-inflammatory factor">
@@ -521,7 +521,7 @@
                     <relative_rupture_volume units="dimensionless">2</relative_rupture_volume>
                 </volume>
                 <mechanics>
-                    <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
+                    <cell_cell_adhesion_strength units="micron/min">0</cell_cell_adhesion_strength>
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
@@ -619,7 +619,7 @@
                     </transformation_rates>
                 </cell_transformations>
                 <cell_integrity>
-                    <damage_rate units="1/min">1.0</damage_rate>
+                    <damage_rate units="1/min">0</damage_rate>
                     <damage_repair_rate units="1/min">0.0</damage_repair_rate>
                 </cell_integrity>
             </phenotype>
