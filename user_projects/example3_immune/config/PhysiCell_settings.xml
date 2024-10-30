@@ -144,7 +144,7 @@
             <phenotype>
                 <cycle code="5" name="live">
                     <phase_transition_rates units="1/min">
-                        <rate start_index="0" end_index="0" fixed_duration="false">0.0</rate>
+                        <rate start_index="0" end_index="0" fixed_duration="false">7.2e-4</rate>
                     </phase_transition_rates>
                     <standard_asymmetric_division enabled="False">
                         <asymmetric_division_probability name="tumor" units="dimensionless">1.0</asymmetric_division_probability>
@@ -416,7 +416,7 @@
                     <substrate name="pro-inflammatory factor">
                         <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">1.0</secretion_target>
-                        <uptake_rate units="1/min">1</uptake_rate>
+                        <uptake_rate units="1/min">0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="anti-inflammatory factor">
@@ -604,7 +604,7 @@
                         <attack_rate name="CD8 T cell" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <attack_damage_rate units="1/min">1.0</attack_damage_rate>
-                    <attack_duration units="min">0.1</attack_duration>
+                    <attack_duration units="min">15</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="tumor" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophage" units="1/min">0.0</fusion_rate>

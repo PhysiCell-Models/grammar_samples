@@ -1,7 +1,7 @@
-tumor,oxygen,increases,cycle entry,7.2e-04,21.5,4,0
+tumor,oxygen,increases,cycle entry,7.2e-03,21.5,4,0
 tumor,pressure,decreases,cycle entry,0,0.25,3,0
 tumor,oxygen,decreases,necrosis,0,3.75,8,0
-tumor,damage,increases,apoptosis,7.2e-04,180,2,0
+tumor,damage,increases,apoptosis,5.31667e-03,45,10,0
 tumor,dead,increases,debris secretion,0.017,0.5,10,1
 macrophage,oxygen,increases,pro-inflammatory factor secretion,10,5,4,0
 macrophage,oxygen,decreases,anti-inflammatory factor secretion,0,5,4,0
