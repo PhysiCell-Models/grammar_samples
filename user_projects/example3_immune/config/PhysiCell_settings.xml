@@ -10,10 +10,10 @@
     </cell_rules>
 
     <domain>
-        <x_min>-400</x_min>
-        <x_max>400</x_max>
-        <y_min>-400</y_min>
-        <y_max>400</y_max>
+        <x_min>-750</x_min>
+        <x_max>750</x_max>
+        <y_min>-750</y_min>
+        <y_max>750</y_max>
         <z_min>-10</z_min>
         <z_max>10</z_max>
         <dx>20</dx>
@@ -427,8 +427,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <apoptotic_phagocytosis_rate units="1/min">0.01</apoptotic_phagocytosis_rate>
-                    <necrotic_phagocytosis_rate units="1/min">0.01</necrotic_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0.1</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0.017</necrotic_phagocytosis_rate>
                     <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
