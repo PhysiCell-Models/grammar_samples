@@ -43,7 +43,7 @@ def initial_condition_random_annulus(fraction=1.0, fileName=None):
         return csv_array
 
 def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, ReplicateID):
-    mcds_ts = pcdl.TimeSeries(OutputFolder, microenv=True, graph=False, settingxml=None, verbose=False)
+    mcds_ts = pcdl.TimeSeries(OutputFolder, microenv=True, graph=False, settingxml=None, physiboss=False, verbose=False)
     for mcds in mcds_ts.get_mcds_list():
         df_cell = mcds.get_cell_df() 
         df_tumor_live = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['dead'] == False) ]
