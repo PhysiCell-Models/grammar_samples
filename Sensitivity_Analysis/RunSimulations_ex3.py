@@ -47,17 +47,19 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
     for mcds in mcds_ts.get_mcds_list():
         df_cell = mcds.get_cell_df() 
         df_tumor_live = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['dead'] == False) ]
-        df_tumor_dead = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['dead'] == True) ]
+        df_tumor_apop = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['cycle_model'] == 'apoptosis_death_model') ]
+        df_tumor_nec = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['cycle_model'] == 'necrosis_death_model') ]
         df_mac = df_cell[ (df_cell['cell_type'] == 'macrophage') ]
-        df_cd8 = df_cell[ (df_cell['cell_type'] == 'CD8 T cell') ]
+        df_cd8 = df_cell[ (df_cell['cell_type'] == 'CD8_T_cell') ]
         # distance from the center (0,0,0)
         distances_tumor_live = np.sqrt( (df_tumor_live['position_x'])**2 + (df_tumor_live['position_y'])**2 + (df_tumor_live['position_z'])**2 )
-        distances_tumor_dead = np.sqrt( (df_tumor_dead['position_x'])**2 + (df_tumor_dead['position_y'])**2 + (df_tumor_dead['position_z'])**2 )
+        distances_tumor_apop = np.sqrt( (df_tumor_apop['position_x'])**2 + (df_tumor_apop['position_y'])**2 + (df_tumor_apop['position_z'])**2 )
+        distances_tumor_nec = np.sqrt( (df_tumor_nec['position_x'])**2 + (df_tumor_nec['position_y'])**2 + (df_tumor_nec['position_z'])**2 )
         distances_mac = np.sqrt( (df_mac['position_x'])**2 + (df_mac['position_y'])**2 + (df_mac['position_z'])**2 )
         distances_cd8 = np.sqrt( (df_cd8['position_x'])**2 + (df_cd8['position_y'])**2 + (df_cd8['position_z'])**2 )
         data = {'time': mcds.get_time(), 'replicate': ReplicateID, 'sample': SampleID, 'runtime': mcds.get_runtime(),
-                'tumor_live': len(df_tumor_live), 'tumor_dead': len(df_tumor_dead), 'macrophage': len(df_mac), 'CD8 T cell': len(df_cd8),
-                'dist_tumor_live': distances_tumor_live.to_numpy(), 'dist_tumor_dead': distances_tumor_dead.to_numpy(),
+                'tumor_live': len(df_tumor_live), 'tumor_apop': len(df_tumor_apop), 'tumor_nec': len(df_tumor_nec), 'macrophage': len(df_mac), 'CD8 T cell': len(df_cd8),
+                'dist_tumor_live': distances_tumor_live.to_numpy(), 'dist_tumor_apop': distances_tumor_apop.to_numpy(), 'dist_tumor_nec': distances_tumor_nec.to_numpy(),
                 'dist_mac': distances_mac.to_numpy(), 'dist_cd8': distances_cd8.to_numpy()
                 }      
         data_conc = {**data,**dic_params} 
