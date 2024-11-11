@@ -103,7 +103,7 @@ int main( int argc, char* argv[] )
 	{ exit(-1); }
 	
 	// copy config file to output directry 
-	system( copy_command ); 
+	system( copy_command );  
 	
 	// OpenMP setup
 	omp_set_num_threads(PhysiCell_settings.omp_num_threads);
@@ -124,7 +124,6 @@ int main( int argc, char* argv[] )
 	/* Users typically start modifying here. START USERMODS */ 
 	
 	create_cell_types();
-	
 	setup_tissue();
 
 	/* Users typically stop modifying here. END USERMODS */ 

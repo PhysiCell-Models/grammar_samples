@@ -69,12 +69,6 @@
 
 void create_cell_types( void )
 {
-	// set the random seed 
-	if (parameters.ints.find_index("random_seed") != -1)
-	{
-		SeedRandom(parameters.ints("random_seed"));
-	}
-	
 	/* 
 	   Put any modifications to default cell definition here if you 
 	   want to have "inherited" by other cell types. 
@@ -92,51 +86,51 @@ void create_cell_types( void )
 	cell_defaults.functions.update_phenotype = NULL; // update_cell_and_death_parameters_O2_based; 
 	cell_defaults.functions.custom_cell_rule = NULL; 
 	cell_defaults.functions.contact_function = NULL; 
-	
+
 	cell_defaults.functions.add_cell_basement_membrane_interactions = NULL; 
 	cell_defaults.functions.calculate_distance_to_membrane = NULL; 
-	
+
 	/*
 	   This parses the cell definitions in the XML config file. 
 	*/
-	
-	initialize_cell_definitions_from_pugixml(); 
+
+	initialize_cell_definitions_from_pugixml();
 
 	/*
-	   This builds the map of cell definitions and summarizes the setup. 
+	   This builds the map of cell definitions and summarizes the setup.
 	*/
-		
-	build_cell_definitions_maps(); 
+
+	build_cell_definitions_maps();
 
 	/*
-	   This intializes cell signal and response dictionaries 
+	   This intializes cell signal and response dictionaries
 	*/
 
-	setup_signal_behavior_dictionaries(); 	
+	setup_signal_behavior_dictionaries();
 
 	/*
-       Cell rule definitions 
+	   Cell rule definitions
 	*/
 
-	setup_cell_rules(); 
+	setup_cell_rules();
 
-	/* 
-	   Put any modifications to individual cell definitions here. 
-	   
-	   This is a good place to set custom functions. 
-	*/ 
-	
-	cell_defaults.functions.update_phenotype = phenotype_function; 
-	cell_defaults.functions.custom_cell_rule = custom_function; 
-	cell_defaults.functions.contact_function = contact_function; 
-	
 	/*
-	   This builds the map of cell definitions and summarizes the setup. 
+	   Put any modifications to individual cell definitions here.
+
+	   This is a good place to set custom functions.
 	*/
-		
-	display_cell_definitions( std::cout ); 
-	
-	return; 
+
+	cell_defaults.functions.update_phenotype = phenotype_function;
+	cell_defaults.functions.custom_cell_rule = custom_function;
+	cell_defaults.functions.contact_function = contact_function;
+
+	/*
+	   This builds the map of cell definitions and summarizes the setup.
+	*/
+
+	display_cell_definitions(std::cout);
+
+	return;
 }
 
 void setup_microenvironment( void )
@@ -153,47 +147,101 @@ void setup_microenvironment( void )
 	return; 
 }
 
-void setup_tissue( void )
-{
-	double Xmin = microenvironment.mesh.bounding_box[0]; 
-	double Ymin = microenvironment.mesh.bounding_box[1]; 
-	double Zmin = microenvironment.mesh.bounding_box[2]; 
 
-	double Xmax = microenvironment.mesh.bounding_box[3]; 
-	double Ymax = microenvironment.mesh.bounding_box[4]; 
-	double Zmax = microenvironment.mesh.bounding_box[5]; 
-	
-	if( default_microenvironment_options.simulate_2D == true )
+void setup_tissue(void)
+{
+	double Xmin = microenvironment.mesh.bounding_box[0];
+	double Ymin = microenvironment.mesh.bounding_box[1];
+	double Zmin = microenvironment.mesh.bounding_box[2];
+
+	double Xmax = microenvironment.mesh.bounding_box[3];
+	double Ymax = microenvironment.mesh.bounding_box[4];
+	double Zmax = microenvironment.mesh.bounding_box[5];
+
+	if (default_microenvironment_options.simulate_2D == true)
 	{
-		Zmin = 0.0; 
-		Zmax = 0.0; 
+		Zmin = 0.0;
+		Zmax = 0.0;
 	}
-	
-	double Xrange = Xmax - Xmin; 
-	double Yrange = Ymax - Ymin; 
-	double Zrange = Zmax - Zmin; 
+
+	double Xrange = Xmax - Xmin;
+	double Yrange = Ymax - Ymin;
+	double Zrange = Zmax - Zmin;
+
+	double Xmiddle = 0.5*(Xmin+Xmax);
+	double Ymiddle = 0.5*(Ymin+Ymax);
+	double Zmiddle = 0.5*(Zmin+Zmax);
+
+	std::vector<double> center = {Xmiddle,Ymiddle,Zmiddle}; 
+
+	double radius = std::min( Xrange, Yrange ); 
+	if( Zrange > microenvironment.mesh.dz - 1e-5 )
+	{ radius = std::min( radius, Zrange ); }
+	radius *= 0.5; 
 	
 	// create some of each type of cell 
 	
 	Cell* pC;
-	
+
+	double r1_default = 0; 
+	double r2_default = radius; 
+
+	std::string optional_parameter_name = "min_position_cells"; 
+	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+	{ r1_default = parameters.doubles(optional_parameter_name); }
+
+	optional_parameter_name = "max_position_cells"; 
+	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+	{ r2_default = parameters.doubles(optional_parameter_name); }
+
 	for( int k=0; k < cell_definitions_by_index.size() ; k++ )
 	{
 		Cell_Definition* pCD = cell_definitions_by_index[k]; 
-		std::cout << "Placing cells of type " << pCD->name << " ... " << std::endl; 
-		for( int n = 0 ; n < parameters.ints("number_of_cells") ; n++ )
+
+		int number_of_cells = parameters.ints("number_of_cells"); 
+
+		// optional: number_of_{cell type X} : number of cells of this particular type 
+
+		optional_parameter_name = "number_of_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.ints.find_index(optional_parameter_name) > -1 )
+		{ number_of_cells = parameters.ints(optional_parameter_name); }
+
+		std::cout << "Placing " << number_of_cells << " cells of type " << pCD->name << " ... " << std::endl; 
+
+		double r1 = r1_default; 
+		optional_parameter_name = "min_position_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+		{ r1 = parameters.doubles(optional_parameter_name); }
+
+		double r2 = r2_default; 
+		optional_parameter_name = "max_position_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+		{ r2 = parameters.doubles(optional_parameter_name); }
+
+		for( int n = 0 ; n < number_of_cells ; n++ )
 		{
-			std::vector<double> position = {0,0,0}; 
+			std::vector<double> position; 
+			if( default_microenvironment_options.simulate_2D )
+			{ position = UniformInAnnulus( r1, r2); }
+			else
+			{ position = UniformInShell( r1, r2); }
+
+			position += center; 
+			/*
 			position[0] = Xmin + UniformRandom()*Xrange; 
 			position[1] = Ymin + UniformRandom()*Yrange; 
 			position[2] = Zmin + UniformRandom()*Zrange; 
-			
+			*/
+
 			pC = create_cell( *pCD ); 
 			pC->assign_position( position );
 		}
 	}
 	std::cout << std::endl; 
-	
+
 	// load cells from your CSV file (if enabled)
 	load_cells_from_pugixml();
 	set_parameters_from_distributions();
@@ -212,3 +260,163 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
 { return; } 
+
+void turn_on_systemic_therapy( std::string substrate, double time_on, double time_off , double dose )
+{
+
+	static bool therapy_on = false; 
+	static double tol = 0.001; 
+
+	if( PhysiCell_globals.current_time >= time_on - tol && therapy_on == false )
+	{ 
+		therapy_on = true; 
+		set_Dirichlet_boundary(substrate,dose,true); 
+	}
+
+	if( PhysiCell_globals.current_time >= time_off - tol && therapy_on == true )
+	{ 
+		therapy_on = false; 
+		set_Dirichlet_boundary(substrate,dose,false); 
+	}
+
+	return; 
+}
+
+void set_Dirichlet_boundary( std::string substrate , double value , bool activated )
+{
+	static int substrate_index = microenvironment.find_density_index( substrate ); 
+
+	// add the Dirichlet nodes in the right places 
+	// now, go in and set the values 
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int I = 0; 
+		// set Dirichlet conditions along the xmin outer edges 
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int voxel_index = microenvironment.voxel_index(I,j,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+		
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int I = microenvironment.mesh.x_coordinates.size()-1;; 
+		// set Dirichlet conditions along the xmax outer edges 
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int voxel_index = microenvironment.voxel_index(I,j,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+		
+
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int J = 0; // microenvironment.mesh.x_coordinates.size()-1;; 
+		// set Dirichlet conditions along the ymin outer edges 
+		for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+		{
+			int voxel_index = microenvironment.voxel_index(i,J,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+
+	for( unsigned int k=0 ; k < microenvironment.mesh.z_coordinates.size() ; k++ )
+	{
+		int J = microenvironment.mesh.y_coordinates.size()-1;; 
+		// set Dirichlet conditions along the ymin outer edges 
+		for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+		{
+			int voxel_index = microenvironment.voxel_index(i,J,k); 
+
+			if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+			{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+			microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+			microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+		}
+	}
+
+	// if not 2D:
+	if( default_microenvironment_options.simulate_2D == false )
+	{
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int K = 0; // microenvironment.mesh.z_coordinates.size()-1;; 
+			// set Dirichlet conditions along the ymin outer edges 
+			for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+			{
+				int voxel_index = microenvironment.voxel_index(i,j,K); 
+
+				if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+				{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+				microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+				microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+			}
+		}
+		
+
+		for( unsigned int j=0 ; j < microenvironment.mesh.y_coordinates.size() ; j++ )
+		{
+			int K = microenvironment.mesh.z_coordinates.size()-1;; 
+			// set Dirichlet conditions along the ymin outer edges 
+			for( unsigned int i=0 ; i < microenvironment.mesh.x_coordinates.size() ; i++ )
+			{
+				int voxel_index = microenvironment.voxel_index(i,j,K); 
+
+				if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && activated == true )
+				{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+				microenvironment.update_dirichlet_node(voxel_index,substrate_index,value); 
+				microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,activated); 
+			}
+		}
+		
+	}
+	return; 		
+}
+
+void turn_on_injected_therapy( std::string substrate, std::vector<double> position, double time_on, double time_off, double dose )
+{
+	int substrate_index = microenvironment.find_density_index( substrate ); 
+	int voxel_index = microenvironment.nearest_voxel_index(position); 
+
+	static bool therapy_on = false; 
+	static double tol = 0.001; 
+
+	if( PhysiCell_globals.current_time >= time_on - tol && therapy_on == false )
+	{ 
+		therapy_on = true; 
+
+		if( microenvironment.mesh.voxels[voxel_index].is_Dirichlet == false && therapy_on == true )
+		{ microenvironment.mesh.voxels[voxel_index].is_Dirichlet=true; }
+		microenvironment.update_dirichlet_node(voxel_index,substrate_index,dose); 
+		microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,true); 
+
+	}
+
+	if( PhysiCell_globals.current_time >= time_off - tol && therapy_on == true )
+	{ 
+		therapy_on = false; 
+
+		microenvironment.update_dirichlet_node(voxel_index,substrate_index,dose); 
+		microenvironment.set_substrate_dirichlet_activation(substrate_index,voxel_index,false); 
+
+	}
+
+}
