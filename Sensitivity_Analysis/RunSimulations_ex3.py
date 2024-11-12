@@ -51,6 +51,9 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
         df_tumor_nec = df_cell[ (df_cell['cell_type'] == 'tumor') & (df_cell['cycle_model'] == 'necrosis_death_model') ]
         df_mac = df_cell[ (df_cell['cell_type'] == 'macrophage') ]
         df_cd8 = df_cell[ (df_cell['cell_type'] == 'CD8_T_cell') ]
+        # pro- and anti-inflammatory secretion rates
+        mac_pif_secretion = df_mac['pro-inflammatory_factor_secretion_rates'].to_numpy()
+        mac_aif_secretion = df_mac['anti-inflammatory_factor_secretion_rates'].to_numpy()
         # distance from the center (0,0,0)
         distances_tumor_live = np.sqrt( (df_tumor_live['position_x'])**2 + (df_tumor_live['position_y'])**2 + (df_tumor_live['position_z'])**2 )
         distances_tumor_apop = np.sqrt( (df_tumor_apop['position_x'])**2 + (df_tumor_apop['position_y'])**2 + (df_tumor_apop['position_z'])**2 )
@@ -60,7 +63,7 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
         data = {'time': mcds.get_time(), 'replicate': ReplicateID, 'sample': SampleID, 'runtime': mcds.get_runtime(),
                 'tumor_live': len(df_tumor_live), 'tumor_apop': len(df_tumor_apop), 'tumor_nec': len(df_tumor_nec), 'macrophage': len(df_mac), 'CD8 T cell': len(df_cd8),
                 'dist_tumor_live': distances_tumor_live.to_numpy(), 'dist_tumor_apop': distances_tumor_apop.to_numpy(), 'dist_tumor_nec': distances_tumor_nec.to_numpy(),
-                'dist_mac': distances_mac.to_numpy(), 'dist_cd8': distances_cd8.to_numpy()
+                'dist_mac': distances_mac.to_numpy(), 'dist_cd8': distances_cd8.to_numpy(), 'mac_pif_secretion': mac_pif_secretion, 'mac_aif_secretion': mac_aif_secretion
                 }      
         data_conc = {**data,**dic_params} 
         if ( mcds.get_time() == 0 ): 
