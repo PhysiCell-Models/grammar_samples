@@ -52,8 +52,8 @@ def custom_summary_func(OutputFolder,SummaryFile, dic_params, SampleID, Replicat
         df_mac = df_cell[ (df_cell['cell_type'] == 'macrophage') ]
         df_cd8 = df_cell[ (df_cell['cell_type'] == 'CD8_T_cell') ]
         # pro- and anti-inflammatory secretion rates
-        mac_pif_secretion = df_mac['pro-inflammatory_factor_secretion_rates'].to_numpy()
-        mac_aif_secretion = df_mac['anti-inflammatory_factor_secretion_rates'].to_numpy()
+        mac_pif_secretion = df_mac['pro-inflammatory_factor_secretion_rates'].mean()
+        mac_aif_secretion = df_mac['anti-inflammatory_factor_secretion_rates'].mean()
         # distance from the center (0,0,0)
         distances_tumor_live = np.sqrt( (df_tumor_live['position_x'])**2 + (df_tumor_live['position_y'])**2 + (df_tumor_live['position_z'])**2 )
         distances_tumor_apop = np.sqrt( (df_tumor_apop['position_x'])**2 + (df_tumor_apop['position_y'])**2 + (df_tumor_apop['position_z'])**2 )
