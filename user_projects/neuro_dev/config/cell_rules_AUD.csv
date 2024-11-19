@@ -1,0 +1,13 @@
+rgc,contact with apical,decreases,migration speed,0,0.5,8,0
+rgc,time,decreases,cycle entry,0.00085,4808,10,0
+rgc,time,increases,asymmetric division to layer_6,1.0,1440,256,0
+rgc,time,decreases,asymmetric division to layer_6,0.0,3309,256,0
+rgc,time,increases,asymmetric division to layer_5,1.0,3309,256,0
+rgc,time,decreases,asymmetric division to layer_5,0.0,7068,256,0
+rgc,time,increases,asymmetric division to layer_4,1.0,7068,256,0
+rgc,time,decreases,asymmetric division to layer_4,0.0,8638,256,0
+rgc,time,increases,asymmetric division to layer_3,1.0,8638,256,0
+rgc,time,decreases,asymmetric division to layer_3,0.0,10799,256,0
+rgc,time,increases,asymmetric division to layer_2,1.0,10799,256,0
+rgc,time,decreases,asymmetric division to layer_2,0.0,12960,256,0
+rgc,time,increases,apoptosis,1.0,12960,256,0
