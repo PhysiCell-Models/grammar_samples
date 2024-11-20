@@ -3,8 +3,8 @@ tumor,pressure,decreases,cycle entry,0,0.25,3,0
 tumor,oxygen,decreases,necrosis,0,3.75,8,0
 tumor,damage,increases,apoptosis,0.023,45,16,0
 tumor,dead,increases,debris secretion,0.017,0.1,10,1
-macrophage,oxygen,increases,pro-inflammatory factor secretion,10,5,4,0
-macrophage,oxygen,decreases,anti-inflammatory factor secretion,0,5,4,0
+macrophage,oxygen,increases,pro-inflammatory factor secretion,10,12,16,0
+macrophage,oxygen,decreases,anti-inflammatory factor secretion,0,12,16,0
 CD8 T cell,anti-inflammatory factor,decreases,attack tumor,0,0.5,8,0
 CD8 T cell,pro-inflammatory factor,increases,attack tumor,1.0,0.5,8,0
 CD8 T cell,anti-inflammatory factor,decreases,migration speed,0,0.5,8,0
