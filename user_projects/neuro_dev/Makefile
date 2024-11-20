@@ -184,15 +184,17 @@ reset:
 	cp ./config/PhysiCell_settings-backup.xml ./config/PhysiCell_settings.xml 
 	touch ./config/empty.csv
 	rm -f ./config/*.csv
+	rm -f ./config/PhysiCell_settings_AUD.xml ./config/PhysiCell_settings_SOM.xml
 	
 clean:
 	rm -f *.o
 	rm -f $(PROGRAM_NAME)*
 	
 data-cleanup:
-	rm -rf ./output
-	mkdir ./output
-	touch ./output/empty.txt
+	echo "Cleaning up data files for $(REGION). Set the region (AUD or SOM) with, e.g., make data-cleanup REGION=SOM"
+	rm -rf $(OUTPUT)
+	mkdir $(OUTPUT)
+	touch $(OUTPUT)/empty.txt
 	
 # archival 
 	
@@ -222,7 +224,8 @@ untar:
 # easier animation 
 
 FRAMERATE := 24
-OUTPUT := output
+REGION := AUD
+OUTPUT := outputs/neuro_dev/$(REGION)
 
 jpeg: 
 	@magick identify -format "%h" $(OUTPUT)/initial.svg > __H.txt 

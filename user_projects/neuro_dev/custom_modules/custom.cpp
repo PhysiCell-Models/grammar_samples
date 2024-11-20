@@ -132,16 +132,12 @@ void create_cell_types(void)
 	find_cell_definition( "layer_4" )->functions.update_phenotype = migrating_phenotype_function;
 	find_cell_definition( "layer_3" )->functions.update_phenotype = migrating_phenotype_function;
 	find_cell_definition( "layer_2" )->functions.update_phenotype = migrating_phenotype_function;
-	find_cell_definition( "layer_1" )->functions.update_phenotype = migrating_phenotype_function;
-	find_cell_definition( "interneuron" )->functions.update_phenotype = migrating_phenotype_function;
 	
 	find_cell_definition( "layer_6" )->functions.custom_cell_rule = custom_function;
 	find_cell_definition( "layer_5" )->functions.custom_cell_rule = custom_function;
 	find_cell_definition( "layer_4" )->functions.custom_cell_rule = custom_function;
 	find_cell_definition( "layer_3" )->functions.custom_cell_rule = custom_function;
 	find_cell_definition( "layer_2" )->functions.custom_cell_rule = custom_function;
-	find_cell_definition( "layer_1" )->functions.custom_cell_rule = custom_function;
-	find_cell_definition( "interneuron" )->functions.custom_cell_rule = custom_function;
 	find_cell_definition( "pial" )->functions.custom_cell_rule = pial_function;
 
 	/*

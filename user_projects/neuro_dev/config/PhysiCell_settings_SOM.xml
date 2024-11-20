@@ -36,7 +36,7 @@
     </parallel>
 
     <save>
-        <folder>output</folder>
+        <folder>outputs/neuro_dev/SOM</folder>
         <full_data>
             <interval units="min">60</interval>
             <enable>true</enable>
