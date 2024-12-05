@@ -1,0 +1,307 @@
+---
+title: "TME_simulation_target_classification_PengSteele"
+author: "Jacob Mitchell"
+date: "2024-10-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(Seurat)
+library(tidyr)
+library(ggplot2)
+
+set.seed(123)
+sessionInfo()
+
+result_dir <- "experimental_data_analysis/PDAC_TME_cell_classification/processed_data/TME_simulation_target_classification_PengSteele"
+if(!dir.exists(result_dir)){dir.create(result_dir, recursive = TRUE)}
+figure_dir <- "experimental_data_analysis/PDAC_TME_cell_classification/figures/TME_simulation_target_classification_PengSteele"
+if(!dir.exists(figure_dir)){dir.create(figure_dir, recursive = TRUE)}
+```
+
+```{r}
+# using the seurat object for PDAC Atlas cell type deconvolution as of 12/20/22
+seurat <- readRDS("experimental_data_analysis/PDAC_TME_cell_classification/Intermediate_Seur_Object_celltyperef.rds")
+# subset to immune cells and cancer cells from Steele et al
+simulation_cells <- c("Activated_CD4", "B cell", "CD4", "CD8", "Effector_CD8", "Epithelial_cancer", "Macrophage", "Mast", "Neutrophil", "NK/CTL", "T cell", "Treg cell")
+seurat <- seurat[
+  ,seurat$final_celltype %in% simulation_cells & 
+    (seurat$manuscript %in% c("Steele", "Peng"))
+]
+seurat <- NormalizeData(seurat)
+seurat <- FindVariableFeatures(seurat)
+seurat <- ScaleData(seurat)
+seurat <- RunPCA(seurat)
+```
+
+```{r}
+seurat <- RunUMAP(seurat, reduction = "pca", dims = 1:25)
+pl_immune <- DimPlot(seurat, red = "umap", group.by = "final_celltype")
+print(pl_immune)
+ggsave(plot = pl_immune, filename = paste0(figure_dir, "/umap_", "final_celltype", ".png"),
+         width = unit(6,"in"), height = unit(6,"in"), dpi = 300)
+cell_types <- unique(seurat$final_celltype)
+```
+
+```{r}
+simulation_targets <- c("PDCD1", "CD274", "TNFRSF9")
+targets <- unique(c(simulation_targets))
+
+for(t in targets){
+  pl <- FeaturePlot(seurat, red = "umap", features = t)
+  print(pl)
+  ggsave(plot = pl, filename = paste0(figure_dir, "/umap_", t, ".png"),
+         width = unit(6,"in"), height = unit(6,"in"), dpi = 300)
+}
+# absolute count of cells with non-zero expression of each marker
+marker_expr_df <- data.frame("marker" = targets)
+marker_expr_df$total_cell_count <- sapply(
+  marker_expr_df$marker,
+  FUN = function(x){sum(seurat[["originalexp"]]@data[c(x),] > 0)}
+)
+# counts of expressing cells in each cell type
+for(cell in cell_types){
+  marker_expr_df[[paste0(cell, "_cell_count")]] <- sapply(
+    marker_expr_df$marker,
+    FUN = function(x){
+      sum(seurat[["originalexp"]]@data[c(x),seurat$final_celltype == cell] > 0)
+    }
+  )
+}
+
+# establish a threshold of expression between high and low for each marker as
+# the median of expression in cells with non-zero expression
+marker_expr_df$hi_expr_threshold <- sapply(
+  marker_expr_df$marker,
+  FUN = function(x){
+    nonZeroExpr <- seurat[["originalexp"]]@data[c(x),] > 0
+    return(median(seurat[["originalexp"]]@data[c(x), nonZeroExpr]))
+  }
+)
+# count cells with high expression
+for(cell in cell_types){
+  marker_expr_df[[paste0(cell, "_highExpr_count")]] <- sapply(
+    marker_expr_df$marker,
+    FUN = function(x){
+      thresh <- marker_expr_df[marker_expr_df$marker == x, c("hi_expr_threshold")]
+      sum(seurat[["originalexp"]]@data[c(x),seurat$final_celltype == cell] > thresh)
+    }
+  )
+}
+```
+
+```{r}
+# Add classification for high expression to meta_data
+classify_high_expression <- function(seurat, marker, threshold){
+  high_expr <- seurat[["originalexp"]]@data[c(marker),] > threshold
+  return(ifelse(high_expr, paste0(marker, "_high"), paste0(marker, "_low")))
+}
+for(t in targets){
+  seurat@meta.data[[paste0(t, "_class")]] <-
+    classify_high_expression(
+      seurat = seurat,
+      marker = t,
+      threshold = marker_expr_df[marker_expr_df$marker == t, c("hi_expr_threshold")]
+    )
+  pl <- DimPlot(seurat, red = "umap", group.by = paste0(t, "_class"))
+  print(pl)
+  ggsave(plot = pl, filename = paste0(figure_dir, 
+                                      "/umap_", paste0(t, "_class"), ".png"),
+         width = unit(6,"in"), height = unit(6,"in"), dpi = 300)
+}
+
+# dual marker classification
+seurat$dual_PDCD1_TNFRSF9_class <- paste0(seurat$PDCD1_class, ",", seurat$TNFRSF9_class)
+table(seurat$dual_PDCD1_TNFRSF9_class, seurat$final_celltype)
+
+# stacked barplots of cells in the dual positive class
+
+stack_cell_porportions <- function(seurat, group.by.x, group.by.stack){
+  cell_meta_data <- seurat@meta.data
+  # x axis labels
+  x.group <- unique(cell_meta_data[[group.by.x]])
+  # groups in stacks
+  stack.group <- unique(cell_meta_data[[group.by.stack]])
+  
+  prop <- data.frame(x.group = x.group)
+  
+  # count cells in x groups
+  prop[["total_count"]] <- sapply(
+    x.group, 
+    function(x){
+      nrow(cell_meta_data[cell_meta_data[[group.by.x ]] == x,]
+           )
+    }
+  )
+  for(type in stack.group){
+    prop[[paste0(type, "_count")]] <- sapply(
+      x.group, 
+      function(x){
+        nrow(cell_meta_data[cell_meta_data[[group.by.x]] == x &
+                              cell_meta_data[[group.by.stack]] == type,]
+             )
+      }
+    )
+  }
+  # convert counts to a proportion
+  cluster_counts <- colnames(prop)[-1:-2]
+  for(i in cluster_counts){
+    proportion <- gsub("_count$", "_proportion", i)
+    prop[[proportion]] <- prop[[i]]/prop[["total_count"]]
+  }
+  # reorient to long data frame
+  columns <- colnames(prop)[grep("proportion$", colnames(prop))]
+  prop_stacked <- pivot_longer(prop, cols = columns,
+                               names_to = group.by.stack,
+                               values_to = "proportion")
+  prop_stacked[[group.by.stack]] <- gsub("_proportion$", "", prop_stacked[[group.by.stack]])
+  return(prop_stacked)
+}
+  
+plot_stack <- function(prop_stacked, group.by.x, group.by.stack, title = "",
+                       fill.palette = NULL){ 
+  if(is.null(fill.palette)){
+    stack.group <- unique(prop_stacked[[group.by.stack]])
+    fill.palette <- scales::hue_pal()(length(stack.group))
+    names(fill.palette) <- stack.group
+  }
+  stack_plot <-
+    ggplot(prop_stacked, 
+           aes(x = x.group, 
+               y = proportion, 
+               fill = .data[[group.by.stack]])) +
+    geom_bar(position = "stack", stat = "identity", color = "#000000", linewidth = 0.2) +
+    scale_fill_manual(values = fill.palette) +
+    ylab("Cell proportion") +
+    theme_classic() +
+    theme(axis.text.x = element_text(angle = 20, vjust = 1, hjust=1),
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 16),
+          title = element_text(size = 20)) +
+    ggtitle(title)
+  return(stack_plot)
+}
+
+dual_label_stack <- stack_cell_porportions(
+  seurat, group.by.x = "final_celltype", group.by.stack = "dual_PDCD1_TNFRSF9_class"
+)
+pl_cell_stack <-
+  plot_stack(
+    dual_label_stack, 
+    group.by.x = "final_celltype", group.by.stack = "dual_PDCD1_TNFRSF9_class") +
+  theme(axis.title.y = element_text(size = 12), legend.title = element_text(size = 8))
+print(pl_cell_stack)
+ggsave(plot = pl_cell_stack, filename = paste0(figure_dir, "/stackedBar_", "PDCD1_TNFRSF9_dual_high_celltype", ".png"),
+         width = unit(6,"in"), height = unit(6,"in"), dpi = 300)
+```
+
+```{r}
+# limit to CD8, CD4, cancer, and macrophages
+seur_sub <- seurat[,seurat$final_celltype %in% c("Activated_CD4", "CD4", "CD8", "Effector_CD8", "Macrophage", "T cell", "Treg cell", "Epithelial_cancer")]
+# combine CD8 and CD4 cell types
+seur_sub$summary_celltype <- sapply(
+  seur_sub$final_celltype,
+  FUN = function(x){
+    if(x %in% c("Activated_CD4", "CD4")){
+      return("CD4_Tcell")
+    } else if(x %in% c("CD8", "Effector_CD8", "T cell")){
+      return("CD8_Tcell")
+    } else if(x %in% c("Treg cell")) {
+      return("Treg_cell")
+    } else {return(x)}
+  })
+# recompute UMAP on the subset
+seur_sub <- FindVariableFeatures(seur_sub)
+seur_sub <- ScaleData(seur_sub)
+seur_sub <- RunPCA(seur_sub)
+seur_sub <- RunUMAP(seur_sub, reduction = "pca", dims = 1:25)
+
+DimPlot(seur_sub, red = "umap", group.by = "summary_celltype")
+DimPlot(seur_sub, red = "umap", group.by = "dual_PDCD1_TNFRSF9_class")
+
+# classify CD8/CD4 T cells based on PD-1(PDCD1) and CD137(TNFRSF9) expression
+gated_celltype <- c()
+for(i in 1:ncol(seur_sub)){
+  cell <- unname(seur_sub$summary_celltype[i])
+  if(cell == "CD8_Tcell"){
+    gated_celltype <- c(
+      gated_celltype, 
+      paste0(seur_sub$dual_PDCD1_TNFRSF9_class[i], "_", seur_sub$summary_celltype[i])
+    )
+  } else if(cell == "CD4_Tcell"){
+    gated_celltype <- c(
+      gated_celltype, 
+      paste0(seur_sub$PDCD1_class[i], "_", seur_sub$summary_celltype[i])
+    )
+  } else if(cell == "Epithelial_cancer") {
+    gated_celltype <- c(
+      gated_celltype, 
+      paste0(seur_sub$CD274_class[i], "_", seur_sub$summary_celltype[i])
+    )
+  } else {
+    gated_celltype <- c(
+      gated_celltype, 
+      seur_sub$summary_celltype[i]
+    )
+  }
+}
+seur_sub$gated_celltype <- unname(gsub("\\,", "_", gated_celltype))
+seur_sub$sample_ID <- factor(
+  seur_sub$sample_ID, levels = c(
+    "PDAC_TISSUE_1","PDAC_TISSUE_2","PDAC_TISSUE_3", "PDAC_TISSUE_4","PDAC_TISSUE_5",
+    "PDAC_TISSUE_6", "PDAC_TISSUE_7","PDAC_TISSUE_8","PDAC_TISSUE_9",
+    "PDAC_TISSUE_10","PDAC_TISSUE_11A","PDAC_TISSUE_11B", "PDAC_TISSUE_12",
+    "PDAC_TISSUE_13","PDAC_TISSUE_15", "PDAC_TISSUE_16",
+    "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12",
+    "T13", "T14", "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", "T23",
+    "T24"            
+  )
+)
+
+DimPlot(seur_sub, red = "umap", group.by = "gated_celltype")
+# counts of cells belonging to each subtype
+table(seur_sub$gated_celltype)
+# counts of cells per patient
+table(seur_sub$gated_celltype, seur_sub$sample_ID)
+
+stack_pal <- c(
+  "CD274_high_Epithelial_cancer" = "#FF1728",
+  "CD274_low_Epithelial_cancer" = "#808080",
+  "Macrophage" = "#FFFE6F",
+  "Treg_cell" = "#FFFFFF",
+  "PDCD1_high_TNFRSF9_low_CD8_Tcell" = "#017F30",
+  "PDCD1_low_TNFRSF9_low_CD8_Tcell" = "#001CEC",
+  "PDCD1_high_TNFRSF9_high_CD8_Tcell" = "#FF27F0",
+  "PDCD1_low_TNFRSF9_high_CD8_Tcell" = "#FFA54C",
+  "PDCD1_high_CD4_Tcell" = "#0BFD67",
+  "PDCD1_low_CD4_Tcell" = "#00FEFD"
+)
+
+simulation_stack <- stack_cell_porportions(
+  seur_sub, group.by.x = "sample_ID", group.by.stack = "gated_celltype"
+)
+simulation_stack$gated_celltype <- factor(
+  simulation_stack$gated_celltype, levels = names(stack_pal)
+)
+pl_simulation_stack <- 
+  plot_stack(
+    simulation_stack, 
+    group.by.x = "sample_ID", group.by.stack = "gated_celltype",
+    fill.palette = stack_pal) +
+  theme(axis.title.y = element_text(size = 12), legend.title = element_text(size = 8))
+pl_simulation_stack
+ggsave(plot = pl_simulation_stack, filename = paste0(figure_dir, "/stackedBar_gated_celltype_sample_ID.png"),
+       width = unit(9,"in"), height = unit(6,"in"), dpi = 300)
+
+# save table proportions used for these plots
+write.csv(dual_label_stack, file = paste0(result_dir, "/stackedBar_", "PDCD1_TNFRSF9_dual_high_celltype", ".csv"))
+write.csv(simulation_stack, file = paste0(result_dir, "/stackedBar_", "gated_celltype_sample_ID", ".csv"))
+
+# save Seurat object of the subset data
+saveRDS(seur_sub, file = paste0(result_dir, "/PDAC_atlas_agent-based_model_gating.rds"))
+```
+
