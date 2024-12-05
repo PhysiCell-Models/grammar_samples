@@ -1,0 +1,104 @@
+---
+title: "Evaluation of CAF-conditioned media on PDO invasion"
+author: "Elana J Fertig"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning=FALSE,
+                      dev = c('png','pdf'),
+                      fig.path = './CAFConditionedMedia/')
+```
+
+# R setup
+
+```{r}
+library('ggplot2')
+library('ggpubr')
+library('tidyverse')
+
+sessionInfo()
+```
+
+# Reading in inverse circularity data by organoid
+
+```{r}
+InverseCirc <- list()
+files <- grep('PD',list.files(), value=T)
+for (f in files) {
+  PDO <- strsplit(strsplit(f,'\\(')[[1]][2],
+                  '\\)',)[[1]][1]
+  
+  dat <- read.table(f, sep=",", skip=1, header=T)[,4:6]
+  
+  # convert to tidy formatting for plotting
+  InverseCirc[[PDO]] <- dat %>% 
+    pivot_longer(everything(), names_to='media', 
+                 values_to = 'inverse.circularity') 
+}
+  
+```
+
+# Compare effect of caf-conditioned media on average
+
+```{r}
+# compute average by organoid for plotting 
+
+sumDat <- list()
+for (f in names(InverseCirc)) {
+  sumDat[[f]] <- InverseCirc[[f]] %>% 
+    group_by(media) %>%
+    summarize(mean.inverse.circularity = 
+                mean(inverse.circularity, na.rm=T))
+}
+
+sumDat <- bind_rows(sumDat,.id = "PDO")
+
+ggpaired(sumDat %>% 
+           filter(media!='iCAF.1'),
+         x='media',
+         y='mean.inverse.circularity',
+         id='PDO',
+         ylab='mean.inverse.circularity') + 
+  stat_compare_means(paired=T,method='wilcox.test')
+
+ggpaired(sumDat %>% 
+           filter(media!='my.CAF.1'),
+         x='media',
+         y='mean.inverse.circularity',
+         id='PDO',
+         ylab='mean.inverse.circularity') + 
+  stat_compare_means(paired=T,method='wilcox.test')
+
+ggpaired(sumDat %>% 
+           filter(media!='Control.1'),
+         x='media',
+         y='mean.inverse.circularity',
+         id='PDO',
+         ylab='mean.inverse.circularity') + 
+  stat_compare_means(paired=T,method='wilcox.test')
+
+```
+
+# Compare effect of caf-conditioned media by organoid
+
+```{r}
+comparisons <- list(c('Control.1','my.CAF.1'),
+                    c('Control.1','iCAF.1'),
+                    c('my.CAF.1','iCAF.1'))
+
+
+for (f in names(InverseCirc)) { 
+  p <-  ggboxplot(InverseCirc[[f]],x='media',
+                  y='inverse.circularity',add='jitter') + 
+    stat_compare_means(comparisons=comparisons, 
+                       method = 'wilcox.test') +
+    labs(title=f)
+  print(p)
+}
+  
+  
+
+```
