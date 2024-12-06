@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH --job-name=cortex_sim
+#SBATCH --output=%x_%a.out
+#SBATCH --error=%x_%a.err
+#SBATCH --time=00-1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=<user>@<domain>
+#SBATCH --array=0
+
+echo "Working directory: $(pwd)"
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+
+echo "$(scontrol show node $SLURMD_NODENAME)"
+./project ./config/PhysiCell_settings_$SLURM_ARRAY_TASK_ID.xml
+
+# Note: one of the HPCs we ran this on had different CPU manufactures on different nodes, requiring compiling multiple instances of project
+# we used the following to address this after compiling on the different nodes
+
+# active_features=$(scontrol show node $SLURMD_NODENAME | grep -oP 'ActiveFeatures=\K\S+')
+
+# # Determine if 'intel' or 'amd' appears in ActiveFeatures
+# if echo "$active_features" | grep -q "intel"; then
+#     echo "Intel found in ActiveFeatures"
+#     if echo "$active_features" | grep -q "broadwell"; then
+#         echo "broadwell found in ActiveFeatures"
+#         ./project_intel_broadwell ./config/PhysiCell_settings_$SLURM_ARRAY_TASK_ID.xml
+#     else
+#         ./project_intel ./config/PhysiCell_settings_$SLURM_ARRAY_TASK_ID.xml
+#     fi
+# elif echo "$active_features" | grep -q "amd"; then
+#     echo "AMD found in ActiveFeatures"
+#     ./project_amd ./config/PhysiCell_settings_$SLURM_ARRAY_TASK_ID.xml
+# else
+#     echo "Neither Intel nor AMD found in ActiveFeatures"
+# fi
