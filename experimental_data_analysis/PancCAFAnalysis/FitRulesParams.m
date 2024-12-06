@@ -2,7 +2,7 @@ clearvars
 addpath("./src") % two helper functions
 
 %% load the file 
-file = "./data/motility_features_30.csv";
+file = "./data/motility_features_30.csv"; % full dataset available at https://doi.org/10.5281/zenodo.14081884
 X = readtable(file);
 
 %% get the relevant info
