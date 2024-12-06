@@ -30,13 +30,13 @@ make load PROJ=example1_hypoxia && make && ./project
 </details>
 
 
-## Model 3: Base tumor-immune example ([link](user_projects/example3_immune))
+## Model 3: Base tumor-immune example ([link](user_projects/tumor_immune_base))
 ### Description: 
 The model represents the basic interactions between the tumor and the immune system, incorporating immune responses to tumor groth, such as macrophage polarization and CD8 T cell cytotoxicity.
 
 ### Load and run simulation:
 ``` bash
-make load PROJ=example3_immune && make && ./project
+make load PROJ=tumor_immune_base && make && ./project
 ```
 ### Cell Hypothesis Rules:
 <details open>

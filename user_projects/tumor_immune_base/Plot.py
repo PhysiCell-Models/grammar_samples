@@ -1,5 +1,5 @@
 import pcdl
-mcds_ts = pcdl.TimeSeries(output_path="outputs/example3_immune",settingxml=None,microenv=True,graph=False,verbose=False, physiboss=False)
+mcds_ts = pcdl.TimeSeries(output_path="outputs/tumor_immune_base",settingxml=None,microenv=True,graph=False,verbose=False, physiboss=False)
 time = []; pop_tumor = []; pro_factor = []; anti_factor = []; debris = []; oxygen = []
 sec_pro = []; sec_anti = []; ratio = []
 for mcds in mcds_ts.get_mcds_list():

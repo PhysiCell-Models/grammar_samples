@@ -36,7 +36,7 @@
     </parallel>
 
     <save>
-        <folder>outputs/example3_immune</folder>
+        <folder>outputs/tumor_immune_base</folder>
         <full_data>
             <interval units="min">60</interval>
             <enable>true</enable>

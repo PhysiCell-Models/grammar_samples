@@ -199,9 +199,9 @@ clean:
 	rm -f $(PROGRAM_NAME)*
 	
 data-cleanup:
-	rm -rf ./output
-	mkdir ./output
-	touch ./output/empty.txt
+	rm -rf $(OUTPUT)
+	mkdir $(OUTPUT)
+	touch $(OUTPUT)/empty.txt
 	
 # archival 
 	
@@ -231,7 +231,7 @@ untar:
 # easier animation 
 
 FRAMERATE := 24
-OUTPUT := output
+OUTPUT := outputs/tumor_immune_base
 
 jpeg: 
 	@magick identify -format "%h" $(OUTPUT)/initial.svg > __H.txt 
