@@ -9,3 +9,7 @@ Sensitivity_Analysis/*.sh
 *.err
 project
 
+*.pyc
+Sensitivity_Analysis/df_complete.db
+/Sensitivity_Analysis/*.svg
+/Sensitivity_Analysis/*.feather
