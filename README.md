@@ -29,6 +29,8 @@ make load PROJ=example1_hypoxia && make && ./project
     </ul>
 </details>
 
+### Sensitivity Analysis
+A local sensitivity analysis was performed on 24 parameters associated with the cell hypothesis rules to evaluate their impact on the model's behavior. [View the analysis script](Sensitivity_Analysis/SA_script_ex1.ipynb).
 
 ## Model 3: Base tumor-immune example ([link](user_projects/tumor_immune_base))
 ### Description: 
@@ -65,6 +67,9 @@ make load PROJ=tumor_immune_base && make && ./project
     <li>contact with tumor decreases migration speed from 1 towards 0 with a Hill response, with half-max 0.5 and Hill power 8.</li>
     </ul>
 </details>
+
+### Sensitivity Analysis
+A local sensitivity analysis was conducted on 26 parameters associated with the cell hypothesis rules to evaluate their impact on tumor-immune interactions. [View the analysis script](Sensitivity_Analysis/SA_script_ex3.ipynb).
 
 ## Model 4: Extended tumor-immune example ([link](user_projects/tumor_immune_extended))
 ### Description:
