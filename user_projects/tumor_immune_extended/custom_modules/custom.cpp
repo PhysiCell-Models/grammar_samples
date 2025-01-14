@@ -153,17 +153,7 @@ void setup_microenvironment( void )
 	return; 
 }
 
-void setup_tissue( void )
-{
-	setup_tissue_domain();
-	// load cells from your CSV file (if enabled)
-	load_cells_from_pugixml();
-	set_parameters_from_distributions();
-
-	return;
-}
-
-void setup_tissue_domain(void)
+void setup_tissue(void)
 {
 	double Xmin = microenvironment.mesh.bounding_box[0]; 
 	double Ymin = microenvironment.mesh.bounding_box[1]; 
@@ -204,6 +194,10 @@ void setup_tissue_domain(void)
 	}
 	std::cout << std::endl; 
 	
+	// load cells from your CSV file (if enabled)
+	load_cells_from_pugixml();
+	set_parameters_from_distributions();
+
 	return; 
 }
 

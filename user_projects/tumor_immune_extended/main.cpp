@@ -72,7 +72,6 @@
 #include <cmath>
 #include <omp.h>
 #include <fstream>
-#include <getopt.h>
 
 #include "./core/PhysiCell.h"
 #include "./modules/PhysiCell_standard_modules.h" 
@@ -86,6 +85,7 @@ using namespace PhysiCell;
 
 int main( int argc, char* argv[] )
 {
+	// load and parse settings file(s)
 	bool XML_status = false; 
 	char copy_command [1024]; 
 	if( argc > 1 )
@@ -102,7 +102,7 @@ int main( int argc, char* argv[] )
 	{ exit(-1); }
 	
 	// copy config file to output directry
-	system(copy_command);
+	system( copy_command );
 	
 	// OpenMP setup
 	omp_set_num_threads(PhysiCell_settings.omp_num_threads);
@@ -179,7 +179,7 @@ int main( int argc, char* argv[] )
 		while( PhysiCell_globals.current_time < PhysiCell_settings.max_time + 0.1*diffusion_dt )
 		{
 			// save data if it's time. 
-			if( fabs( PhysiCell_globals.current_time - PhysiCell_globals.next_full_save_time ) < 0.01 * diffusion_dt )
+			if( PhysiCell_globals.current_time > PhysiCell_globals.next_full_save_time - 0.5 * diffusion_dt )
 			{
 				display_simulation_status( std::cout ); 
 				if( PhysiCell_settings.enable_legacy_saves == true )
@@ -199,7 +199,7 @@ int main( int argc, char* argv[] )
 			}
 			
 			// save SVG plot if it's time
-			if( fabs( PhysiCell_globals.current_time - PhysiCell_globals.next_SVG_save_time  ) < 0.01 * diffusion_dt )
+			if( PhysiCell_globals.current_time > PhysiCell_globals.next_SVG_save_time - 0.5 * diffusion_dt )
 			{
 				if( PhysiCell_settings.enable_SVG_saves == true )
 				{	
