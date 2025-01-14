@@ -1,0 +1,91 @@
+,organoids,invasion
+PDO1-CONTROL,11,invasive
+PDO1-MyCAF,15,invasive
+PDO1-iCAF ,14,invasive
+PDO2-CONTROL,12,invasive
+PDO2-MyCAF,11,invasive
+PDO2-iCAF ,16,invasive
+PDO3-CONTROL,15,invasive
+PDO3-MyCAF,16,invasive
+PDO3-iCAF ,14,invasive
+PDO4-CONTROL,9,invasive
+PDO4-MyCAF,11,invasive
+PDO4-iCAF ,11,invasive
+PDO5-CONTROL,13,invasive
+PDO5-MyCAF,14,invasive
+PDO5-iCAF ,14,invasive
+PDO6-CONTROL,14,invasive
+PDO6-MyCAF,14,invasive
+PDO6-iCAF ,13,invasive
+PDO7-CONTROL,12,invasive
+PDO7-MyCAF,15,invasive
+PDO7-iCAF ,13,invasive
+PDO8-CONTROL,17,invasive
+PDO8-MyCAF,15,invasive
+PDO8-iCAF ,13,invasive
+PDO9-CONTROL,11,invasive
+PDO9-MyCAF,15,invasive
+PDO9-iCAF ,14,invasive
+PDO10-CONTROL,14,invasive
+PDO10-MyCAF,16,invasive
+PDO10-iCAF ,15,invasive
+PDO11-CONTROL,8,invasive
+PDO11-MyCAF,10,invasive
+PDO11-iCAF ,9,invasive
+PDO12-CONTROL,17,invasive
+PDO12-MyCAF,19,invasive
+PDO12-iCAF ,17,invasive
+PDO13-CONTROL,12,invasive
+PDO13-MyCAF,13,invasive
+PDO13-iCAF ,13,invasive
+PDO14-CONTROL,11,invasive
+PDO14-MyCAF,12,invasive
+PDO14-iCAF ,11,invasive
+PDO15-CONTROL,10,invasive
+PDO15-MyCAF,11,invasive
+PDO15-iCAF ,12,invasive
+PDO1-CONTROL,18,non invasive
+PDO1-MyCAF,20,non invasive
+PDO1-iCAF ,18,non invasive
+PDO2-CONTROL,16,non invasive
+PDO2-MyCAF,12,non invasive
+PDO2-iCAF ,20,non invasive
+PDO3-CONTROL,21,non invasive
+PDO3-MyCAF,20,non invasive
+PDO3-iCAF ,18,non invasive
+PDO4-CONTROL,15,non invasive
+PDO4-MyCAF,16,non invasive
+PDO4-iCAF ,15,non invasive
+PDO5-CONTROL,16,non invasive
+PDO5-MyCAF,15,non invasive
+PDO5-iCAF ,16,non invasive
+PDO6-CONTROL,20,non invasive
+PDO6-MyCAF,18,non invasive
+PDO6-iCAF ,18,non invasive
+PDO7-CONTROL,18,non invasive
+PDO7-MyCAF,19,non invasive
+PDO7-iCAF ,19,non invasive
+PDO8-CONTROL,20,non invasive
+PDO8-MyCAF,15,non invasive
+PDO8-iCAF ,15,non invasive
+PDO9-CONTROL,19,non invasive
+PDO9-MyCAF,18,non invasive
+PDO9-iCAF ,18,non invasive
+PDO10-CONTROL,21,non invasive
+PDO10-MyCAF,19,non invasive
+PDO10-iCAF ,19,non invasive
+PDO11-CONTROL,13,non invasive
+PDO11-MyCAF,15,non invasive
+PDO11-iCAF ,15,non invasive
+PDO12-CONTROL,21,non invasive
+PDO12-MyCAF,22,non invasive
+PDO12-iCAF ,20,non invasive
+PDO13-CONTROL,16,non invasive
+PDO13-MyCAF,15,non invasive
+PDO13-iCAF ,16,non invasive
+PDO14-CONTROL,17,non invasive
+PDO14-MyCAF,16,non invasive
+PDO14-iCAF ,16,non invasive
+PDO15-CONTROL,20,non invasive
+PDO15-MyCAF,18,non invasive
+PDO15-iCAF ,18,non invasive

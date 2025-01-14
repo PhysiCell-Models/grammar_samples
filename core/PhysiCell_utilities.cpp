@@ -92,6 +92,12 @@ void setup_rng( void )
 		warned = true;
 	}
 	std::cout << "Setting up RNG with seed " << physicell_random_seed << std::endl;
+
+	// save the seed to random_seed.txt
+	std::ofstream out(PhysiCell_settings.folder + "/random_seed.txt");
+	out << physicell_random_seed << std::endl;
+	out.close();
+
 	physicell_PRNG_generator.seed( physicell_random_seed );
 
 	// now get number of threads and set up a seed for each thread 
@@ -376,7 +382,7 @@ void copy_file_to_output(std::string filename)
 	char copy_command[1024];
 	sprintf(copy_command, "cp %s %s", filename.c_str(), output_filename.c_str());
 	std::cout << "Copy command: " << copy_command << std::endl;
-	system(copy_command);
+	(void)system(copy_command); // make it explicit that we are ignoring the return value
 }
 
 };
