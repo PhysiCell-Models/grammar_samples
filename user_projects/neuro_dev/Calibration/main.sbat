@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=main_cortex_calib
+#SBATCH --output=%x.out
+#SBATCH --error=%x.err
+#SBATCH --time=00-48:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --export=ALL
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=<user>@<domain>
+
+
+# See requirements.txt for the conda environment
+# Set up the environment using:
+# $ conda create --name cortex-calib --file path/to/neuro_dev/Calibration/requirements.txt
+
+echo "Starting the main job"
+module load conda
+conda activate cortex-calib
+python CortexCalibration.py
