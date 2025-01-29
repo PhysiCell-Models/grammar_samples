@@ -225,22 +225,33 @@ untar:
 
 FRAMERATE := 24
 REGION := AUD
-OUTPUT := outputs/neuro_dev/$(REGION)
+OUTPUT := outputs/neuro_dev
+REGION_OUTPUT := $(OUTPUT)/$(REGION)
+
+explain_region_output:
+	@echo "This project uses the variable REGION to define the output directory."
+	@echo "The default value of REGION is AUD."
+	@echo "To target the SOM output, use REGION=SOM in your command."
+	@echo "For example, to make a movie of the SOM output, use make movie REGION=SOM."
+	@echo "For now, continuing on with REGION=$(REGION)..."
 
 jpeg: 
-	@magick identify -format "%h" $(OUTPUT)/initial.svg > __H.txt 
-	@magick identify -format "%w" $(OUTPUT)/initial.svg > __W.txt 
+	make explain_region_output
+	@magick identify -format "%h" $(REGION_OUTPUT)/initial.svg > __H.txt 
+	@magick identify -format "%w" $(REGION_OUTPUT)/initial.svg > __W.txt 
 	@expr 2 \* \( $$(grep . __H.txt) / 2 \) > __H1.txt 
 	@expr 2 \* \( $$(grep . __W.txt) / 2 \) > __W1.txt 
 	@echo "$$(grep . __W1.txt)!x$$(grep . __H1.txt)!" > __resize.txt 
-	@magick mogrify -format jpg -resize $$(grep . __resize.txt) $(OUTPUT)/s*.svg
+	@magick mogrify -format jpg -resize $$(grep . __resize.txt) $(REGION_OUTPUT)/s*.svg
 	rm -f __H*.txt __W*.txt __resize.txt 
 	
 gif: 
-	magick convert $(OUTPUT)/s*.svg $(OUTPUT)/out.gif 
+	make explain_region_output
+	magick convert $(REGION_OUTPUT)/s*.svg $(REGION_OUTPUT)/out.gif 
 	 
 movie:
-	ffmpeg -r $(FRAMERATE) -f image2 -i $(OUTPUT)/snapshot%08d.jpg -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec none $(OUTPUT)/out.mp4
+	make explain_region_output
+	ffmpeg -r $(FRAMERATE) -f image2 -i $(REGION_OUTPUT)/snapshot%08d.jpg -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec none $(REGION_OUTPUT)/out.mp4
 	
 # upgrade rules 
 
