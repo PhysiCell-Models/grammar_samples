@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for folder in /Users/danielbergman/grammar_samples/user_projects/*; do
+# run this script from the root PhysiCell directory, not the beta directory
+
+for folder in user_projects/*; do
     if [ -d "$folder" ]; then
         folder_name=$(basename $folder)
         if [ "$folder_name" == "epi_caf_invasion" ]; then
