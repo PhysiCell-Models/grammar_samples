@@ -155,39 +155,92 @@ void setup_microenvironment( void )
 
 void setup_tissue(void)
 {
-	double Xmin = microenvironment.mesh.bounding_box[0]; 
-	double Ymin = microenvironment.mesh.bounding_box[1]; 
-	double Zmin = microenvironment.mesh.bounding_box[2]; 
+	double Xmin = microenvironment.mesh.bounding_box[0];
+	double Ymin = microenvironment.mesh.bounding_box[1];
+	double Zmin = microenvironment.mesh.bounding_box[2];
 
-	double Xmax = microenvironment.mesh.bounding_box[3]; 
-	double Ymax = microenvironment.mesh.bounding_box[4]; 
-	double Zmax = microenvironment.mesh.bounding_box[5]; 
-	
-	if( default_microenvironment_options.simulate_2D == true )
+	double Xmax = microenvironment.mesh.bounding_box[3];
+	double Ymax = microenvironment.mesh.bounding_box[4];
+	double Zmax = microenvironment.mesh.bounding_box[5];
+
+	if (default_microenvironment_options.simulate_2D == true)
 	{
-		Zmin = 0.0; 
-		Zmax = 0.0; 
+		Zmin = 0.0;
+		Zmax = 0.0;
 	}
-	
-	double Xrange = Xmax - Xmin; 
-	double Yrange = Ymax - Ymin; 
-	double Zrange = Zmax - Zmin; 
+
+	double Xrange = Xmax - Xmin;
+	double Yrange = Ymax - Ymin;
+	double Zrange = Zmax - Zmin;
+
+	double Xmiddle = 0.5*(Xmin+Xmax);
+	double Ymiddle = 0.5*(Ymin+Ymax);
+	double Zmiddle = 0.5*(Zmin+Zmax);
+
+	std::vector<double> center = {Xmiddle,Ymiddle,Zmiddle}; 
+
+	double radius = std::min( Xrange, Yrange ); 
+	if( Zrange > microenvironment.mesh.dz - 1e-5 )
+	{ radius = std::min( radius, Zrange ); }
+	radius *= 0.5; 
 	
 	// create some of each type of cell 
 	
 	Cell* pC;
-	
+
+	double r1_default = 0; 
+	double r2_default = radius; 
+
+	std::string optional_parameter_name = "min_position_cells"; 
+	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+	{ r1_default = parameters.doubles(optional_parameter_name); }
+
+	optional_parameter_name = "max_position_cells"; 
+	if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+	{ r2_default = parameters.doubles(optional_parameter_name); }
+
 	for( int k=0; k < cell_definitions_by_index.size() ; k++ )
 	{
 		Cell_Definition* pCD = cell_definitions_by_index[k]; 
-		std::cout << "Placing cells of type " << pCD->name << " ... " << std::endl; 
-		for( int n = 0 ; n < parameters.ints("number_of_cells") ; n++ )
+
+		int number_of_cells = parameters.ints("number_of_cells"); 
+
+		// optional: number_of_{cell type X} : number of cells of this particular type 
+
+		optional_parameter_name = "number_of_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.ints.find_index(optional_parameter_name) > -1 )
+		{ number_of_cells = parameters.ints(optional_parameter_name); }
+
+		std::cout << "Placing " << number_of_cells << " cells of type " << pCD->name << " ... " << std::endl; 
+
+		double r1 = r1_default; 
+		optional_parameter_name = "min_position_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+		{ r1 = parameters.doubles(optional_parameter_name); }
+
+		double r2 = r2_default; 
+		optional_parameter_name = "max_position_" + pCD->name; 
+		spaces_to_underscore( optional_parameter_name ); 
+		if( parameters.doubles.find_index(optional_parameter_name) > -1 )
+		{ r2 = parameters.doubles(optional_parameter_name); }
+
+		for( int n = 0 ; n < number_of_cells ; n++ )
 		{
-			std::vector<double> position = {0,0,0}; 
+			std::vector<double> position; 
+			if( default_microenvironment_options.simulate_2D )
+			{ position = UniformInAnnulus( r1, r2); }
+			else
+			{ position = UniformInShell( r1, r2); }
+
+			position += center; 
+			/*
 			position[0] = Xmin + UniformRandom()*Xrange; 
 			position[1] = Ymin + UniformRandom()*Yrange; 
 			position[2] = Zmin + UniformRandom()*Zrange; 
-			
+			*/
+
 			pC = create_cell( *pCD ); 
 			pC->assign_position( position );
 		}
