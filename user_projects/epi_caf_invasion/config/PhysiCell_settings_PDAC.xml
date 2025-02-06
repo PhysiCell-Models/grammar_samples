@@ -204,7 +204,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0</phagocytosis_rate>
@@ -219,7 +220,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0</fusion_rate>
@@ -237,6 +239,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
@@ -347,7 +353,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -362,7 +369,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0.0</fusion_rate>
@@ -380,6 +388,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">1e-3</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
@@ -490,7 +502,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -505,7 +518,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0.0</fusion_rate>
@@ -523,6 +537,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
@@ -633,7 +651,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -648,7 +667,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0.0</fusion_rate>
@@ -666,6 +686,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
@@ -776,7 +800,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -791,7 +816,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0.0</fusion_rate>
@@ -809,6 +835,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
@@ -919,7 +949,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0</phagocytosis_rate>
@@ -934,7 +965,8 @@
                         <attack_rate name="mesenchymal_normal" units="1/min">0.0</attack_rate>
                         <attack_rate name="mesenchymal_tumor" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <attack_damage_rate units="1/min">1</attack_damage_rate>
+                    <attack_duration units="min">0.1</attack_duration>
                     <fusion_rates>
                         <fusion_rate name="fibroblast" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="epithelial_normal" units="1/min">0</fusion_rate>
@@ -952,6 +984,10 @@
                         <transformation_rate name="mesenchymal_tumor" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
+                <cell_integrity>
+                    <damage_rate units="1/min">0.0</damage_rate>
+                    <damage_repair_rate units="1/min">0.0</damage_repair_rate>
+                </cell_integrity>
             </phenotype>
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
