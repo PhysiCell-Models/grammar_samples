@@ -483,8 +483,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <apoptotic_phagocytosis_rate units="1/min">0.001</apoptotic_phagocytosis_rate>
-                    <necrotic_phagocytosis_rate units="1/min">0.001</necrotic_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -661,8 +661,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <apoptotic_phagocytosis_rate units="1/min">0.001</apoptotic_phagocytosis_rate>
-                    <necrotic_phagocytosis_rate units="1/min">0.001</necrotic_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -839,8 +839,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <apoptotic_phagocytosis_rate units="1/min">0.001</apoptotic_phagocytosis_rate>
-                    <necrotic_phagocytosis_rate units="1/min">0.001</necrotic_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
