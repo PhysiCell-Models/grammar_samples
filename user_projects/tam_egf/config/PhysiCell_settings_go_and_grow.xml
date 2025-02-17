@@ -46,6 +46,7 @@
             <enable>true</enable>
             <plot_substrate enabled="true" limits="true">
                 <substrate>IFN-gamma</substrate>
+                <colormap>YlOrRd</colormap>
                 <min_conc>0</min_conc>
                 <max_conc>1</max_conc>
             </plot_substrate>
@@ -238,6 +239,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.17</speed>
@@ -307,6 +309,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -348,6 +351,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="M0 macrophage" ID="1">
             <phenotype>
@@ -416,6 +421,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.5</speed>
@@ -485,6 +491,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -526,6 +533,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="M1 macrophage" ID="2">
             <phenotype>
@@ -594,6 +603,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.5</speed>
@@ -663,6 +673,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -704,6 +715,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="M2 macrophage" ID="3">
             <phenotype>
@@ -772,6 +785,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.5</speed>
@@ -841,6 +855,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -882,6 +897,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="Th2 CD4 T cell" ID="4">
             <phenotype>
@@ -950,6 +967,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.5</speed>
@@ -1019,6 +1037,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0.0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0.0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="tumor" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="M0 macrophage" units="1/min">0.0</phagocytosis_rate>
@@ -1060,6 +1079,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
     </cell_definitions>
 
@@ -1084,5 +1105,6 @@
         <number_of_M0_macrophage type="int" units="" description="">0</number_of_M0_macrophage>
         <number_of_naive_T_cell type="int" units="" description="">0</number_of_naive_T_cell>
         <systemic_therapy type="string" units="" description="set to IFN-gamma, IL-4, or none to control which therapy is given">none</systemic_therapy>
+        <random_seed type="double" units="" description="">42</random_seed>
     </user_parameters>
 </PhysiCell_settings>
