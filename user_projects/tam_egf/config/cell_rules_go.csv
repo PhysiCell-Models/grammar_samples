@@ -1,6 +1,5 @@
 tumor,pressure,decreases,cycle entry,0,1,4,0
 tumor,oxygen,decreases,necrosis,0.00E+00,3.75,8,0
-tumor,damage,increases,apoptosis,0.072,180,2,0
 tumor,dead,increases,debris secretion,0.017,0.1,10,1
 tumor,IFN-gamma,decreases,migration speed,0,0.25,2,0
 tumor,EGF,increases,migration speed,0.5,2,10,0

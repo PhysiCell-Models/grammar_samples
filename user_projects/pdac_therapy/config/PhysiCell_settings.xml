@@ -598,8 +598,8 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <apoptotic_phagocytosis_rate units="1/min">0.01</apoptotic_phagocytosis_rate>
-                    <necrotic_phagocytosis_rate units="1/min">0.01</necrotic_phagocytosis_rate>
+                    <apoptotic_phagocytosis_rate units="1/min">0.1</apoptotic_phagocytosis_rate>
+                    <necrotic_phagocytosis_rate units="1/min">0.017</necrotic_phagocytosis_rate>
                     <other_dead_phagocytosis_rate units="1/min">0.01</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="PD-1hi_CD4_Tcell" units="1/min">0</phagocytosis_rate>
