@@ -1,5 +1,13 @@
 # Sample models for the PhysiCell grammar / rules paper
 
+## Latest Release
+
+We have made our latest release available on Zenodo. You can find it at the following link:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14900736.svg)](https://doi.org/10.5281/zenodo.14900736)
+
+This release includes all the necessary files and documentation for [_Digitize your Biology! Modeling multicellular systems through interpretable cell behavior_](https://doi.org/10.1101/2023.09.17.557982). This release is dated February 20, 2025. Please refer to the [release notes](https://github.com/PhysiCell-Models/grammar_samples/releases/tag/v2.0.0) for more details.
+
 ## Getting started
 ### Windows users
 Note: these instructions are written for Linux/MacOS systems.
