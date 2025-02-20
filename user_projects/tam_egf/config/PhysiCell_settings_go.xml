@@ -1087,7 +1087,7 @@
     <initial_conditions>
         <cell_positions type="csv" enabled="true">
             <folder>./config</folder>
-            <filename>cells.csv</filename>
+            <filename>cells_with_M2.csv</filename>
         </cell_positions>
     </initial_conditions>
 

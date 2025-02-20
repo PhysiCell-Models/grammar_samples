@@ -247,10 +247,12 @@ The model represents the interactions between tumor cells and tumor-associated m
 Three hypotheses are tested: EGFR signaling increasing (1) tumor growth, (2) tumor motility, and (3) both.
 These correspond to the three config files and the three rules files with filenames ending with `_grow`, `_go`, and `_go_and_grow`, respectively.
 
-Furthermore, the cell initial conditions are provided in `config/cells.csv`; and with CD4+ T cells are in `config/cells_with_cd4s.csv`.
+Furthermore, the cell initial conditions is provided in `config/cells_with_M2.csv` (used to create panels 5C-E in the paper).
+An alternative initial condition with M2-like macrophages replaced with naive M0 macrophages is given in `config/cells_with_M0.csv` (used to create panel 3H with the `systemic_therapy` parameter set accordingly).
+A third alternative initial condition with CD4+ T cells and M0 macrophages is provided in `config/cells_with_M0_and_CD4.csv` (used to create panel 3I).
 For the desired hypothesis, change the config file (e.g., `PhysiCell_settings_grow.xml`) to use the desired cells file in the `<cell_positions>` element.
 
-Finally, systemic therapy is controlled via a `<user_parameter>` in each of the config files.
+Finally, systemic therapy is controlled via the `<user_parameter>` `systemic_therapy`in each of the config files.
 Set this to one of `IFN-gamma`, `IL-4`, or `none` to simulate the effect of the respective therapy.
 
 ### Load and run simulation:
