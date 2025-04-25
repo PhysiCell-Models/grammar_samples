@@ -3,12 +3,13 @@ import pandas as pd
 import scanpy as sc
 import seaborn as sns
 
-model_1_adata = sc.read_visium("../../databarn/PanINSpaceRangerOutputs/113_2")
+stdata_path = "/path/to/folder"
+model_1_adata = sc.read_visium(stdata_path + "/PanINSpaceRangerOutputs/113_2")
 model_2_adata = sc.read_visium("../../databarn/PanINSpaceRangerOutputs/113_4")
 model_3_adata = sc.read_visium("../../databarn/PanINSpaceRangerOutputs/114_2")
-model_1_R_annotations = pd.read_csv("../../databarn/model_1_R_annotations.csv")
-model_2_R_annotations = pd.read_csv("../../databarn/model_2_R_annotations.csv")
-model_3_R_annotations = pd.read_csv("../../databarn/model_3_R_annotations.csv")
+# model_1_R_annotations = pd.read_csv("../../databarn/model_1_R_annotations.csv")
+# model_2_R_annotations = pd.read_csv("../../databarn/model_2_R_annotations.csv")
+# model_3_R_annotations = pd.read_csv("../../databarn/model_3_R_annotations.csv")
 
 pattern_scores = pd.read_csv(
     "../../databarn/panin_ffp_with_epithelial_pattern_annotations.csv"

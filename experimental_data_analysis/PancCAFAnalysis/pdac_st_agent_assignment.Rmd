@@ -1,0 +1,104 @@
+---
+title: "agent_assignment"
+output: html_document
+date: "2025-04-09"
+---
+
+```{r setup, include=FALSE}
+library(Seurat)
+PanIN.epithelial <- readRDS("~/OneDrive - University of Maryland School of Medicine/pdac_st_data/PanIN.epithelial.rds")
+```
+
+```{r }
+Idents(subject_01_module_scores)<-"segment"
+pdac01 <- subset(subject_01_module_scores, idents="PDAC01")
+
+epi_classification <- PanIN.epithelial@meta.data
+mean_pattern7 <- mean(epi_classification$Pattern_7)
+
+sub01_meta <- subject_01_module_scores@meta.data
+sub02_meta <- subject_02_module_scores@meta.data
+sub03_meta <- subject_03_module_scores@meta.data
+
+sub01_meta$pattern_7 <- 0
+sub02_meta$pattern_7 <- 0
+sub03_meta$pattern_7 <- 0
+
+for (row in intersect(rownames(sub01_meta), rownames(epi_classification))){
+  sub01_meta[row,]$pattern_7 <- epi_classification[row,]$Pattern_7
+  print(epi_classification[row,]$Pattern_7)
+}
+for (row in intersect(rownames(sub02_meta), rownames(epi_classification))){
+  sub02_meta[row,]$pattern_7 <- epi_classification[row,]$Pattern_7
+  print(epi_classification[row,]$Pattern_7)
+}
+for (row in intersect(rownames(sub03_meta), rownames(epi_classification))){
+  sub03_meta[row,]$pattern_7 <- epi_classification[row,]$Pattern_7
+  print(epi_classification[row,]$Pattern_7)
+}
+
+```
+```{r agent logic}
+sub01_meta$physicell_agent_type <- NA
+sub02_meta$physicell_agent_type <- NA
+sub03_meta$physicell_agent_type <- NA
+mean_pattern7 <- mean(epi_classification$Pattern_7)
+
+add_metadata <- function(sub_meta){
+  for(row in rownames(sub_meta)){
+    if(sub_meta[row,]$cell_type_confirmed=="normal epithelium"){
+      if(sub_meta[row,]$pattern_7 > mean_pattern7){
+        sub_meta[row,]$physicell_agent_type <- "mesenchymal_normal"
+      }
+      else{
+        sub_meta[row,]$physicell_agent_type <- "epithelial_normal"
+      }
+    }
+    else if(sub_meta[row,]$cell_type_confirmed=="pdac"){
+          if(sub_meta[row,]$pattern_7 > mean_pattern7){
+        sub_meta[row,]$physicell_agent_type <- "mesenchymal_tumor"
+      }
+      else{
+        sub_meta[row,]$physicell_agent_type <- "epithelial_tumor"
+      }
+    }
+    else if (sub_meta[row,]$cell_type_confirmed == "islets" 
+        | sub_meta[row,]$cell_type_confirmed == "acini"
+        | sub_meta[row,]$cell_type_confirmed == "smooth muscle"){
+      sub_meta[row,]$physicell_agent_type <- "other_tissue"
+    }
+    else if (sub_meta[row,]$fibroblast_module_score1 
+             >  mean(sub_meta$fibroblast_module_score1)){
+        sub_meta[row,]$physicell_agent_type <- "fibroblast"
+    }
+  }
+  return(sub_meta)
+}
+
+sub02 <- add_metadata(sub02_meta)
+sub03 <- add_metadata(sub03_meta)
+subject_01_module_scores$physicell_agent_type <- sub01_meta$physicell_agent_type
+subject_02_module_scores$physicell_agent_type <- sub02$physicell_agent_type
+subject_03_module_scores$physicell_agent_type <- sub03$physicell_agent_type
+```
+
+```{r coords}
+Idents(subject_01_module_scores)<-"segment"
+pdac01 <- subset(subject_01_module_scores, idents="PDAC01")
+coords <- pdac01@images$PDAC01@coordinates
+coords$agent_type <- pdac01$physicell_agent_type
+
+Idents(subject_02_module_scores)<-"segment"
+pdac02 <- subset(subject_02_module_scores, idents="PDAC02")
+coords02 <- pdac02@images$PDAC02@coordinates
+coords02$agent_type <- pdac02$physicell_agent_type
+
+Idents(subject_03_module_scores)<-"segment"
+pdac03 <- subset(subject_03_module_scores, idents="PDAC03")
+coords03 <- pdac03@images$PDAC03@coordinates
+coords03$agent_type <- pdac03$physicell_agent_type
+
+write.csv(coords[c("imagerow", "imagecol", "agent_type")], "/Users/jeanettejohnson/OneDrive - University of Maryland School of Medicine/pdac_st_data/pdac01_coords.csv")
+write.csv(coords02[c("imagerow", "imagecol", "agent_type")], "/Users/jeanettejohnson/OneDrive - University of Maryland School of Medicine/pdac_st_data/pdac02_coords.csv")
+write.csv(coords03[c("imagerow", "imagecol", "agent_type")], "/Users/jeanettejohnson/OneDrive - University of Maryland School of Medicine/pdac_st_data/pdac03_coords.csv")
+```
