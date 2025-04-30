@@ -1380,9 +1380,14 @@ void standard_asymmetric_division_function( Cell* pCell_parent, Cell* pCell_daug
 	if (total > 1.0)
 	{
 		double sym_div_prob = pCell_parent->phenotype.cycle.asymmetric_division.asymmetric_division_probabilities[pCell_parent->type] + 1.0 - total;
-		if (sym_div_prob < 0.0)
-		{ 
-			throw std::runtime_error("Error: Asymmetric division probabilities for " + pCD_parent->name + " sum to greater than 1.0 and cannot be normalized.");
+		if (sym_div_prob < 0)
+		{
+			std::cerr << "Warning: Asymmetric division probabilities for " + pCD_parent->name + " sum to greater than 1.0 and cannot be normalized." << std::endl
+					  << "We all this in this repository to allow the parameter calibration to proceed as the neuro_dev model can produce probabilities that sum to greater than 1.0 due to not using switch functions for rules." << std::endl
+					  << "  Probabilities: " << pCell_parent->phenotype.cycle.asymmetric_division.asymmetric_division_probabilities << std::endl
+					  << "  Total: " << total << std::endl
+					  << "  Symmetric division probability: " << sym_div_prob << std::endl << std::endl;
+			sym_div_prob = 0.0;
 		}
 		pCell_parent->phenotype.cycle.asymmetric_division.asymmetric_division_probabilities[pCell_parent->type] = sym_div_prob;
 		pCell_daughter->phenotype.cycle.asymmetric_division.asymmetric_division_probabilities[pCell_daughter->type] = sym_div_prob;
