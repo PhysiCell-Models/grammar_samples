@@ -3,8 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-# find this file at this helpful link: [sorry, I guess we forgot to get around to including the link here :( it is part of the Allen Brain Atlas dataset though]
-path_to_file = "./Zhuang-ABCA-1-raw_1.086_wMeta_wAnnotations_KW.h5ad"
+path_to_file = "./Zhuang-ABCA-1-raw_1.086_wMeta_wAnnotations_KW.h5ad" # this is from the Allen Brain Atlas at z-slice 1.086
 
 region_name = 'AUD'
 
