@@ -286,8 +286,8 @@ load:
 	echo "Loading project from $(PROJ) ... "
 	cp ./user_projects/$(PROJ)/main.cpp .
 	cp ./user_projects/$(PROJ)/Makefile .
-	cp ./user_projects/$(PROJ)/config/* ./config/ 
-	cp ./user_projects/$(PROJ)/custom_modules/* ./custom_modules/ 
+	cp -r ./user_projects/$(PROJ)/config/* ./config/ 
+	cp -r ./user_projects/$(PROJ)/custom_modules/* ./custom_modules/ 
 
 # useage: make share PROJ=your_project_name
 share: 
