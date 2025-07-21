@@ -6,6 +6,8 @@ We have made our latest release available on Zenodo. You can find it at the foll
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14900735.svg)](https://doi.org/10.5281/zenodo.14900735)
 
+# Manuscript Release
+
 The version synced with the published manuscript is here:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16285252.svg)](https://doi.org/10.5281/zenodo.16285252)
