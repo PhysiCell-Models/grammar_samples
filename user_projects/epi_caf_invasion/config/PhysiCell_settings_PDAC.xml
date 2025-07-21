@@ -37,6 +37,7 @@
             <enable>true</enable>
             <plot_substrate enabled="true" limits="false">
                 <substrate>ecm</substrate>
+                <colormap>YlOrRd</colormap>
                 <min_conc />
                 <max_conc />
             </plot_substrate>
@@ -90,7 +91,7 @@
             <calculate_gradients>true</calculate_gradients>
             <track_internalized_substrates_in_each_agent>false</track_internalized_substrates_in_each_agent>
             <initial_condition type="csv" enabled="true">
-                <filename>./config/ics/PDAC01/substrates.csv</filename>
+                <filename>/Users/jeanette.johnson/cell_paper_fix/grammar_samples/user_projects/epi_caf_invasion/config/ics/PDAC01/substrates.csv</filename>
             </initial_condition>
             <dirichlet_nodes type="matlab" enabled="false">
                 <filename>./config/dirichlet.mat</filename>
@@ -105,6 +106,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">0</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">1.0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -166,6 +175,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0</speed>
@@ -206,6 +216,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0</phagocytosis_rate>
@@ -247,6 +258,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="mesenchymal_normal" ID="1">
             <phenotype>
@@ -254,6 +267,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">0</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">1.0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -315,6 +336,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.249908679</speed>
@@ -355,6 +377,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -396,6 +419,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="fibroblast" ID="2">
             <phenotype>
@@ -403,6 +428,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">0</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">1.0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -464,13 +497,14 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">8.03971290256818e-06</speed>
                     <persistence_time units="min">10</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>true</enabled>
+                        <enabled>false</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -504,6 +538,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -545,6 +580,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="epithelial_tumor" ID="3">
             <phenotype>
@@ -552,6 +589,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">1e-3</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">1.0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -613,6 +658,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0</speed>
@@ -653,6 +699,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -694,6 +741,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="mesenchymal_tumor" ID="4">
             <phenotype>
@@ -701,6 +750,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">0</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">1.0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -762,6 +819,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0.249908679</speed>
@@ -802,6 +860,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0.0</phagocytosis_rate>
@@ -843,6 +902,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
         <cell_definition name="other_tissue" ID="5">
             <phenotype>
@@ -850,6 +911,14 @@
                     <phase_transition_rates units="1/min">
                         <rate start_index="0" end_index="0" fixed_duration="false">0</rate>
                     </phase_transition_rates>
+                    <standard_asymmetric_division enabled="False">
+                        <asymmetric_division_probability name="epithelial_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_normal" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="fibroblast" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="epithelial_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="mesenchymal_tumor" units="dimensionless">0</asymmetric_division_probability>
+                        <asymmetric_division_probability name="other_tissue" units="dimensionless">1.0</asymmetric_division_probability>
+                    </standard_asymmetric_division>
                 </cycle>
                 <death>
                     <model code="100" name="apoptosis">
@@ -911,6 +980,7 @@
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
+                    <maximum_number_of_attachments>12</maximum_number_of_attachments>
                 </mechanics>
                 <motility>
                     <speed units="micron/min">0</speed>
@@ -951,6 +1021,7 @@
                 <cell_interactions>
                     <apoptotic_phagocytosis_rate units="1/min">0</apoptotic_phagocytosis_rate>
                     <necrotic_phagocytosis_rate units="1/min">0</necrotic_phagocytosis_rate>
+                    <other_dead_phagocytosis_rate units="1/min">0.0</other_dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
                         <phagocytosis_rate name="fibroblast" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="epithelial_normal" units="1/min">0</phagocytosis_rate>
@@ -992,6 +1063,8 @@
             <custom_data>
                 <sample conserved="false" units="dimensionless" description="">1.0</sample>
             </custom_data>
+            <initial_parameter_distributions enabled="false">
+          </initial_parameter_distributions>
         </cell_definition>
     </cell_definitions>
 
