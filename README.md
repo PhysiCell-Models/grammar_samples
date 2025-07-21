@@ -8,7 +8,7 @@ We have made our latest release available on Zenodo. You can find it at the foll
 
 The version synced with the published manuscript is here:
 
-DOI TBD
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16285252.svg)](https://doi.org/10.5281/zenodo.16285252)
 
 This release includes all the necessary files and documentation for _Human interpretable grammar encodes multicellular systems biology models to democratize virtual cell laboratories_ (with preprint named [_Digitize your Biology! Modeling multicellular systems through interpretable cell behavior_](https://doi.org/10.1101/2023.09.17.557982)). This release is dated July 21, 2025. Please refer to the [release notes](https://github.com/PhysiCell-Models/grammar_samples/releases/tag/v2.0.1) for more details.
 
