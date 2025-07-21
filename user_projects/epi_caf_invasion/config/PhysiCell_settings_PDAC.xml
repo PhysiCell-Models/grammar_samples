@@ -91,7 +91,7 @@
             <calculate_gradients>true</calculate_gradients>
             <track_internalized_substrates_in_each_agent>false</track_internalized_substrates_in_each_agent>
             <initial_condition type="csv" enabled="true">
-                <filename>/Users/jeanette.johnson/cell_paper_fix/grammar_samples/user_projects/epi_caf_invasion/config/ics/PDAC01/substrates.csv</filename>
+                <filename>./config/ics/PDAC01/substrates.csv</filename>
             </initial_condition>
             <dirichlet_nodes type="matlab" enabled="false">
                 <filename>./config/dirichlet.mat</filename>
