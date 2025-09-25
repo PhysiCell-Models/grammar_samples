@@ -263,7 +263,6 @@
                                 <chemotactic_sensitivity substrate="IL-10">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="IL-4">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="EGF">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -445,7 +444,6 @@
                                 <chemotactic_sensitivity substrate="IL-10">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="IL-4">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="EGF">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -627,7 +625,6 @@
                                 <chemotactic_sensitivity substrate="IL-10">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="IL-4">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="EGF">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -809,7 +806,6 @@
                                 <chemotactic_sensitivity substrate="IL-10">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="IL-4">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="EGF">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -991,7 +987,6 @@
                                 <chemotactic_sensitivity substrate="IL-10">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="IL-4">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="EGF">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>

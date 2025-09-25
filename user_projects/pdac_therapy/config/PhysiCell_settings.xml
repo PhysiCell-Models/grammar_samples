@@ -229,7 +229,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -397,7 +396,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -566,7 +564,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -735,7 +732,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -904,7 +900,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -1075,7 +1070,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -1239,7 +1233,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -1407,7 +1400,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -1575,7 +1567,6 @@
                                 <chemotactic_sensitivity substrate="debris">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="pro-inflammatory factor">0.0</chemotactic_sensitivity>
                                 <chemotactic_sensitivity substrate="anti-inflammatory factor">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="substrate">0.0</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
